@@ -20,10 +20,10 @@ file(GLOB Pokeman
 add_executable(PokemanProject ${Pokeman} PokemanGreen.cpp PokemanGreen.h Player.cpp Player.h NPC.cpp NPC.h)
 target_link_libraries(PokemanProject ${all_libs})
 
-# copy files to dest (art still needed...)
-#file(COPY platformer-art-deluxe.json platformer-art-deluxe.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-#file(COPY platformer-art-deluxe.json platformer-art-deluxe.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
-#file(COPY platformer-art-deluxe.json platformer-art-deluxe.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+# copy files to dest
+file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 IF (WIN32)
     # Copy dll files to ${CMAKE_CURRENT_BINARY_DIR}/Debug
