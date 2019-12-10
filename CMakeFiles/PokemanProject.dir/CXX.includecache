@@ -632,21 +632,55 @@ close_code.h
 
 /Library/Frameworks/SDL2.framework/Headers/close_code.h
 
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.hpp
+GameObject.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+SDL_events.h
+-
+string
+-
+sre/Sprite.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/Sprite.hpp
+sre/SpriteBatch.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteBatch.hpp
+
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.h
+GameObject.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+Collidable.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.hpp
+
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGreen.cpp
 PokemanGreen.h
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGreen.h
 iostream
 -
+glm/gtc/constants.hpp
+-
+GameObject.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+Collidable.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.hpp
+Player.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.h
+vector
+-
 
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGreen.h
 sre/SDLRenderer.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SDLRenderer.hpp
-
-/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp
-iostream
+vector
 -
-PokemanGreen.h
-/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGreen.h
+sre/SDLRenderer.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SDLRenderer.hpp
+sre/SpriteAtlas.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteAtlas.hpp
+GameObject.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+Player.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.h
 
 submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 sre/impl/Export.hpp
@@ -843,6 +877,16 @@ glm/glm.hpp
 submodules/SimpleRenderEngine/include/sre/glm/glm.hpp
 sre/impl/CPPShim.hpp
 submodules/SimpleRenderEngine/include/sre/sre/impl/CPPShim.hpp
+
+submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
+vector
+-
+string
+-
+map
+-
+sre/Sprite.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Sprite.hpp
 
 submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
 vector
@@ -1451,6 +1495,16 @@ vector_relational.hpp
 submodules/SimpleRenderEngine/submodules/glm/glm/vector_relational.hpp
 integer.hpp
 submodules/SimpleRenderEngine/submodules/glm/glm/integer.hpp
+
+submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.hpp
+../detail/setup.hpp
+submodules/SimpleRenderEngine/submodules/glm/glm/detail/setup.hpp
+constants.inl
+submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.inl
+
+submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.inl
+limits
+-
 
 submodules/SimpleRenderEngine/submodules/glm/glm/integer.hpp
 detail/setup.hpp

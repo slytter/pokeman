@@ -174,6 +174,87 @@ PokemanProject/fast:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/build
 .PHONY : PokemanProject/fast
 
+Collidable.o: Collidable.cpp.o
+
+.PHONY : Collidable.o
+
+# target to build an object file
+Collidable.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.o
+.PHONY : Collidable.cpp.o
+
+Collidable.i: Collidable.cpp.i
+
+.PHONY : Collidable.i
+
+# target to preprocess a source file
+Collidable.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.i
+.PHONY : Collidable.cpp.i
+
+Collidable.s: Collidable.cpp.s
+
+.PHONY : Collidable.s
+
+# target to generate assembly for a file
+Collidable.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.s
+.PHONY : Collidable.cpp.s
+
+GameObject.o: GameObject.cpp.o
+
+.PHONY : GameObject.o
+
+# target to build an object file
+GameObject.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.o
+.PHONY : GameObject.cpp.o
+
+GameObject.i: GameObject.cpp.i
+
+.PHONY : GameObject.i
+
+# target to preprocess a source file
+GameObject.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.i
+.PHONY : GameObject.cpp.i
+
+GameObject.s: GameObject.cpp.s
+
+.PHONY : GameObject.s
+
+# target to generate assembly for a file
+GameObject.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.s
+.PHONY : GameObject.cpp.s
+
+Player.o: Player.cpp.o
+
+.PHONY : Player.o
+
+# target to build an object file
+Player.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.o
+.PHONY : Player.cpp.o
+
+Player.i: Player.cpp.i
+
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
 PokemanGreen.o: PokemanGreen.cpp.o
 
 .PHONY : PokemanGreen.o
@@ -241,6 +322,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... PokemanProject"
+	@echo "... Collidable.o"
+	@echo "... Collidable.i"
+	@echo "... Collidable.s"
+	@echo "... GameObject.o"
+	@echo "... GameObject.i"
+	@echo "... GameObject.s"
+	@echo "... Player.o"
+	@echo "... Player.i"
+	@echo "... Player.s"
 	@echo "... PokemanGreen.o"
 	@echo "... PokemanGreen.i"
 	@echo "... PokemanGreen.s"
