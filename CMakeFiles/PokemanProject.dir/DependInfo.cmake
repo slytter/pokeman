@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.o"
+  "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/NPC.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGreen.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/PokemanGreen.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/PokemanProject.dir/main.cpp.o"

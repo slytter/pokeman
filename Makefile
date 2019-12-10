@@ -228,6 +228,33 @@ GameObject.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.s
 .PHONY : GameObject.cpp.s
 
+NPC.o: NPC.cpp.o
+
+.PHONY : NPC.o
+
+# target to build an object file
+NPC.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.o
+.PHONY : NPC.cpp.o
+
+NPC.i: NPC.cpp.i
+
+.PHONY : NPC.i
+
+# target to preprocess a source file
+NPC.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.i
+.PHONY : NPC.cpp.i
+
+NPC.s: NPC.cpp.s
+
+.PHONY : NPC.s
+
+# target to generate assembly for a file
+NPC.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.s
+.PHONY : NPC.cpp.s
+
 Player.o: Player.cpp.o
 
 .PHONY : Player.o
@@ -328,6 +355,9 @@ help:
 	@echo "... GameObject.o"
 	@echo "... GameObject.i"
 	@echo "... GameObject.s"
+	@echo "... NPC.o"
+	@echo "... NPC.i"
+	@echo "... NPC.s"
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"

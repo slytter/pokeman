@@ -19,8 +19,9 @@ public:
     PokemanGreen ();
     void init ();
     void startGame ();
-    public std::shared_ptr<Player> player;
+    std::shared_ptr<Player> player;
 private:
+    void keyEvent(SDL_Event &event, std::shared_ptr<Player> player);
     sre::SDLRenderer renderer;
     sre::Camera mainCam;
     std::shared_ptr<sre::SpriteAtlas> atlas;
@@ -30,7 +31,4 @@ private:
     void render();
     bool debugCollisionCircles = false;
     // void drawCircle(std::vector<glm::vec3> &lines, glm::vec2 position, float radius);
-
-
-
 };

@@ -15,7 +15,6 @@ public:
     void update(float deltaTime) override;
     void onCollision(std::shared_ptr<GameObject> other) override;
     void onKey(SDL_Event &keyEvent) override;
-
     bool *isDead;
 
 private:
