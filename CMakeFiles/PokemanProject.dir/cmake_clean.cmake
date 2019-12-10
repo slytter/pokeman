@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PokemanProject.dir/Collidable.cpp.o"
   "CMakeFiles/PokemanProject.dir/GameObject.cpp.o"
   "CMakeFiles/PokemanProject.dir/NPC.cpp.o"
   "CMakeFiles/PokemanProject.dir/Player.cpp.o"

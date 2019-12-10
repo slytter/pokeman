@@ -310,10 +310,6 @@ close_code.h
 
 /Library/Frameworks/SDL2.framework/Headers/close_code.h
 
-/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.hpp
-GameObject.hpp
-/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
-
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
 SDL_events.h
 -
@@ -324,6 +320,16 @@ sre/Sprite.hpp
 sre/SpriteBatch.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteBatch.hpp
 
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/NPC.cpp
+NPC.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/NPC.h
+sre/Renderer.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/Renderer.hpp
+
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/NPC.h
+GameObject.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.cpp
 Player.h
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.h
@@ -333,8 +339,6 @@ sre/Renderer.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Player.h
 GameObject.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
-Collidable.hpp
-/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Collidable.hpp
 
 submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 sre/impl/Export.hpp

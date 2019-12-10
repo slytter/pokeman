@@ -5,7 +5,6 @@
 #include <iostream>
 #include <glm/gtc/constants.hpp>
 #include "GameObject.hpp"
-#include "Collidable.hpp"
 #include "Player.h"
 #include <vector>
 
@@ -74,16 +73,6 @@ void PokemanGreen::render() {
     auto spriteBatch = spriteBatchBuilder.build();
     renderPass.draw(spriteBatch);
 
-    if (debugCollisionCircles) {
-        std::vector<glm::vec3> lines;
-        for (auto &go : gameObjects) {
-            auto col = std::dynamic_pointer_cast<Collidable>(go);
-            if (col != nullptr) {
-                // drawCircle(lines, go->position, col->getRadius());
-            }
-        }
-        //renderPass.drawLines(lines);
-    }
 
     ImGui::SetNextWindowPos(ImVec2(Renderer::instance->getWindowSize().x / 2 - 100, .0f), ImGuiSetCond_Always);
     ImGui::SetNextWindowSize(ImVec2(200, 70), ImGuiSetCond_Always);

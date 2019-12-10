@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -173,33 +173,6 @@ PokemanProject: project/Pokeman/CMakeFiles/PokemanProject.dir/rule
 PokemanProject/fast:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/build
 .PHONY : PokemanProject/fast
-
-Collidable.o: Collidable.cpp.o
-
-.PHONY : Collidable.o
-
-# target to build an object file
-Collidable.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.o
-.PHONY : Collidable.cpp.o
-
-Collidable.i: Collidable.cpp.i
-
-.PHONY : Collidable.i
-
-# target to preprocess a source file
-Collidable.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.i
-.PHONY : Collidable.cpp.i
-
-Collidable.s: Collidable.cpp.s
-
-.PHONY : Collidable.s
-
-# target to generate assembly for a file
-Collidable.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Collidable.cpp.s
-.PHONY : Collidable.cpp.s
 
 GameObject.o: GameObject.cpp.o
 
@@ -349,9 +322,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... PokemanProject"
-	@echo "... Collidable.o"
-	@echo "... Collidable.i"
-	@echo "... Collidable.s"
 	@echo "... GameObject.o"
 	@echo "... GameObject.i"
 	@echo "... GameObject.s"
