@@ -9,8 +9,6 @@ using namespace std;
 PokemanGreen::PokemanGreen() {
     winSize = glm::vec2 (900,500);
 
-
-
     init();
 }
 
@@ -21,8 +19,15 @@ void PokemanGreen::init() {
             .withSdlWindowFlags(SDL_WINDOW_OPENGL)
             .withVSync(true);
 
+    // setup callback functions
+    renderer.keyEvent = [&](SDL_Event& e){
+
+    };
     renderer.frameUpdate = [&](float deltaTime){
-        cout << deltaTime << "\n";
+        // update(deltaTime);
+    };
+    renderer.frameRender = [&](){
+       // render();
     };
 
 
@@ -31,5 +36,7 @@ void PokemanGreen::init() {
 
     renderer.startEventLoop();
     cout<< "Let the pokeman begin!";
+
 }
+
 

@@ -1,5 +1,5 @@
 //
-// Created by Sune Øllgaard Klem on 09/12/2019.
+//  Created by Nikolay Schlüter and Sune Klem on 09/12/2019.
 //
 
 #include "sre/SDLRenderer.hpp"
