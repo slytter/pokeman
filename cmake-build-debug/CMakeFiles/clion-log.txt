@@ -1,0 +1,18 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman
+CMake Error at CMakeLists.txt:3 (message):
+  This CMakeLists.txt must be included using the command
+  add_subdirectory(name)
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.14)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/cmake-build-debug/CMakeFiles/CMakeOutput.log".
