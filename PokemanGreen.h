@@ -23,7 +23,14 @@ public:
 private:
     void keyEvent(SDL_Event &event, std::shared_ptr<Player> player);
     sre::SDLRenderer renderer;
+
+    //Camera settings
     sre::Camera mainCam;
+    glm::vec2 camRotation;
+
+
+
+
     std::shared_ptr<sre::SpriteAtlas> atlas;
     std::vector<std::shared_ptr<GameObject>> gameObjects;
     bool isDead = false;

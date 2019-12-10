@@ -7,6 +7,7 @@
 #include "GameObject.hpp"
 #include "Player.h"
 #include <vector>
+#include <glm/gtc/matrix_transform.hpp>
 
 using namespace std;
 using namespace sre;
@@ -16,6 +17,8 @@ PokemanGreen::PokemanGreen() {
     renderer.init().withSdlInitFlags(SDL_INIT_EVERYTHING)
             .withSdlWindowFlags(SDL_WINDOW_OPENGL)
             .withVSync(true);
+
+    camRotation = glm::vec2(0.6108652382f,0.75049157836f);
 
     init();
 }
@@ -40,11 +43,16 @@ void PokemanGreen::init() {
     };
 
     mainCam.setWindowCoordinates();
+    mainCam.setOrthographicProjection(200, -1000, 1000);
 
-    // mainCam.setOrthographicProjection(0,0.1f,1000);
-    mainCam.setOrthographicProjection(200, -1, 1);
-    mainCam.lookAt({player->position,0},{player->position,-1},{0,1,0});
-    // mainCam.setProjectionTransform() <-- Jeg tror det er det vi skal bruge til at lave det isometric...
+    // We still need look at!! //
+
+    player->position = glm::vec3(0,0,0);
+
+    glm::mat4 IsometricView = glm::rotate(mainCam.getViewTransform(), camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
+    IsometricView = glm::rotate(IsometricView, camRotation.y, glm::vec3(-1.0f, 0.0f, 0.0f));
+
+    mainCam.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
 
     renderer.startEventLoop();
     cout<< "Let the pokeman begin!";
@@ -64,11 +72,11 @@ void PokemanGreen::render() {
             .withClearColor(true, {.30, .90, .40, 1})
             .build();
     auto spriteBatchBuilder = SpriteBatch::create();
-    mainCam.lookAt({player->position,0},{player->position,-1},{0,1,0});
+    //mainCam.lookAt({player->position,0},{player->position,-1},{0,1,0});
 
     for (int i = 0; i < gameObjects.size(); i++) {
         gameObjects[i]->render(spriteBatchBuilder);
-        cout << gameObjects[i]->position.x << endl;
+        //cout << gameObjects[i]->position.x << endl;
     }
     auto spriteBatch = spriteBatchBuilder.build();
     renderPass.draw(spriteBatch);
