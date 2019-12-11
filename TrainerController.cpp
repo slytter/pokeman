@@ -65,8 +65,6 @@ void TrainerController::update(float deltaTime) {
     }
 
 
-
-
 }
 
 void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
@@ -74,7 +72,10 @@ void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
 }
 
 void TrainerController::updatePos(glm::vec3 dir) {
-    gameObject->setPosition(vec3(gameObject->getPosition(),0) + dir);
+    std::shared_ptr<PhysicsComponent> trainerPhysx = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
+    trainerPhysx->addForce(vec2(dir.x, dir.y) * playerSpeed);
+    trainerPhysx->body->SetLinearDamping((10));
+    // trainerPhysx->
 }
 
 

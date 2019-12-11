@@ -19,6 +19,7 @@ public:
     void onCollisionEnd(PhysicsComponent *comp) override;
 
 private:
+    float playerSpeed = 0.75f;
     bool fwd = false;
     bool bwd  = false;
     bool left  = false;

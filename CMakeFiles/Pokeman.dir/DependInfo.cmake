@@ -6,11 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o"
+  "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/GameObject.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o"
-  "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/SideScrollingCamera.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o"

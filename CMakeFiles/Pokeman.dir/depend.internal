@@ -51,10 +51,10 @@ project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Camera.hpp
  submodules/SimpleRenderEngine/include/sre/Color.hpp
@@ -447,6 +447,191 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o
  thirdparty/macOS/Box2D/include/Box2D/Common/b2Draw.h
  thirdparty/macOS/Box2D/include/Box2D/Common/b2Math.h
  thirdparty/macOS/Box2D/include/Box2D/Common/b2Settings.h
+project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o
+ /Library/Frameworks/SDL2.framework/Headers/SDL.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_audio.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_blendmode.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_clipboard.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_config.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_config_macosx.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_cpuinfo.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_endian.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_error.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_events.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_filesystem.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_gamecontroller.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_gesture.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_haptic.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_hints.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_joystick.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_keyboard.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_keycode.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_loadso.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_log.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_main.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_messagebox.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_mouse.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_mutex.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_pixels.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_platform.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_power.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_quit.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_rect.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_render.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_rwops.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_scancode.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_sensor.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_shape.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_stdinc.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_surface.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_system.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_thread.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_timer.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_touch.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_version.h
+ /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
+ /Library/Frameworks/SDL2.framework/Headers/begin_code.h
+ /Library/Frameworks/SDL2.framework/Headers/close_code.h
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.cpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ submodules/SimpleRenderEngine/include/sre/BlendType.hpp
+ submodules/SimpleRenderEngine/include/sre/Camera.hpp
+ submodules/SimpleRenderEngine/include/sre/Color.hpp
+ submodules/SimpleRenderEngine/include/sre/Framebuffer.hpp
+ submodules/SimpleRenderEngine/include/sre/Light.hpp
+ submodules/SimpleRenderEngine/include/sre/LightType.hpp
+ submodules/SimpleRenderEngine/include/sre/Log.hpp
+ submodules/SimpleRenderEngine/include/sre/Material.hpp
+ submodules/SimpleRenderEngine/include/sre/Mesh.hpp
+ submodules/SimpleRenderEngine/include/sre/MeshTopology.hpp
+ submodules/SimpleRenderEngine/include/sre/RenderPass.hpp
+ submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
+ submodules/SimpleRenderEngine/include/sre/Renderer.hpp
+ submodules/SimpleRenderEngine/include/sre/SDLRenderer.hpp
+ submodules/SimpleRenderEngine/include/sre/Shader.hpp
+ submodules/SimpleRenderEngine/include/sre/Skybox.hpp
+ submodules/SimpleRenderEngine/include/sre/Sprite.hpp
+ submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
+ submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
+ submodules/SimpleRenderEngine/include/sre/Texture.hpp
+ submodules/SimpleRenderEngine/include/sre/WorldLights.hpp
+ submodules/SimpleRenderEngine/include/sre/imgui_sre.hpp
+ submodules/SimpleRenderEngine/include/sre/impl/CPPShim.hpp
+ submodules/SimpleRenderEngine/include/sre/impl/Export.hpp
+ submodules/SimpleRenderEngine/include/sre/impl/GL.hpp
+ submodules/SimpleRenderEngine/include/sre/impl/UniformSet.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/common.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/_fixes.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/_swizzle.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/_swizzle_func.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/_vectorize.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/compute_vector_relational.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_common.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_common_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_exponential.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_exponential_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_geometric.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_geometric_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_integer.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_integer_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_matrix.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_matrix_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_packing.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_packing_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_trigonometric.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_trigonometric_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_vector_relational.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_vector_relational_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/qualifier.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/setup.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_float.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_half.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_half.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_int.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x2.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x3.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x4.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x2.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x3.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x4.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x2.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x3.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec1.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec1.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec2.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec3.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4_simd.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/exponential.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/ext/vec1.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/fwd.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/geometric.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/glm.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/gtc/matrix_transform.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/gtc/matrix_transform.inl
+ submodules/SimpleRenderEngine/submodules/glm/glm/integer.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat2x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat2x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat2x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat3x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat3x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat3x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat4x2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat4x3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/mat4x4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/matrix.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/packing.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/common.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/exponential.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/geometric.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/integer.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/matrix.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/simd/platform.h
+ submodules/SimpleRenderEngine/submodules/glm/glm/trigonometric.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/vec2.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/vec3.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/vec4.hpp
+ submodules/SimpleRenderEngine/submodules/glm/glm/vector_relational.hpp
+ submodules/SimpleRenderEngine/submodules/imgui/imconfig.h
+ submodules/SimpleRenderEngine/submodules/imgui/imgui.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/b2BroadPhase.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/b2Collision.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/b2DynamicTree.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2BlockAllocator.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2Draw.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2GrowableStack.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2Math.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2Settings.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2StackAllocator.h
+ thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2ContactManager.h
+ thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2TimeStep.h
+ thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2World.h
+ thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
@@ -711,12 +896,12 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Camera.hpp
  submodules/SimpleRenderEngine/include/sre/Color.hpp
@@ -917,12 +1102,12 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
@@ -1057,191 +1242,6 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2Body.h
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2ContactManager.h
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2Fixture.h
- thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2TimeStep.h
- thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2World.h
- thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
-project/Pokeman/CMakeFiles/Pokeman.dir/SideScrollingCamera.cpp.o
- /Library/Frameworks/SDL2.framework/Headers/SDL.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_audio.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_blendmode.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_clipboard.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_config.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_config_macosx.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_cpuinfo.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_endian.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_error.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_events.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_filesystem.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_gamecontroller.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_gesture.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_haptic.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_hints.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_joystick.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_keyboard.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_keycode.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_loadso.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_log.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_main.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_messagebox.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_mouse.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_mutex.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_pixels.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_platform.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_power.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_quit.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_rect.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_render.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_rwops.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_scancode.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_sensor.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_shape.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_stdinc.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_surface.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_system.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_thread.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_timer.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_touch.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_version.h
- /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
- /Library/Frameworks/SDL2.framework/Headers/begin_code.h
- /Library/Frameworks/SDL2.framework/Headers/close_code.h
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.cpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
- submodules/SimpleRenderEngine/include/sre/BlendType.hpp
- submodules/SimpleRenderEngine/include/sre/Camera.hpp
- submodules/SimpleRenderEngine/include/sre/Color.hpp
- submodules/SimpleRenderEngine/include/sre/Framebuffer.hpp
- submodules/SimpleRenderEngine/include/sre/Light.hpp
- submodules/SimpleRenderEngine/include/sre/LightType.hpp
- submodules/SimpleRenderEngine/include/sre/Log.hpp
- submodules/SimpleRenderEngine/include/sre/Material.hpp
- submodules/SimpleRenderEngine/include/sre/Mesh.hpp
- submodules/SimpleRenderEngine/include/sre/MeshTopology.hpp
- submodules/SimpleRenderEngine/include/sre/RenderPass.hpp
- submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
- submodules/SimpleRenderEngine/include/sre/Renderer.hpp
- submodules/SimpleRenderEngine/include/sre/SDLRenderer.hpp
- submodules/SimpleRenderEngine/include/sre/Shader.hpp
- submodules/SimpleRenderEngine/include/sre/Skybox.hpp
- submodules/SimpleRenderEngine/include/sre/Sprite.hpp
- submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
- submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
- submodules/SimpleRenderEngine/include/sre/Texture.hpp
- submodules/SimpleRenderEngine/include/sre/WorldLights.hpp
- submodules/SimpleRenderEngine/include/sre/imgui_sre.hpp
- submodules/SimpleRenderEngine/include/sre/impl/CPPShim.hpp
- submodules/SimpleRenderEngine/include/sre/impl/Export.hpp
- submodules/SimpleRenderEngine/include/sre/impl/GL.hpp
- submodules/SimpleRenderEngine/include/sre/impl/UniformSet.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/common.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/_fixes.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/_swizzle.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/_swizzle_func.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/_vectorize.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/compute_vector_relational.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_common.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_common_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_exponential.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_exponential_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_geometric.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_geometric_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_integer.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_integer_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_matrix.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_matrix_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_packing.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_packing_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_trigonometric.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_trigonometric_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_vector_relational.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/func_vector_relational_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/qualifier.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/setup.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_float.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_half.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_half.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_int.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x2.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x3.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat2x4.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x2.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x3.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat3x4.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x2.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x3.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_mat4x4_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec1.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec1.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec2.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec3.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/detail/type_vec4_simd.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/exponential.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/ext/vec1.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/fwd.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/geometric.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/glm.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/gtc/constants.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/gtc/matrix_transform.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/gtc/matrix_transform.inl
- submodules/SimpleRenderEngine/submodules/glm/glm/integer.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat2x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat2x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat2x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat3x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat3x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat3x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat4x2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat4x3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/mat4x4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/matrix.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/packing.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/common.h
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/exponential.h
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/geometric.h
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/integer.h
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/matrix.h
- submodules/SimpleRenderEngine/submodules/glm/glm/simd/platform.h
- submodules/SimpleRenderEngine/submodules/glm/glm/trigonometric.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/vec2.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/vec3.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/vec4.hpp
- submodules/SimpleRenderEngine/submodules/glm/glm/vector_relational.hpp
- submodules/SimpleRenderEngine/submodules/imgui/imconfig.h
- submodules/SimpleRenderEngine/submodules/imgui/imgui.h
- thirdparty/macOS/Box2D/include/Box2D/Collision/b2BroadPhase.h
- thirdparty/macOS/Box2D/include/Box2D/Collision/b2Collision.h
- thirdparty/macOS/Box2D/include/Box2D/Collision/b2DynamicTree.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2BlockAllocator.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2Draw.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2GrowableStack.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2Math.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2Settings.h
- thirdparty/macOS/Box2D/include/Box2D/Common/b2StackAllocator.h
- thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2ContactManager.h
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2TimeStep.h
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2World.h
  thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
@@ -1513,11 +1513,11 @@ project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
@@ -1701,10 +1701,10 @@ project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
- /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SideScrollingCamera.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Camera.hpp
