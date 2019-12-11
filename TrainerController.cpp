@@ -15,22 +15,20 @@ using namespace glm;
 
 TrainerController::TrainerController(GameObject *gameObject) : Component(gameObject) {
     // initiate bird physics
-    phys = this->gameObject->getComponent<PhysicsComponent>();
-    phys->setLinearVelocity(vec2(1.2, 0));
 }
 
 bool TrainerController::onKey(SDL_Event &event) {
 
-    if (event.key.keysym.sym == SDLK_w) {
+    if (event.key.keysym.sym == SDLK_UP) {
         fwd = event.type == SDL_KEYDOWN;
     }
-    if  (event.key.keysym.sym == SDLK_a) {
+    if  (event.key.keysym.sym == SDLK_LEFT) {
         left = event.type == SDL_KEYDOWN;
     }
-    if  (event.key.keysym.sym == SDLK_d) {
+    if  (event.key.keysym.sym == SDLK_RIGHT) {
         right = event.type == SDL_KEYDOWN;
     }
-    if  (event.key.keysym.sym == SDLK_s) {
+    if  (event.key.keysym.sym == SDLK_DOWN) {
         bwd = event.type == SDL_KEYDOWN;
     }
 
@@ -47,8 +45,36 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
     std::cout << "bird collided with something: " << comp->getGameObject()->name << std::endl;
 }
 
+void TrainerController::update(float deltaTime) {
+    //std::cout<< "yas";
+
+    if (fwd) {
+        updatePos (vec3(0,1,0));
+    }
+
+    if (bwd) {
+        updatePos (vec3(0,-1,0));
+    }
+
+    if (left) {
+        updatePos (vec3(-1,0,0));
+    }
+
+    if (right) {
+        updatePos (vec3(1,0,0));
+    }
+
+
+
+
+}
+
 void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
 
+}
+
+void TrainerController::updatePos(glm::vec3 dir) {
+    gameObject->setPosition(vec3(gameObject->getPosition(),0) + dir);
 }
 
 

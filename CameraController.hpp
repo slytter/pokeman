@@ -4,9 +4,9 @@
 #include "glm/glm.hpp"
 #include "Component.hpp"
 
-class SideScrollingCamera : public Component {
+class CameraController : public Component {
 public:
-    explicit SideScrollingCamera(GameObject *gameObject);
+    explicit CameraController(GameObject *gameObject);
     glm::vec2 camRotation;
     void update(float deltaTime) override;
     void setFollowObject(std::shared_ptr<GameObject> followObject, glm::vec2 offset);

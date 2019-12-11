@@ -10,6 +10,10 @@ public:
 
     bool onKey(SDL_Event &event) override;
 
+    void update(float deltaTime) override;
+
+
+
     void onCollisionStart(PhysicsComponent *comp) override;
 
     void onCollisionEnd(PhysicsComponent *comp) override;
@@ -19,4 +23,6 @@ private:
     bool bwd  = false;
     bool left  = false;
     bool right  = false;
+
+    void updatePos(glm::vec3);
 };

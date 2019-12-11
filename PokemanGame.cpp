@@ -50,7 +50,7 @@ void PokemanGame::init() {
     initPhysics();
     auto camObj = createGameObject();
     camObj->name = "Camera";
-    camera = camObj->addComponent<SideScrollingCamera>();
+    camera = camObj->addComponent<CameraController>();
     camObj->setPosition(windowSize*0.5f);
 
     spriteAtlas = SpriteAtlas::create("bird.json","bird.png");

@@ -2,13 +2,13 @@
 // Created by Morten Nobel-Jørgensen on 10/10/2017.
 //
 
-#include "SideScrollingCamera.hpp"
+#include "CameraController.hpp"
 #include "PokemanGame.hpp"
 #include <glm/gtc/matrix_transform.hpp>
 
 using namespace glm;
 
-SideScrollingCamera::SideScrollingCamera(GameObject *gameObject) : Component(gameObject) {
+CameraController::CameraController(GameObject *gameObject) : Component(gameObject) {
     camera.setOrthographicProjection(PokemanGame::windowSize.y * 3, -1000, 1000);
 
     camera.setWindowCoordinates();
@@ -20,11 +20,11 @@ SideScrollingCamera::SideScrollingCamera(GameObject *gameObject) : Component(gam
 
 }
 
-sre::Camera &SideScrollingCamera::getCamera() {
+sre::Camera &CameraController::getCamera() {
     return camera;
 }
 
-void SideScrollingCamera::update(float deltaTime) {
+void CameraController::update(float deltaTime) {
     auto position = followObject->getPosition();
     gameObject->setPosition(position);
     IsometricView = rotate(cameraOriMat4, camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -33,7 +33,7 @@ void SideScrollingCamera::update(float deltaTime) {
     camera.setPositionAndRotation(vec3(position.x,position.y,0), camera.getRotationEuler());
 }
 
-void SideScrollingCamera::setFollowObject(std::shared_ptr<GameObject> followObject, glm::vec2 offset) {
+void CameraController::setFollowObject(std::shared_ptr<GameObject> followObject, glm::vec2 offset) {
     this->followObject = followObject;
     this->offset = offset;
 }

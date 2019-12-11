@@ -3,7 +3,7 @@
 #include <vector>
 #include "Box2D/Dynamics/b2World.h"
 #include "GameObject.hpp"
-#include "SideScrollingCamera.hpp"
+#include "CameraController.hpp"
 #include "BackgroundComponent.hpp"
 #include "Box2DDebugDraw.hpp"
 
@@ -43,7 +43,7 @@ private:
 
     void handleContact(b2Contact *contact, bool begin);
 
-    std::shared_ptr<SideScrollingCamera> camera;
+    std::shared_ptr<CameraController> camera;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
