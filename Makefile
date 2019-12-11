@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -160,19 +160,100 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-project/Pokeman/CMakeFiles/PokemanProject.dir/rule:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f CMakeFiles/Makefile2 project/Pokeman/CMakeFiles/PokemanProject.dir/rule
-.PHONY : project/Pokeman/CMakeFiles/PokemanProject.dir/rule
+project/Pokeman/CMakeFiles/Pokeman.dir/rule:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f CMakeFiles/Makefile2 project/Pokeman/CMakeFiles/Pokeman.dir/rule
+.PHONY : project/Pokeman/CMakeFiles/Pokeman.dir/rule
 
 # Convenience name for target.
-PokemanProject: project/Pokeman/CMakeFiles/PokemanProject.dir/rule
+Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/rule
 
-.PHONY : PokemanProject
+.PHONY : Pokeman
 
 # fast build rule for target.
-PokemanProject/fast:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/build
-.PHONY : PokemanProject/fast
+Pokeman/fast:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/build
+.PHONY : Pokeman/fast
+
+BackgroundComponent.o: BackgroundComponent.cpp.o
+
+.PHONY : BackgroundComponent.o
+
+# target to build an object file
+BackgroundComponent.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o
+.PHONY : BackgroundComponent.cpp.o
+
+BackgroundComponent.i: BackgroundComponent.cpp.i
+
+.PHONY : BackgroundComponent.i
+
+# target to preprocess a source file
+BackgroundComponent.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.i
+.PHONY : BackgroundComponent.cpp.i
+
+BackgroundComponent.s: BackgroundComponent.cpp.s
+
+.PHONY : BackgroundComponent.s
+
+# target to generate assembly for a file
+BackgroundComponent.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.s
+.PHONY : BackgroundComponent.cpp.s
+
+Box2DDebugDraw.o: Box2DDebugDraw.cpp.o
+
+.PHONY : Box2DDebugDraw.o
+
+# target to build an object file
+Box2DDebugDraw.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o
+.PHONY : Box2DDebugDraw.cpp.o
+
+Box2DDebugDraw.i: Box2DDebugDraw.cpp.i
+
+.PHONY : Box2DDebugDraw.i
+
+# target to preprocess a source file
+Box2DDebugDraw.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.i
+.PHONY : Box2DDebugDraw.cpp.i
+
+Box2DDebugDraw.s: Box2DDebugDraw.cpp.s
+
+.PHONY : Box2DDebugDraw.s
+
+# target to generate assembly for a file
+Box2DDebugDraw.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.s
+.PHONY : Box2DDebugDraw.cpp.s
+
+Component.o: Component.cpp.o
+
+.PHONY : Component.o
+
+# target to build an object file
+Component.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.o
+.PHONY : Component.cpp.o
+
+Component.i: Component.cpp.i
+
+.PHONY : Component.i
+
+# target to preprocess a source file
+Component.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.i
+.PHONY : Component.cpp.i
+
+Component.s: Component.cpp.s
+
+.PHONY : Component.s
+
+# target to generate assembly for a file
+Component.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.s
+.PHONY : Component.cpp.s
 
 GameObject.o: GameObject.cpp.o
 
@@ -180,7 +261,7 @@ GameObject.o: GameObject.cpp.o
 
 # target to build an object file
 GameObject.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.o
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/GameObject.cpp.o
 .PHONY : GameObject.cpp.o
 
 GameObject.i: GameObject.cpp.i
@@ -189,7 +270,7 @@ GameObject.i: GameObject.cpp.i
 
 # target to preprocess a source file
 GameObject.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.i
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/GameObject.cpp.i
 .PHONY : GameObject.cpp.i
 
 GameObject.s: GameObject.cpp.s
@@ -198,89 +279,170 @@ GameObject.s: GameObject.cpp.s
 
 # target to generate assembly for a file
 GameObject.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/GameObject.cpp.s
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/GameObject.cpp.s
 .PHONY : GameObject.cpp.s
 
-NPC.o: NPC.cpp.o
+PhysicsComponent.o: PhysicsComponent.cpp.o
 
-.PHONY : NPC.o
-
-# target to build an object file
-NPC.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.o
-.PHONY : NPC.cpp.o
-
-NPC.i: NPC.cpp.i
-
-.PHONY : NPC.i
-
-# target to preprocess a source file
-NPC.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.i
-.PHONY : NPC.cpp.i
-
-NPC.s: NPC.cpp.s
-
-.PHONY : NPC.s
-
-# target to generate assembly for a file
-NPC.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/NPC.cpp.s
-.PHONY : NPC.cpp.s
-
-Player.o: Player.cpp.o
-
-.PHONY : Player.o
+.PHONY : PhysicsComponent.o
 
 # target to build an object file
-Player.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.o
-.PHONY : Player.cpp.o
+PhysicsComponent.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o
+.PHONY : PhysicsComponent.cpp.o
 
-Player.i: Player.cpp.i
+PhysicsComponent.i: PhysicsComponent.cpp.i
 
-.PHONY : Player.i
+.PHONY : PhysicsComponent.i
 
 # target to preprocess a source file
-Player.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.i
-.PHONY : Player.cpp.i
+PhysicsComponent.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.i
+.PHONY : PhysicsComponent.cpp.i
 
-Player.s: Player.cpp.s
+PhysicsComponent.s: PhysicsComponent.cpp.s
 
-.PHONY : Player.s
+.PHONY : PhysicsComponent.s
 
 # target to generate assembly for a file
-Player.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/Player.cpp.s
-.PHONY : Player.cpp.s
+PhysicsComponent.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.s
+.PHONY : PhysicsComponent.cpp.s
 
-PokemanGreen.o: PokemanGreen.cpp.o
+PokemanGame.o: PokemanGame.cpp.o
 
-.PHONY : PokemanGreen.o
+.PHONY : PokemanGame.o
 
 # target to build an object file
-PokemanGreen.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/PokemanGreen.cpp.o
-.PHONY : PokemanGreen.cpp.o
+PokemanGame.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
+.PHONY : PokemanGame.cpp.o
 
-PokemanGreen.i: PokemanGreen.cpp.i
+PokemanGame.i: PokemanGame.cpp.i
 
-.PHONY : PokemanGreen.i
+.PHONY : PokemanGame.i
 
 # target to preprocess a source file
-PokemanGreen.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/PokemanGreen.cpp.i
-.PHONY : PokemanGreen.cpp.i
+PokemanGame.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.i
+.PHONY : PokemanGame.cpp.i
 
-PokemanGreen.s: PokemanGreen.cpp.s
+PokemanGame.s: PokemanGame.cpp.s
 
-.PHONY : PokemanGreen.s
+.PHONY : PokemanGame.s
 
 # target to generate assembly for a file
-PokemanGreen.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/PokemanGreen.cpp.s
-.PHONY : PokemanGreen.cpp.s
+PokemanGame.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.s
+.PHONY : PokemanGame.cpp.s
+
+SideScrollingCamera.o: SideScrollingCamera.cpp.o
+
+.PHONY : SideScrollingCamera.o
+
+# target to build an object file
+SideScrollingCamera.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SideScrollingCamera.cpp.o
+.PHONY : SideScrollingCamera.cpp.o
+
+SideScrollingCamera.i: SideScrollingCamera.cpp.i
+
+.PHONY : SideScrollingCamera.i
+
+# target to preprocess a source file
+SideScrollingCamera.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SideScrollingCamera.cpp.i
+.PHONY : SideScrollingCamera.cpp.i
+
+SideScrollingCamera.s: SideScrollingCamera.cpp.s
+
+.PHONY : SideScrollingCamera.s
+
+# target to generate assembly for a file
+SideScrollingCamera.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SideScrollingCamera.cpp.s
+.PHONY : SideScrollingCamera.cpp.s
+
+SpriteAnimationComponent.o: SpriteAnimationComponent.cpp.o
+
+.PHONY : SpriteAnimationComponent.o
+
+# target to build an object file
+SpriteAnimationComponent.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o
+.PHONY : SpriteAnimationComponent.cpp.o
+
+SpriteAnimationComponent.i: SpriteAnimationComponent.cpp.i
+
+.PHONY : SpriteAnimationComponent.i
+
+# target to preprocess a source file
+SpriteAnimationComponent.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.i
+.PHONY : SpriteAnimationComponent.cpp.i
+
+SpriteAnimationComponent.s: SpriteAnimationComponent.cpp.s
+
+.PHONY : SpriteAnimationComponent.s
+
+# target to generate assembly for a file
+SpriteAnimationComponent.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.s
+.PHONY : SpriteAnimationComponent.cpp.s
+
+SpriteComponent.o: SpriteComponent.cpp.o
+
+.PHONY : SpriteComponent.o
+
+# target to build an object file
+SpriteComponent.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o
+.PHONY : SpriteComponent.cpp.o
+
+SpriteComponent.i: SpriteComponent.cpp.i
+
+.PHONY : SpriteComponent.i
+
+# target to preprocess a source file
+SpriteComponent.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.i
+.PHONY : SpriteComponent.cpp.i
+
+SpriteComponent.s: SpriteComponent.cpp.s
+
+.PHONY : SpriteComponent.s
+
+# target to generate assembly for a file
+SpriteComponent.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.s
+.PHONY : SpriteComponent.cpp.s
+
+TrainerController.o: TrainerController.cpp.o
+
+.PHONY : TrainerController.o
+
+# target to build an object file
+TrainerController.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o
+.PHONY : TrainerController.cpp.o
+
+TrainerController.i: TrainerController.cpp.i
+
+.PHONY : TrainerController.i
+
+# target to preprocess a source file
+TrainerController.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.i
+.PHONY : TrainerController.cpp.i
+
+TrainerController.s: TrainerController.cpp.s
+
+.PHONY : TrainerController.s
+
+# target to generate assembly for a file
+TrainerController.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.s
+.PHONY : TrainerController.cpp.s
 
 main.o: main.cpp.o
 
@@ -288,7 +450,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/main.cpp.o
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -297,7 +459,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/main.cpp.i
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -306,7 +468,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/PokemanProject.dir/build.make project/Pokeman/CMakeFiles/PokemanProject.dir/main.cpp.s
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -321,19 +483,37 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... PokemanProject"
+	@echo "... Pokeman"
+	@echo "... BackgroundComponent.o"
+	@echo "... BackgroundComponent.i"
+	@echo "... BackgroundComponent.s"
+	@echo "... Box2DDebugDraw.o"
+	@echo "... Box2DDebugDraw.i"
+	@echo "... Box2DDebugDraw.s"
+	@echo "... Component.o"
+	@echo "... Component.i"
+	@echo "... Component.s"
 	@echo "... GameObject.o"
 	@echo "... GameObject.i"
 	@echo "... GameObject.s"
-	@echo "... NPC.o"
-	@echo "... NPC.i"
-	@echo "... NPC.s"
-	@echo "... Player.o"
-	@echo "... Player.i"
-	@echo "... Player.s"
-	@echo "... PokemanGreen.o"
-	@echo "... PokemanGreen.i"
-	@echo "... PokemanGreen.s"
+	@echo "... PhysicsComponent.o"
+	@echo "... PhysicsComponent.i"
+	@echo "... PhysicsComponent.s"
+	@echo "... PokemanGame.o"
+	@echo "... PokemanGame.i"
+	@echo "... PokemanGame.s"
+	@echo "... SideScrollingCamera.o"
+	@echo "... SideScrollingCamera.i"
+	@echo "... SideScrollingCamera.s"
+	@echo "... SpriteAnimationComponent.o"
+	@echo "... SpriteAnimationComponent.i"
+	@echo "... SpriteAnimationComponent.s"
+	@echo "... SpriteComponent.o"
+	@echo "... SpriteComponent.i"
+	@echo "... SpriteComponent.s"
+	@echo "... TrainerController.o"
+	@echo "... TrainerController.i"
+	@echo "... TrainerController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

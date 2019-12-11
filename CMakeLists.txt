@@ -10,20 +10,20 @@ IF (WIN32)
 ENDIF(WIN32)
 
 # Add hpp and cpp files to Snake variable
-file(GLOB Pokeman
+file(GLOB pokeman
         "*.hpp"
         "*.h"
         "*.cpp"
         )
 
-# Compile cpp files
-add_executable(PokemanProject ${Pokeman} PokemanGreen.cpp PokemanGreen.h Player.cpp Player.h NPC.cpp NPC.h)
-target_link_libraries(PokemanProject ${all_libs})
+# Compile cpp files (from Snake variable)
+add_executable(Pokeman ${pokeman})
+target_link_libraries(Pokeman ${all_libs})
 
 # copy files to dest
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY background.png background2.png bird.json bird.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+file(COPY background.png background2.png bird.json bird.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+file(COPY background.png background2.png bird.json bird.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 IF (WIN32)
     # Copy dll files to ${CMAKE_CURRENT_BINARY_DIR}/Debug
@@ -32,5 +32,5 @@ IF (WIN32)
     file(COPY ${DLLFileList} DESTINATION .)
 
     # Set working directory to ${CMAKE_CURRENT_BINARY_DIR}/Debug
-    set_target_properties(PokemanProject PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+    set_target_properties(Pokeman PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Debug)
 ENDIF(WIN32)
