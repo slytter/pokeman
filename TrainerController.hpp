@@ -13,4 +13,10 @@ public:
     void onCollisionStart(PhysicsComponent *comp) override;
 
     void onCollisionEnd(PhysicsComponent *comp) override;
+
+private:
+    bool fwd = false;
+    bool bwd  = false;
+    bool left  = false;
+    bool right  = false;
 };

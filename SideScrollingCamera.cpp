@@ -1,4 +1,4 @@
-//
+    //
 // Created by Morten Nobel-Jørgensen on 10/10/2017.
 //
 
@@ -13,12 +13,9 @@ SideScrollingCamera::SideScrollingCamera(GameObject *gameObject) : Component(gam
 
     camera.setWindowCoordinates();
     camera.setOrthographicProjection(300, -2000, 2000);
-    camRotation = glm::vec2(1,1);
-    IsometricView = rotate(camera.getViewTransform(), camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
-    IsometricView = glm::rotate(IsometricView, camRotation.y, glm::vec3(-1.0f, 0.0f, 0.0f));
-
+    camRotation = glm::vec2(0.3,0.3);
+    cameraOriMat4 = camera.getViewTransform();
     camera.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
-
 
 
 }
@@ -28,18 +25,12 @@ sre::Camera &SideScrollingCamera::getCamera() {
 }
 
 void SideScrollingCamera::update(float deltaTime) {
-    auto position = followObject->getPosition(); // getting position
+    auto position = followObject->getPosition();
     gameObject->setPosition(position);
-
-    camera.setPositionAndRotation(vec3(position.x, position.y, 0), vec3(0,0,0));
-    IsometricView = rotate(camera.getViewTransform(), camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
+    IsometricView = rotate(cameraOriMat4, camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
     IsometricView = glm::rotate(IsometricView, camRotation.y, glm::vec3(-1.0f, 0.0f, 0.0f));
-    camera.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
-    vec3 eye (camera.getPosition());
-    vec3 at (position, -1);
-    vec3 up (0, 1, 0);
-    camera.lookAt(eye, at, up);
-
+    camera.setViewTransform(IsometricView);
+    camera.setPositionAndRotation(vec3(position.x,position.y,0), camera.getRotationEuler());
 }
 
 void SideScrollingCamera::setFollowObject(std::shared_ptr<GameObject> followObject, glm::vec2 offset) {

@@ -20,12 +20,20 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
 }
 
 bool TrainerController::onKey(SDL_Event &event) {
-    if (event.type == SDL_KEYDOWN){
-        phys->addImpulse(vec2(0, 0.15));
-        std::cout << "some key pressed" << std::endl;
-    } else if (event.type == SDL_KEYUP){
-        std::cout << "some key released" << std::endl;
+
+    if (event.key.keysym.sym == SDLK_w) {
+        fwd = event.type == SDL_KEYDOWN;
     }
+    if  (event.key.keysym.sym == SDLK_a) {
+        left = event.type == SDL_KEYDOWN;
+    }
+    if  (event.key.keysym.sym == SDLK_d) {
+        right = event.type == SDL_KEYDOWN;
+    }
+    if  (event.key.keysym.sym == SDLK_s) {
+        bwd = event.type == SDL_KEYDOWN;
+    }
+
     return false;
 }
 
