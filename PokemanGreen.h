@@ -35,8 +35,12 @@ private:
     // Player
     Trainer trainer;
 
-
+    // Sprite
     std::shared_ptr<sre::SpriteAtlas> atlas;
+    sre::Sprite tile;
+
+
+
     std::vector<std::shared_ptr<GameObject>> gameObjects;
     bool isDead = false;
     glm::vec2 winSize;

@@ -21,9 +21,9 @@ add_executable(PokemanProject ${Pokeman} PokemanGreen.cpp PokemanGreen.h Player.
 target_link_libraries(PokemanProject ${all_libs})
 
 # copy files to dest
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
-file(COPY asteroids.json asteroids.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY 2DLandscape.json 2DLandscape.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+file(COPY 2DLandscape.json 2DLandscape.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+file(COPY 2DLandscape.json 2DLandscape.png DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 IF (WIN32)
     # Copy dll files to ${CMAKE_CURRENT_BINARY_DIR}/Debug

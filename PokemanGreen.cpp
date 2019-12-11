@@ -23,6 +23,10 @@ PokemanGreen::PokemanGreen() {
 
     camRotation = glm::vec2(0.6108652382f,0.75049157836f);
 
+    atlas = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+
+    tile = atlas->get("brick_brown-vines1.png");
+
     init();
 }
 
@@ -33,7 +37,9 @@ void PokemanGreen::init() {
     trainer = Trainer ();
     gameObjects.push_back(player);
 
+
     renderer.setWindowSize(winSize);
+
 
     // setup callback functions
     renderer.keyEvent = [&](SDL_Event& e){
@@ -55,18 +61,12 @@ void PokemanGreen::init() {
 
     player->position = glm::vec3(0,0,0);
 
-
-
     glm::mat4 IsometricView = glm::rotate(mainCam.getViewTransform(), camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
     IsometricView = glm::rotate(IsometricView, camRotation.y, glm::vec3(-1.0f, 0.0f, 0.0f));
-
     mainCam.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
 
-
-
-
     renderer.startEventLoop();
-    cout<< "Let the pokeman begin!";
+
     startGame();
 }
 
@@ -103,7 +103,7 @@ void PokemanGreen::render() {
         //renderPass.drawLines(lines);
     }
 
-
+    tile.setPosition(glm::vec2(0,0));
 
     ImGui::SetNextWindowPos(ImVec2(Renderer::instance->getWindowSize().x / 2 - 100, .0f), ImGuiSetCond_Always);
     ImGui::SetNextWindowSize(ImVec2(200, 70), ImGuiSetCond_Always);
