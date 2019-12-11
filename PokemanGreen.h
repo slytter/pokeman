@@ -8,6 +8,10 @@
 #include "sre/SpriteAtlas.hpp"
 #include "GameObject.hpp"
 #include "Player.h"
+#include "Box2D/Box2D.h"
+#include "Trainer.h"
+
+
 
 #ifndef SIMPLERENDERENGINEPROJECT_POKEMANGREEN_H
 #define SIMPLERENDERENGINEPROJECT_POKEMANGREEN_H
@@ -28,7 +32,8 @@ private:
     sre::Camera mainCam;
     glm::vec2 camRotation;
 
-
+    // Player
+    Trainer trainer;
 
 
     std::shared_ptr<sre::SpriteAtlas> atlas;

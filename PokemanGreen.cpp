@@ -9,6 +9,8 @@
 #include "Player.h"
 #include <vector>
 #include <glm/gtc/matrix_transform.hpp>
+#include "Box2D/Box2D.h"
+
 
 using namespace std;
 using namespace sre;
@@ -28,6 +30,7 @@ void PokemanGreen::init() {
     atlas = SpriteAtlas::create("asteroids.json", "asteroids.png");
     auto spaceshipSprite = atlas->get("playerShip2_red.png");
     player = std::make_shared<Player>(spaceshipSprite, &isDead);
+    trainer = Trainer ();
     gameObjects.push_back(player);
 
     renderer.setWindowSize(winSize);
@@ -35,6 +38,8 @@ void PokemanGreen::init() {
     // setup callback functions
     renderer.keyEvent = [&](SDL_Event& e){
         keyEvent(e, player);
+        trainer.onKey(e);
+
     };
     renderer.frameUpdate = [&](float deltaTime){
         // update(deltaTime);
@@ -50,10 +55,15 @@ void PokemanGreen::init() {
 
     player->position = glm::vec3(0,0,0);
 
+
+
     glm::mat4 IsometricView = glm::rotate(mainCam.getViewTransform(), camRotation.x, glm::vec3(0.0f, 1.0f, 0.0f));
     IsometricView = glm::rotate(IsometricView, camRotation.y, glm::vec3(-1.0f, 0.0f, 0.0f));
 
     mainCam.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
+
+
+
 
     renderer.startEventLoop();
     cout<< "Let the pokeman begin!";
@@ -73,7 +83,7 @@ void PokemanGreen::render() {
             .withClearColor(true, {.30, .90, .40, 1})
             .build();
     auto spriteBatchBuilder = SpriteBatch::create();
-    //mainCam.lookAt({player->position,0},{player->position,-1},{0,1,0});
+    //mainCam.lookAt(mainCam.getPosition(),{player->position,-1},{0,1,0});
 
     for (int i = 0; i < gameObjects.size(); i++) {
         gameObjects[i]->render(spriteBatchBuilder);
@@ -92,6 +102,8 @@ void PokemanGreen::render() {
         }
         //renderPass.drawLines(lines);
     }
+
+
 
     ImGui::SetNextWindowPos(ImVec2(Renderer::instance->getWindowSize().x / 2 - 100, .0f), ImGuiSetCond_Always);
     ImGui::SetNextWindowSize(ImVec2(200, 70), ImGuiSetCond_Always);

@@ -17,7 +17,7 @@ file(GLOB Pokeman
         )
 
 # Compile cpp files
-add_executable(PokemanProject ${Pokeman} PokemanGreen.cpp PokemanGreen.h Player.cpp Player.h NPC.cpp NPC.h)
+add_executable(PokemanProject ${Pokeman} PokemanGreen.cpp PokemanGreen.h Player.cpp Player.h NPC.cpp NPC.h Trainer.cpp Trainer.h)
 target_link_libraries(PokemanProject ${all_libs})
 
 # copy files to dest
