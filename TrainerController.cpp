@@ -49,19 +49,19 @@ void TrainerController::update(float deltaTime) {
     //std::cout<< "yas";
 
     if (fwd) {
-        updatePos (vec3(0,1,0));
+        updatePos (vec3(-1,1,0));
     }
 
     if (bwd) {
-        updatePos (vec3(0,-1,0));
+        updatePos (vec3(1,-1,0));
     }
 
     if (left) {
-        updatePos (vec3(-1,0,0));
+        updatePos (vec3(-1,-1,0));
     }
 
     if (right) {
-        updatePos (vec3(1,0,0));
+        updatePos (vec3(1,1,0));
     }
 
 

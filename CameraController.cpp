@@ -13,9 +13,9 @@ CameraController::CameraController(GameObject *gameObject) : Component(gameObjec
 
     camera.setWindowCoordinates();
     camera.setOrthographicProjection(200, -2000, 2000);
-    camRotation = glm::vec3(-0.76,-0.76, 0.54); // x: 35deg y: 45deg (in radians)
+    camRotation = glm::vec3(-0.76,-0.76, 0.54);
     cameraOriMat4 = camera.getViewTransform();
-    camera.setViewTransform(IsometricView); // <-- Jeg tror det er det vi skal bruge til at lave det isometric...
+    camera.setViewTransform(IsometricView);
 }
 
 sre::Camera &CameraController::getCamera() {
@@ -37,10 +37,7 @@ void CameraController::setFollowObject(std::shared_ptr<GameObject> followObject,
     this->offset = offset;
 }
 
-
-
 bool CameraController::onKey(SDL_Event &event) {
-
     if (event.key.keysym.sym == SDLK_t && event.type == SDL_KEYDOWN) {
         camRotation.x += 0.02f;
     }

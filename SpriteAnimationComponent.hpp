@@ -3,11 +3,12 @@
 #include "Component.hpp"
 #include "sre/Sprite.hpp"
 #include "SpriteComponent.hpp"
-
+#include "TrainerController.hpp"
+#include "PhysicsComponent.hpp"
 class SpriteAnimationComponent: public Component {
 public:
     SpriteAnimationComponent(GameObject *gameObject);
-
+    std::shared_ptr<TrainerController> playerController;
     void setSprites(std::vector<sre::Sprite> sprites);      // sprite sequence
 
     void update(float deltaTime) override;
@@ -15,6 +16,7 @@ public:
     float getAnimationTime() const;                         // time between animations (in seconds)
     void setAnimationTime(float animationTime);
 private:
+    std::shared_ptr<PhysicsComponent> characterPhysics;
     float animationTime = 0.300f;
     std::vector<sre::Sprite> sprites;
     float time = 0;
