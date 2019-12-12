@@ -72,21 +72,21 @@ void PokemanGame::init() {
     spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
     defaultSprites = SpriteAtlas::create("bird.json","bird.png");
 
-    auto birdObj = createGameObject();
-    birdObj->name = "Bird";
-    camera->setFollowObject(birdObj, {+150, PokemanGame::windowSize.y / 2});
-    auto so = birdObj->addComponent<SpriteComponent>();
+    Player = createGameObject();
+    Player->name = "Player";
+    camera->setFollowObject(Player, {+150, PokemanGame::windowSize.y / 2});
+    auto so = Player->addComponent<SpriteComponent>();
     auto sprite = spriteAtlas->get("tile008.png");
     // sprite.setOrderInBatch(10); <-- til z-order
     sprite.setScale({2,2});
     std:: cout << (int)pokemanMap.getStartingPosition().x;
 
-    birdObj->setPosition({(int)pokemanMap.getStartingPosition().x,pokemanMap.getStartingPosition().y});
+    Player->setPosition({(int)pokemanMap.getStartingPosition().x, pokemanMap.getStartingPosition().y});
     so->setSprite(sprite);
-    auto anim = birdObj->addComponent<SpriteAnimationComponent>();
-    auto phys = birdObj->addComponent<PhysicsComponent>();
-    phys->initCircle(b2_dynamicBody, 10/physicsScale, {birdObj->getPosition().x/physicsScale,birdObj->getPosition().y/physicsScale}, 1);
-    auto birdC = birdObj->addComponent<TrainerController>();
+    auto anim = Player->addComponent<SpriteAnimationComponent>();
+    auto phys = Player->addComponent<PhysicsComponent>();
+    phys->initCircle(b2_dynamicBody, 10/physicsScale, {Player->getPosition().x / physicsScale, Player->getPosition().y / physicsScale}, 1);
+    auto birdC = Player->addComponent<TrainerController>();
 
     vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
     anim-> setSprites(spriteAnim);
@@ -108,7 +108,7 @@ void PokemanGame::init() {
     auto phys2 = enemy->addComponent<PhysicsComponent>();
     phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
     auto creature = enemy->addComponent<Creature>();
-    creature->getPlayer(birdObj);
+    creature->getPlayer(Player);
 
 
     spawnProjectile(vec2(0,0), 0);

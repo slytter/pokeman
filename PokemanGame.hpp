@@ -19,7 +19,7 @@ enum class GameState{
 class PokemanGame : public b2ContactListener {
 public:
     PokemanGame();
-
+    std::shared_ptr<GameObject> Player;
     std::shared_ptr<GameObject> createGameObject();
     static const glm::vec2 windowSize;
 
