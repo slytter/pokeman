@@ -17,7 +17,7 @@ file(GLOB pokeman
         )
 
 # Compile cpp files (from Snake variable)
-add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h)
+add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Creature.h Creature.cpp)
 target_link_libraries(Pokeman ${all_libs})
 
 # copy files to dest

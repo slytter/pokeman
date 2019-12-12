@@ -11,6 +11,7 @@
 #include <iostream>
 
 using namespace std;
+using namespace glm;
 using namespace rapidjson;
 
 WorldGenerator::WorldGenerator(){
@@ -25,8 +26,13 @@ void WorldGenerator::loadPokemanMap (string filename) {
     Document d;
     d.ParseStream(isw);
 
-    startingPosition = glm::vec2(0,0);
-    worldOffset = glm::vec2(150,150);
+    startingPosition = vec2(0,0);
+    worldOffset = vec2(500,500);
+
+    enemySpawnPoints.push_back(vec2(-267.614,-259.656));
+    enemySpawnPoints.push_back(vec2(-270.858,510.229));
+    enemySpawnPoints.push_back(vec2(1383.31,-247.58245));
+    enemySpawnPoints.push_back(vec2(1353.27,529.92545));
 
     const Value &a = d["tileMap"];
     assert(a.IsArray());
@@ -57,7 +63,7 @@ int WorldGenerator::getHeight() {
     return tiles.size();
 }
 
-glm::vec2 WorldGenerator::getStartingPosition() {
+vec2 WorldGenerator::getStartingPosition() {
     return startingPosition;
 }
 

@@ -18,4 +18,5 @@ public:
 private:
     float playerSpeed = 0.75f;
     void updatePos(glm::vec3);
+    std::shared_ptr<PhysicsComponent> trainerPhys;
 };

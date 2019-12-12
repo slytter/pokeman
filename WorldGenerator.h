@@ -24,6 +24,8 @@ public:
 
     glm::vec2 worldOffset;
 
+    std::vector<glm::vec2> enemySpawnPoints;
+
     glm::vec2 getStartingPosition();
     float getStartingRotation();
 
