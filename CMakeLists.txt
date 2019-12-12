@@ -17,13 +17,13 @@ file(GLOB pokeman
         )
 
 # Compile cpp files (from Snake variable)
-add_executable(Pokeman ${pokeman})
+add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h)
 target_link_libraries(Pokeman ${all_libs})
 
 # copy files to dest
-file(COPY background.png background2.png bird.json bird.png 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-file(COPY background.png background2.png bird.json bird.png 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
-file(COPY background.png background2.png bird.json bird.png 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY background.png background2.png bird.json bird.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+file(COPY background.png background2.png bird.json bird.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+file(COPY background.png background2.png bird.json bird.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 IF (WIN32)
     # Copy dll files to ${CMAKE_CURRENT_BINARY_DIR}/Debug

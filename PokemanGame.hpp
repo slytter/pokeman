@@ -6,6 +6,7 @@
 #include "CameraController.hpp"
 #include "BackgroundComponent.hpp"
 #include "Box2DDebugDraw.hpp"
+#include "WorldGenerator.h"
 
 class PhysicsComponent;
 
@@ -22,18 +23,24 @@ public:
     std::shared_ptr<GameObject> createGameObject();
     static const glm::vec2 windowSize;
 
+    std::shared_ptr<WorldGenerator> pokemanWorld;
+
+
     void BeginContact(b2Contact *contact) override;
 
     void EndContact(b2Contact *contact) override;
 
     static PokemanGame* instance;
 
+    WorldGenerator pokemanMap;
     void setGameState(GameState newState);
 private:
     sre::SDLRenderer r;
 
     void init();
     void initPhysics();
+
+
 
     void update(float time);
 
@@ -49,6 +56,8 @@ private:
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasPokeman;
     std::shared_ptr<sre::SpriteAtlas> defaultSprites;
+
+    std::map<int,std::string> tileType;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
     BackgroundComponent background1Component;
