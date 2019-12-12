@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o"
+  "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

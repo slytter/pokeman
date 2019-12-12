@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -444,6 +444,33 @@ TrainerController.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.s
 .PHONY : TrainerController.cpp.s
 
+WorldGenerator.o: WorldGenerator.cpp.o
+
+.PHONY : WorldGenerator.o
+
+# target to build an object file
+WorldGenerator.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o
+.PHONY : WorldGenerator.cpp.o
+
+WorldGenerator.i: WorldGenerator.cpp.i
+
+.PHONY : WorldGenerator.i
+
+# target to preprocess a source file
+WorldGenerator.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.i
+.PHONY : WorldGenerator.cpp.i
+
+WorldGenerator.s: WorldGenerator.cpp.s
+
+.PHONY : WorldGenerator.s
+
+# target to generate assembly for a file
+WorldGenerator.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.s
+.PHONY : WorldGenerator.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -514,6 +541,9 @@ help:
 	@echo "... TrainerController.o"
 	@echo "... TrainerController.i"
 	@echo "... TrainerController.s"
+	@echo "... WorldGenerator.o"
+	@echo "... WorldGenerator.i"
+	@echo "... WorldGenerator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/TrainerController.cpp.o"
+  "CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o"
   "CMakeFiles/Pokeman.dir/main.cpp.o"
   "Pokeman.pdb"
   "Pokeman"

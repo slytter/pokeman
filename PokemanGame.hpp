@@ -55,6 +55,7 @@ private:
     std::shared_ptr<CameraController> camera;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasPokeman;
+    std::shared_ptr<sre::SpriteAtlas> defaultSprites;
 
     std::map<int,std::string> tileType;
 
