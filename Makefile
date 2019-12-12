@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -363,6 +363,33 @@ PokemanGame.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.s
 .PHONY : PokemanGame.cpp.s
 
+Projectile.o: Projectile.cpp.o
+
+.PHONY : Projectile.o
+
+# target to build an object file
+Projectile.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
+.PHONY : Projectile.cpp.o
+
+Projectile.i: Projectile.cpp.i
+
+.PHONY : Projectile.i
+
+# target to preprocess a source file
+Projectile.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.i
+.PHONY : Projectile.cpp.i
+
+Projectile.s: Projectile.cpp.s
+
+.PHONY : Projectile.s
+
+# target to generate assembly for a file
+Projectile.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.s
+.PHONY : Projectile.cpp.s
+
 SpriteAnimationComponent.o: SpriteAnimationComponent.cpp.o
 
 .PHONY : SpriteAnimationComponent.o
@@ -532,6 +559,9 @@ help:
 	@echo "... PokemanGame.o"
 	@echo "... PokemanGame.i"
 	@echo "... PokemanGame.s"
+	@echo "... Projectile.o"
+	@echo "... Projectile.i"
+	@echo "... Projectile.s"
 	@echo "... SpriteAnimationComponent.o"
 	@echo "... SpriteAnimationComponent.i"
 	@echo "... SpriteAnimationComponent.s"

@@ -8,6 +8,7 @@
 #include "Box2D/Dynamics/Contacts/b2Contact.h"
 #include "PhysicsComponent.hpp"
 #include "TrainerController.hpp"
+#include "Projectile.h"
 
 using namespace std;
 using namespace glm;
@@ -35,9 +36,6 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 
     init();
 
-
-
-
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
         onKey(e);
@@ -56,7 +54,7 @@ void PokemanGame::init() {
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
-
+    createGameObject();
 
     sceneObjects.clear();
     camera.reset();
@@ -96,7 +94,24 @@ void PokemanGame::init() {
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
 
+
+    spawnProjectile(vec2(0,0), 0);
+    spawnProjectile(vec2(1,1), 30);
+    spawnProjectile(vec2(0,2), 60);
+
 }
+
+
+void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
+    auto projectile = createGameObject();
+    projectile->name = "Projectile";
+    std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
+    projectileSpriteCom->setSprite(defaultSprites->get("game-over.png"));
+    std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
+    projectileCompenent->shoot(pos, rotation);
+//    projectileCompenent->playerReference = bird
+}
+
 
 void PokemanGame::update(float time) {
     if (gameState == GameState::Running){
@@ -186,6 +201,8 @@ std::shared_ptr<GameObject> PokemanGame::createGameObject() {
     sceneObjects.push_back(obj);
     return obj;
 }
+
+
 
 void PokemanGame::updatePhysics() {
     const float32 timeStep = 1.0f / 60.0f;
@@ -288,4 +305,9 @@ void PokemanGame::initLevel() {
             }
         }
     }
+}
+
+std::shared_ptr<GameObject> PokemanGame::addGameObject(std::shared_ptr<GameObject> gameObject) {
+    sceneObjects.push_back(gameObject);
+    return gameObject;
 }

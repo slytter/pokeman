@@ -34,6 +34,11 @@ public:
 
     WorldGenerator pokemanMap;
     void setGameState(GameState newState);
+
+    std::shared_ptr<GameObject> addGameObject(std::shared_ptr<GameObject> gameObject);
+
+    void spawnProjectile(glm::vec2 pos, float rotation);
+
 private:
     sre::SDLRenderer r;
 
