@@ -15,6 +15,7 @@ using namespace sre;
 
 const glm::vec2 PokemanGame::windowSize(800, 600);
 
+
 PokemanGame* PokemanGame::instance = nullptr;
 
 PokemanGame::PokemanGame() :debugDraw(physicsScale) {
@@ -24,7 +25,18 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
       .withSdlInitFlags(SDL_INIT_EVERYTHING)
       .withSdlWindowFlags(SDL_WINDOW_OPENGL);
 
+    tileType[0] = std::string("defaultWall.png");
+    tileType[1] = std::string("dirt.png");
+    tileType[2] = std::string("stone.png");
+    tileType[3] = std::string("lava.png");
+
+
+    pokemanMap.loadPokemanMap("levelData.json");
+
     init();
+
+
+
 
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
@@ -55,7 +67,6 @@ void PokemanGame::init() {
 
     spriteAtlas = SpriteAtlas::create("bird.json","bird.png");
     spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
-
 
 
     initLevel ();
@@ -317,23 +328,27 @@ void PokemanGame::setGameState(GameState newState) {
 }
 
 void PokemanGame::initLevel() {
+    sre::Sprite tile;
+    bool colOn = false;
 
-    for (int i = 0; i < 4 ; ++i) {
-        for (int j = 0; j < 4 ; ++j) {
+    for (int i = 0; i < pokemanMap.getHeight() ; ++i) {
+        for (int j = 0; j < pokemanMap.getWidth() ; ++j) {
+            for (auto type : tileType) {
+                if (type.first == pokemanMap.getTile(i, j)) {
+                    tile = spriteAtlasPokeman->get(type.second);
+                    tile.setScale({2,2});
+                    auto tileObj = createGameObject();
+                    tileObj->name = type.second.substr(0,type.second.find('.'));
+                    auto so1 = tileObj->addComponent<SpriteComponent>();
+                    so1->setSprite(tile);
+                    tileObj->setPosition({-250+ (64 * i),350 +(j*64)});
 
-
-            auto tile = spriteAtlasPokeman->get("brick_brown-vines1.png");
-            tile.setScale({2,2});
-            auto tileObj = createGameObject();
-            tileObj->name = "tile";
-            auto so1 = tileObj->addComponent<SpriteComponent>();
-            so1->setSprite(tile);
-            tileObj->setPosition({-200 + (64 * i),300 +(j*64)});
-
-            std::shared_ptr<PhysicsComponent> TilePhys = tileObj->addComponent<PhysicsComponent>();
-            TilePhys->initBox(b2_staticBody, vec2(32 / physicsScale, 32 / physicsScale), {tileObj->getPosition().x/physicsScale,tileObj->getPosition().y/physicsScale}, 2);
-
+                    if (tileObj->name == "defaultWall" || tileObj->name == "lava") {
+                        std::shared_ptr<PhysicsComponent> TilePhys = tileObj->addComponent<PhysicsComponent>();
+                        TilePhys->initBox(b2_staticBody, vec2(32 / physicsScale, 32 / physicsScale), {tileObj->getPosition().x/physicsScale,tileObj->getPosition().y/physicsScale}, 2);
+                    }
+                }
+            }
         }
     }
-
 }

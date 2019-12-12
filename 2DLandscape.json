@@ -1,7 +1,7 @@
 {"frames": [
 
 {
-	"filename": "brick_brown-vines1.png",
+	"filename": "defaultWall.png",
 	"frame": {"x":0,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -298,7 +298,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "dirt0.png",
+	"filename": "dirt.png",
 	"frame": {"x":32,"y":64,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -550,7 +550,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "lava0.png",
+	"filename": "lava.png",
 	"frame": {"x":416,"y":96,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -964,7 +964,7 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "stone2_gray0.png",
+	"filename": "stone.png",
 	"frame": {"x":352,"y":192,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
