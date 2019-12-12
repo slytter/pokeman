@@ -1247,9 +1247,11 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: thirdparty/macOS/Box2D
 
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/Component.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/GameObject.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/PhysicsComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/SpriteAnimationComponent.cpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/SpriteAnimationComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/SpriteComponent.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/Color.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/Light.hpp
@@ -1354,6 +1356,14 @@ project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodule
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/submodules/glm/glm/vector_relational.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/submodules/imgui/imconfig.h
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: submodules/SimpleRenderEngine/submodules/imgui/imgui.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2PolygonShape.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2Shape.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Collision/b2Collision.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Common/b2BlockAllocator.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Common/b2Math.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Common/b2Settings.h
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2Body.h
 
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o: project/Pokeman/Component.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o: project/Pokeman/GameObject.hpp

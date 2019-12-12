@@ -1248,9 +1248,11 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Color.hpp
  submodules/SimpleRenderEngine/include/sre/Light.hpp
@@ -1355,6 +1357,14 @@ project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o
  submodules/SimpleRenderEngine/submodules/glm/glm/vector_relational.hpp
  submodules/SimpleRenderEngine/submodules/imgui/imconfig.h
  submodules/SimpleRenderEngine/submodules/imgui/imgui.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2PolygonShape.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/Shapes/b2Shape.h
+ thirdparty/macOS/Box2D/include/Box2D/Collision/b2Collision.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2BlockAllocator.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2Math.h
+ thirdparty/macOS/Box2D/include/Box2D/Common/b2Settings.h
+ thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2Body.h
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
