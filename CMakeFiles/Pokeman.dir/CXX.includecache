@@ -662,6 +662,12 @@ Component.hpp
 sre/SpriteBatch.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteBatch.hpp
 
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Creature.h
+Component.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
+sre/SpriteAtlas.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteAtlas.hpp
+
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
 memory
 -
@@ -707,6 +713,8 @@ TrainerController.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
 Projectile.h
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.h
+Creature.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Creature.h
 
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
 sre/SDLRenderer.hpp

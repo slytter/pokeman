@@ -20,6 +20,7 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
     // initiate bird physics
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
+    gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
 }
 
 bool TrainerController::onKey(SDL_Event &event) {
@@ -71,9 +72,10 @@ void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
 }
 
 void TrainerController::updatePos(glm::vec3 dir) {
-    std::shared_ptr<PhysicsComponent> trainerPhysx = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
-    trainerPhysx->addForce(vec2(dir.x, dir.y) * playerSpeed);
-    trainerPhysx->body->SetLinearDamping((10));
+    trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
+    trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
+    trainerPhys->body->SetLinearDamping((10));
+    std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y;
     // trainerPhysx->
 }
 

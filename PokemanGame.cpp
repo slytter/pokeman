@@ -9,6 +9,7 @@
 #include "PhysicsComponent.hpp"
 #include "TrainerController.hpp"
 #include "Projectile.h"
+#include "Creature.h"
 
 using namespace std;
 using namespace glm;
@@ -76,6 +77,7 @@ void PokemanGame::init() {
     camera->setFollowObject(birdObj, {+150, PokemanGame::windowSize.y / 2});
     auto so = birdObj->addComponent<SpriteComponent>();
     auto sprite = spriteAtlas->get("tile008.png");
+    // sprite.setOrderInBatch(10); <-- til z-order
     sprite.setScale({2,2});
     std:: cout << (int)pokemanMap.getStartingPosition().x;
 
@@ -93,6 +95,20 @@ void PokemanGame::init() {
         spriteAtlas->get("tile000.png"),spriteAtlas->get("tile001.png"),spriteAtlas->get("tile002.png"),spriteAtlas->get("tile003.png")
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
+
+
+    auto enemy = createGameObject();
+    enemy->name = "creature";
+    auto so2 = enemy->addComponent<SpriteComponent>();
+    auto sprite2 = spriteAtlas->get("tile008.png");
+    sprite2.setScale({2,2});
+    srand(time(NULL));
+    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) + 0]);
+    so2->setSprite(sprite2);
+    auto phys2 = enemy->addComponent<PhysicsComponent>();
+    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
+    auto creature = enemy->addComponent<Creature>();
+    creature->getPlayer(birdObj);
 
 
     spawnProjectile(vec2(0,0), 0);
@@ -284,8 +300,6 @@ void PokemanGame::setGameState(GameState newState) {
 
 void PokemanGame::initLevel() {
     sre::Sprite tile;
-    bool colOn = false;
-
     for (int i = 0; i < pokemanMap.getWidth() ; ++i) {
         for (int j = 0; j < pokemanMap.getHeight() ; ++j) {
             for (auto type : tileType) {

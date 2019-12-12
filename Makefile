@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -281,6 +281,33 @@ Component.s: Component.cpp.s
 Component.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.s
 .PHONY : Component.cpp.s
+
+Creature.o: Creature.cpp.o
+
+.PHONY : Creature.o
+
+# target to build an object file
+Creature.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o
+.PHONY : Creature.cpp.o
+
+Creature.i: Creature.cpp.i
+
+.PHONY : Creature.i
+
+# target to preprocess a source file
+Creature.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.i
+.PHONY : Creature.cpp.i
+
+Creature.s: Creature.cpp.s
+
+.PHONY : Creature.s
+
+# target to generate assembly for a file
+Creature.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.s
+.PHONY : Creature.cpp.s
 
 GameObject.o: GameObject.cpp.o
 
@@ -550,6 +577,9 @@ help:
 	@echo "... Component.o"
 	@echo "... Component.i"
 	@echo "... Component.s"
+	@echo "... Creature.o"
+	@echo "... Creature.i"
+	@echo "... Creature.s"
 	@echo "... GameObject.o"
 	@echo "... GameObject.i"
 	@echo "... GameObject.s"

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o"
   "CMakeFiles/Pokeman.dir/CameraController.cpp.o"
   "CMakeFiles/Pokeman.dir/Component.cpp.o"
+  "CMakeFiles/Pokeman.dir/Creature.cpp.o"
   "CMakeFiles/Pokeman.dir/GameObject.cpp.o"
   "CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/PokemanGame.cpp.o"
