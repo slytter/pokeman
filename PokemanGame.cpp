@@ -329,8 +329,6 @@ void PokemanGame::setGameState(GameState newState) {
 
 void PokemanGame::initLevel() {
     sre::Sprite tile;
-    bool colOn = false;
-
     for (int i = 0; i < pokemanMap.getHeight() ; ++i) {
         for (int j = 0; j < pokemanMap.getWidth() ; ++j) {
             for (auto type : tileType) {
