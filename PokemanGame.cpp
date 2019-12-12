@@ -54,6 +54,11 @@ void PokemanGame::init() {
     camObj->setPosition(windowSize*0.5f);
 
     spriteAtlas = SpriteAtlas::create("bird.json","bird.png");
+    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+
+
+
+    initLevel ();
 
     auto birdObj = createGameObject();
     birdObj->name = "Bird";
@@ -61,6 +66,8 @@ void PokemanGame::init() {
     auto so = birdObj->addComponent<SpriteComponent>();
     auto sprite = spriteAtlas->get("bird1.png");
     sprite.setScale({2,2});
+
+
 
     birdObj->setPosition({-100,300});
     so->setSprite(sprite);
@@ -307,4 +314,26 @@ void PokemanGame::handleContact(b2Contact *contact, bool begin) {
 
 void PokemanGame::setGameState(GameState newState) {
     this->gameState = newState;
+}
+
+void PokemanGame::initLevel() {
+
+    for (int i = 0; i < 4 ; ++i) {
+        for (int j = 0; j < 4 ; ++j) {
+
+
+            auto tile = spriteAtlasPokeman->get("brick_brown-vines1.png");
+            tile.setScale({2,2});
+            auto tileObj = createGameObject();
+            tileObj->name = "tile";
+            auto so1 = tileObj->addComponent<SpriteComponent>();
+            so1->setSprite(tile);
+            tileObj->setPosition({-200 + (64 * i),300 +(j*64)});
+
+            std::shared_ptr<PhysicsComponent> TilePhys = tileObj->addComponent<PhysicsComponent>();
+            TilePhys->initBox(b2_staticBody, vec2(32 / physicsScale, 32 / physicsScale), {tileObj->getPosition().x/physicsScale,tileObj->getPosition().y/physicsScale}, 2);
+
+        }
+    }
+
 }
