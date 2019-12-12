@@ -7,11 +7,13 @@
 class CameraController : public Component {
 public:
     explicit CameraController(GameObject *gameObject);
-    glm::vec2 camRotation;
+    glm::vec3 camRotation;
     void update(float deltaTime) override;
     void setFollowObject(std::shared_ptr<GameObject> followObject, glm::vec2 offset);
     sre::Camera& getCamera();
     glm::mat4 cameraOriMat4;
+    bool onKey(SDL_Event &event) override;
+
 private:
     glm::mat4 IsometricView;
     sre::Camera camera;

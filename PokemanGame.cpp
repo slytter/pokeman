@@ -13,7 +13,7 @@ using namespace std;
 using namespace glm;
 using namespace sre;
 
-const glm::vec2 PokemanGame::windowSize(400, 600);
+const glm::vec2 PokemanGame::windowSize(800, 600);
 
 PokemanGame* PokemanGame::instance = nullptr;
 
