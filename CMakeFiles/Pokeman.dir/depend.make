@@ -1379,6 +1379,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/GameObj
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/PhysicsComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/Projectile.cpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/Projectile.h
+project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Color.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Light.hpp
@@ -1389,6 +1390,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRender
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Shader.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Sprite.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/WorldLights.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/imgui_sre.hpp

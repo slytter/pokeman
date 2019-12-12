@@ -11,7 +11,7 @@ public:
     void update(float deltaTime) override;
     void onCollisionStart(PhysicsComponent *comp) override;
     void onCollisionEnd(PhysicsComponent *comp) override;
-    glm::vec2 currentDirection;
+    glm::vec2 currentDirection = glm::vec2(1, 0);
     bool fwd = false;
     bool bwd = false;
     bool left = false;

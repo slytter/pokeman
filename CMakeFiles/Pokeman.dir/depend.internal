@@ -1380,6 +1380,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.h
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Color.hpp
  submodules/SimpleRenderEngine/include/sre/Light.hpp
@@ -1390,6 +1391,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
  submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
  submodules/SimpleRenderEngine/include/sre/Shader.hpp
  submodules/SimpleRenderEngine/include/sre/Sprite.hpp
+ submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
  submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
  submodules/SimpleRenderEngine/include/sre/WorldLights.hpp
  submodules/SimpleRenderEngine/include/sre/imgui_sre.hpp

@@ -96,7 +96,6 @@ void PokemanGame::init() {
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
 
-
     auto enemy = createGameObject();
     enemy->name = "creature";
     auto so2 = enemy->addComponent<SpriteComponent>();
@@ -109,12 +108,6 @@ void PokemanGame::init() {
     phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
     auto creature = enemy->addComponent<Creature>();
     creature->getPlayer(Player);
-
-
-    spawnProjectile(vec2(0,0), 0);
-    spawnProjectile(vec2(1,1), 30);
-    spawnProjectile(vec2(0,2), 60);
-
 }
 
 
@@ -122,19 +115,22 @@ void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
     auto projectile = createGameObject();
     projectile->name = "Projectile";
     std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
-    projectileSpriteCom->setSprite(defaultSprites->get("game-over.png"));
+    auto spriteImage = defaultSprites->get("game-over.png");
+    spriteImage.setScale(vec2(0.2f, 0.2f));
+    projectileSpriteCom->setSprite(spriteImage);
     std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
+    projectileCompenent->playerReference = Player;
     projectileCompenent->shoot(pos, rotation);
-//    projectileCompenent->playerReference = bird
 }
 
 
 void PokemanGame::update(float time) {
     if (gameState == GameState::Running){
         updatePhysics();
+
     }
     for (int i=0;i<sceneObjects.size();i++){
-        if(sceneObjects[i]->removeMe){
+        if(sceneObjects[i]->removeMe) {
             sceneObjects.erase(sceneObjects.begin() + i);
         }
         sceneObjects[i]->update(time);
@@ -201,6 +197,7 @@ void PokemanGame::onKey(SDL_Event &event) {
                 init();
                 break;
             case SDLK_SPACE:
+                spawnProjectile(vec2(0,2), 60);
                 if (gameState == GameState::GameOver){
                     init();
                     gameState = GameState::Ready;
