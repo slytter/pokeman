@@ -22,17 +22,15 @@ public:
     int getWidth();
     int getHeight();
 
+    glm::vec2 worldOffset;
+
+    glm::vec2 getStartingPosition();
+    float getStartingRotation();
 
 
 private:
     std::vector<std::vector<int>> tiles;
     glm::vec2 startingPosition;
     float startingRotation;
-    glm::vec4 floorColor;
-    glm::vec4 ceilColor;
 
-
-
-    glm::vec2 getStartingPosition();
-    float getStartingRotation();
 };

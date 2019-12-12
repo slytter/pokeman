@@ -25,19 +25,27 @@ void WorldGenerator::loadPokemanMap (string filename) {
     Document d;
     d.ParseStream(isw);
 
+    startingPosition = glm::vec2(0,0);
+    worldOffset = glm::vec2(150,150);
+
     const Value &a = d["tileMap"];
     assert(a.IsArray());
 
+
+
     for (SizeType i = 0; i < a.Size(); i++) {
-        auto row = a[i].GetArray();
-        tiles.push_back({row[0].GetInt(), row[1].GetInt(), row[2].GetInt(),
-                          row[3].GetInt(), row[4].GetInt(), row[5].GetInt(),
-                          row[6].GetInt(), row[7].GetInt(), row[8].GetInt()});
+        auto col = a[i].GetArray();
+        std::vector<int> singleRow;
+        for (int j = 0; j <col.Size() ; ++j) {
+            singleRow.push_back(col[j].GetInt());
+        }
+        tiles.push_back({singleRow});
     }
 
 }
 
 int WorldGenerator::getTile(int x, int y) {
+
     return tiles.at(y).at(x);
 }
 

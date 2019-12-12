@@ -56,20 +56,24 @@ void PokemanGame::init() {
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
+
+
     sceneObjects.clear();
     camera.reset();
     physicsComponentLookup.clear();
     initPhysics();
+
+    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+    initLevel ();
     auto camObj = createGameObject();
     camObj->name = "Camera";
     camera = camObj->addComponent<CameraController>();
     camObj->setPosition(windowSize*0.5f);
 
     spriteAtlas = SpriteAtlas::create("bird.json","bird.png");
-    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
 
 
-    initLevel ();
+
 
     auto birdObj = createGameObject();
     birdObj->name = "Bird";
@@ -79,8 +83,9 @@ void PokemanGame::init() {
     sprite.setScale({2,2});
 
 
+    std:: cout << (int)pokemanMap.getStartingPosition().x;
 
-    birdObj->setPosition({-100,300});
+    birdObj->setPosition({(int)pokemanMap.getStartingPosition().x,pokemanMap.getStartingPosition().y});
     so->setSprite(sprite);
     auto anim = birdObj->addComponent<SpriteAnimationComponent>();
     auto phys = birdObj->addComponent<PhysicsComponent>();
@@ -329,8 +334,10 @@ void PokemanGame::setGameState(GameState newState) {
 
 void PokemanGame::initLevel() {
     sre::Sprite tile;
-    for (int i = 0; i < pokemanMap.getHeight() ; ++i) {
-        for (int j = 0; j < pokemanMap.getWidth() ; ++j) {
+    bool colOn = false;
+
+    for (int i = 0; i < pokemanMap.getWidth() ; ++i) {
+        for (int j = 0; j < pokemanMap.getHeight() ; ++j) {
             for (auto type : tileType) {
                 if (type.first == pokemanMap.getTile(i, j)) {
                     tile = spriteAtlasPokeman->get(type.second);
@@ -339,8 +346,7 @@ void PokemanGame::initLevel() {
                     tileObj->name = type.second.substr(0,type.second.find('.'));
                     auto so1 = tileObj->addComponent<SpriteComponent>();
                     so1->setSprite(tile);
-                    tileObj->setPosition({-250+ (64 * i),350 +(j*64)});
-
+                    tileObj->setPosition({(pokemanMap.getStartingPosition().x - pokemanMap.worldOffset.x) + (64 * i),(pokemanMap.getStartingPosition().y - pokemanMap.worldOffset.y) +(j*64)});
                     if (tileObj->name == "defaultWall" || tileObj->name == "lava") {
                         std::shared_ptr<PhysicsComponent> TilePhys = tileObj->addComponent<PhysicsComponent>();
                         TilePhys->initBox(b2_staticBody, vec2(32 / physicsScale, 32 / physicsScale), {tileObj->getPosition().x/physicsScale,tileObj->getPosition().y/physicsScale}, 2);
