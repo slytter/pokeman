@@ -72,6 +72,7 @@ void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
 }
 
 void TrainerController::updatePos(glm::vec3 dir) {
+    currentDirection = glm::vec2(dir.x, dir.y);
     trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
     trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
     trainerPhys->body->SetLinearDamping((10));

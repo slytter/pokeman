@@ -106,6 +106,7 @@ void PokemanGame::init() {
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
 
+<<<<<<< HEAD
 
 
 
@@ -115,6 +116,20 @@ void PokemanGame::init() {
 
 
 
+=======
+    auto enemy = createGameObject();
+    enemy->name = "creature";
+    auto so2 = enemy->addComponent<SpriteComponent>();
+    auto sprite2 = spriteAtlas->get("tile008.png");
+    sprite2.setScale({2,2});
+    srand(time(NULL));
+    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) + 0]);
+    so2->setSprite(sprite2);
+    auto phys2 = enemy->addComponent<PhysicsComponent>();
+    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
+    auto creature = enemy->addComponent<Creature>();
+    creature->getPlayer(Player);
+>>>>>>> a701861ca91a195339bb0f10fcc858b0f340ac9b
 }
 
 
@@ -122,10 +137,12 @@ void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
     auto projectile = createGameObject();
     projectile->name = "Projectile";
     std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
-    projectileSpriteCom->setSprite(defaultSprites->get("game-over.png"));
+    auto spriteImage = defaultSprites->get("game-over.png");
+    spriteImage.setScale(vec2(0.2f, 0.2f));
+    projectileSpriteCom->setSprite(spriteImage);
     std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
+    projectileCompenent->playerReference = Player;
     projectileCompenent->shoot(pos, rotation);
-//    projectileCompenent->playerReference = bird
 }
 
 void PokemanGame::enemySpawner() {
@@ -157,9 +174,10 @@ void PokemanGame::update(float time) {
 
     if (gameState == GameState::Running){
         updatePhysics();
+
     }
     for (int i=0;i<sceneObjects.size();i++){
-        if(sceneObjects[i]->removeMe){
+        if(sceneObjects[i]->removeMe) {
             sceneObjects.erase(sceneObjects.begin() + i);
         }
         sceneObjects[i]->update(time);
@@ -229,6 +247,7 @@ void PokemanGame::onKey(SDL_Event &event) {
                 init();
                 break;
             case SDLK_SPACE:
+                spawnProjectile(vec2(0,2), 60);
                 if (gameState == GameState::GameOver){
                     init();
                     gameState = GameState::Ready;
