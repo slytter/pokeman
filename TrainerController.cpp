@@ -15,10 +15,11 @@ using namespace glm;
 
 TrainerController::TrainerController(GameObject *gameObject) : Component(gameObject) {
     // initiate bird physics
+    b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition() ;
+    gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
 }
 
 bool TrainerController::onKey(SDL_Event &event) {
-
     if (event.key.keysym.sym == SDLK_UP) {
         fwd = event.type == SDL_KEYDOWN;
     }
@@ -31,13 +32,12 @@ bool TrainerController::onKey(SDL_Event &event) {
     if  (event.key.keysym.sym == SDLK_DOWN) {
         bwd = event.type == SDL_KEYDOWN;
     }
-
     return false;
 }
 
 void TrainerController::onCollisionStart(PhysicsComponent *comp) {
 
-    if(comp->getGameObject()->name == "Coin"){
+    if(comp->getGameObject()->name == "Coin") {
         comp->getGameObject()->removeMe = true;
     } else {
         PokemanGame::instance->setGameState(GameState::GameOver);
@@ -63,7 +63,7 @@ void TrainerController::update(float deltaTime) {
     if (right) {
         updatePos (vec3(1,1,0));
     }
-
+    std::cout << gameObject->getRotation()<< std::endl;
 
 }
 

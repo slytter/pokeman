@@ -14,9 +14,7 @@ public:
     bool bwd  = false;
     bool left  = false;
     bool right  = false;
-
 private:
     float playerSpeed = 0.75f;
-
     void updatePos(glm::vec3);
 };

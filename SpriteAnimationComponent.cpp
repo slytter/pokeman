@@ -6,15 +6,22 @@
 #include "GameObject.hpp"
 #include <memory>
 
+
 SpriteAnimationComponent::SpriteAnimationComponent(GameObject *gameObject) : Component(gameObject) {
     std::shared_ptr<TrainerController> playerController = gameObject->getComponent<TrainerController>();
-    characterPhysics = gameObject->getComponent<PhysicsComponent>();
 }
 
 void SpriteAnimationComponent::update(float deltaTime) {
     auto spriteComponent = gameObject->getComponent<SpriteComponent>();
     assert(spriteComponent != nullptr);
-    time += deltaTime;
+
+    if(characterPhysics == nullptr){
+        characterPhysics = gameObject->getComponent<PhysicsComponent>();
+    }
+    auto velocity = characterPhysics->getLinearVelocity();
+    if((int)velocity.x != 0 || (int)velocity.y != 0){
+        time += deltaTime * (glm::abs(velocity.x) + glm::abs(velocity.y));
+    }
 
     if (time > animationTime) {
         time = fmod(time, animationTime);
@@ -22,11 +29,14 @@ void SpriteAnimationComponent::update(float deltaTime) {
         spriteComponent->setSprite(sprites[spriteIndex]);
     }
 
-    // auto velocity = characterPhysics->getLinearVelocity();
-    // bool direction = velocity.x < 0;
-    // auto chosenSprite = spriteComponent->getSprite();
-    // chosenSprite.setFlip(glm::vec2(direction, 0));
-    // spriteComponent->setSprite(chosenSprite);
+
+
+    bool directionX = velocity.x < 0 || velocity.y < 0;
+    auto chosenSprite = spriteComponent->getSprite();
+    chosenSprite.setRotation(-45.0f);
+    chosenSprite.setFlip(glm::vec2(directionX, false));
+    chosenSprite.setScale(glm::vec2(.8, 1.2f));
+    spriteComponent->setSprite(chosenSprite);
 }
 
 void SpriteAnimationComponent::setSprites(std::vector<sre::Sprite> sprites) {

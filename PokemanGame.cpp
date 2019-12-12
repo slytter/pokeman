@@ -53,20 +53,18 @@ void PokemanGame::init() {
     camera = camObj->addComponent<CameraController>();
     camObj->setPosition(windowSize*0.5f);
 
-    spriteAtlas = SpriteAtlas::create("bird.json","bird.png");
+    spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
     spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+    defaultSprites = SpriteAtlas::create("bird.json","bird.png");
 
-
-
-    initLevel ();
+    // initLevel ();
 
     auto birdObj = createGameObject();
     birdObj->name = "Bird";
     camera->setFollowObject(birdObj, {+150, PokemanGame::windowSize.y / 2});
     auto so = birdObj->addComponent<SpriteComponent>();
-    auto sprite = spriteAtlas->get("bird1.png");
+    auto sprite = spriteAtlas->get("tile008.png");
     sprite.setScale({2,2});
-
 
 
     birdObj->setPosition({-100,300});
@@ -76,14 +74,14 @@ void PokemanGame::init() {
     phys->initCircle(b2_dynamicBody, 10/physicsScale, {birdObj->getPosition().x/physicsScale,birdObj->getPosition().y/physicsScale}, 1);
     auto birdC = birdObj->addComponent<TrainerController>();
 
-    vector<Sprite> spriteAnim({spriteAtlas->get("bird1.png"),spriteAtlas->get("bird2.png"),spriteAtlas->get("bird3.png"),spriteAtlas->get("bird2.png")});
+    vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
     for(auto & s : spriteAnim){
-        s.setScale({2,2});
+        s.setScale({1,1});
     }
     anim-> setSprites(spriteAnim);
 
-    auto spriteBottom = spriteAtlas->get("column_bottom.png");
-    spriteBottom.setScale({2,2});
+    auto spriteBottom = spriteAtlas->get("tile008.png");
+    spriteBottom.setScale({1,1});
     float curve = 250;
     int length = 50;
     float heighVariation = 80;
@@ -104,45 +102,6 @@ void PokemanGame::init() {
         wallPhys->initBox(b2_staticBody, vec2(26 / physicsScale, 160 / physicsScale), {obj->getPosition().x/physicsScale,obj->getPosition().y/physicsScale}, 2);
 
         glm::vec2 s { spriteBottom.getSpriteSize().x * spriteBottom.getScale().x/2, spriteBottom.getSpriteSize().y * spriteBottom.getScale().y/2};
-    }
-    auto spriteTop = spriteAtlas->get("column_top.png");
-    spriteTop.setScale({2,2});
-    for (int i=0;i<length;i++){
-        auto obj = createGameObject();
-        obj->name = "Wall top";
-        auto so = obj->addComponent<SpriteComponent>();
-
-        float xOffset = xVariation * cos(i*curve*0.2f);
-        glm::vec2 pos{ i*300+xOffset, windowSize.y-spriteTop.getSpriteSize().y/2 + sin(i*curve)*heighVariation};
-        obj->setPosition(pos);
-        glm::vec2 s { spriteTop.getSpriteSize().x * spriteTop.getScale().x/2, spriteTop.getSpriteSize().y * spriteTop.getScale().y/2};
-        so->setSprite(spriteTop);
-
-        std::shared_ptr<PhysicsComponent> wallPhys = obj->addComponent<PhysicsComponent>();
-        wallPhys->initBox(b2_staticBody, vec2(26 / physicsScale, 160 / physicsScale), {obj->getPosition().x/physicsScale,obj->getPosition().y/physicsScale}, 2);
-
-    }
-
-    // Coins:
-    int coinAmount = 100;
-    auto coinSprite = spriteAtlas->get("coin.png");
-    float coinHeightVariation = 50;
-    for (int i=0;i<coinAmount;i++) {
-        auto obj = createGameObject();
-        obj->name = "Coin";
-
-        auto so = obj->addComponent<SpriteComponent>();
-
-        float coinOffset = 150;
-        glm::vec2 pos{i*300+coinOffset,300 + coinSprite.getSpriteSize().y/2 + sin(i*curve)*coinHeightVariation};
-        obj->setPosition(pos);
-        so->setSprite(coinSprite);
-
-        auto coinPhys = obj->addComponent<PhysicsComponent>();
-        coinPhys->initCircle(b2_staticBody, 10/physicsScale, {obj->getPosition().x/physicsScale,obj->getPosition().y/physicsScale}, 1);
-        coinPhys->setSensor(true);
-        glm::vec2 s { coinSprite.getSpriteSize().x * coinSprite.getScale().x/2, coinSprite.getSpriteSize().y * coinSprite.getScale().y/2};
-
     }
 
     background1Component.init("background.png");
@@ -175,11 +134,11 @@ void PokemanGame::render() {
     }
 
     if (gameState == GameState::Ready){
-        auto sprite = spriteAtlas->get("get-ready.png");
+        auto sprite = defaultSprites->get("get-ready.png");
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     } else if (gameState == GameState::GameOver){
-        auto sprite = spriteAtlas->get("game-over.png");
+        auto sprite = defaultSprites->get("game-over.png");
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     }

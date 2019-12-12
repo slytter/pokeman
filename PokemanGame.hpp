@@ -48,6 +48,7 @@ private:
     std::shared_ptr<CameraController> camera;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasPokeman;
+    std::shared_ptr<sre::SpriteAtlas> defaultSprites;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
     BackgroundComponent background1Component;
