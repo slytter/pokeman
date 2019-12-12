@@ -45,7 +45,7 @@ private:
     void init();
     void initPhysics();
 
-
+    void enemySpawner ();
 
     void update(float time);
 
@@ -60,9 +60,14 @@ private:
     std::shared_ptr<CameraController> camera;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasPokeman;
+    std::shared_ptr<sre::SpriteAtlas> spriteAtlasMonsters;
     std::shared_ptr<sre::SpriteAtlas> defaultSprites;
 
     std::map<int,std::string> tileType;
+    std::vector<std::string> monsterType;
+
+    float enemySpawnerTime = 2;
+    float countDown = enemySpawnerTime;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
     BackgroundComponent background1Component;

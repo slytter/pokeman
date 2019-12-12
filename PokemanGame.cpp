@@ -32,6 +32,14 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     tileType[2] = std::string("stone.png");
     tileType[3] = std::string("lava.png");
 
+    monsterType.push_back(std::string("tile1.png"));
+    monsterType.push_back(std::string("tile2.png"));
+    monsterType.push_back(std::string("tile3.png"));
+    monsterType.push_back(std::string("tile4.png"));
+    monsterType.push_back(std::string("tile5.png"));
+
+
+
 
     pokemanMap.loadPokemanMap("levelData.json");
 
@@ -63,6 +71,8 @@ void PokemanGame::init() {
     initPhysics();
 
     spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+    spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
+
     initLevel ();
     auto camObj = createGameObject();
     camObj->name = "Camera";
@@ -97,23 +107,13 @@ void PokemanGame::init() {
     anim-> setUpDownSprites(upDownSpriteAnim);
 
 
-    auto enemy = createGameObject();
-    enemy->name = "creature";
-    auto so2 = enemy->addComponent<SpriteComponent>();
-    auto sprite2 = spriteAtlas->get("tile008.png");
-    sprite2.setScale({2,2});
-    srand(time(NULL));
-    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) + 0]);
-    so2->setSprite(sprite2);
-    auto phys2 = enemy->addComponent<PhysicsComponent>();
-    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
-    auto creature = enemy->addComponent<Creature>();
-    creature->getPlayer(Player);
 
 
     spawnProjectile(vec2(0,0), 0);
     spawnProjectile(vec2(1,1), 30);
     spawnProjectile(vec2(0,2), 60);
+
+
 
 }
 
@@ -128,8 +128,33 @@ void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
 //    projectileCompenent->playerReference = bird
 }
 
+void PokemanGame::enemySpawner() {
+    auto enemy = createGameObject();
+    enemy->name = "creature";
+    auto so2 = enemy->addComponent<SpriteComponent>();
+    std::cout<< monsterType[(rand() % 5)]<< "\n";
+
+    auto sprite2 = spriteAtlasMonsters->get(monsterType[(rand() % 5)]);
+    sprite2.setScale({2,2});
+    srand(time(NULL));
+    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) ]);
+    so2->setSprite(sprite2);
+    auto phys2 = enemy->addComponent<PhysicsComponent>();
+    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
+    auto creature = enemy->addComponent<Creature>();
+    creature->getPlayer(Player);
+
+
+}
+
 
 void PokemanGame::update(float time) {
+
+    if (countDown <= 0) {
+        enemySpawner();
+        countDown = enemySpawnerTime;
+    }
+
     if (gameState == GameState::Running){
         updatePhysics();
     }
@@ -139,6 +164,9 @@ void PokemanGame::update(float time) {
         }
         sceneObjects[i]->update(time);
     }
+
+    countDown -= time;
+
 }
 
 void PokemanGame::render() {
