@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Component.hpp"
+#include "sre/SpriteAtlas.hpp"
 
 class TrainerController : public Component {
 public:
@@ -11,9 +12,9 @@ public:
     void onCollisionStart(PhysicsComponent *comp) override;
     void onCollisionEnd(PhysicsComponent *comp) override;
     bool fwd = false;
-    bool bwd  = false;
-    bool left  = false;
-    bool right  = false;
+    bool bwd = false;
+    bool left = false;
+    bool right = false;
 private:
     float playerSpeed = 0.75f;
     void updatePos(glm::vec3);

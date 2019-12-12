@@ -39,6 +39,10 @@ GameObject.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
 memory
 -
+sre/RenderPass.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/RenderPass.hpp
+sre/Inspector.hpp
+-
 
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.hpp
 Component.hpp
@@ -51,6 +55,8 @@ TrainerController.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
 PhysicsComponent.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
+sre/SpriteAtlas.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteAtlas.hpp
 
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
 Component.hpp
@@ -61,14 +67,52 @@ sre/Sprite.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
 Component.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
+sre/SpriteAtlas.hpp
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/sre/SpriteAtlas.hpp
 
 submodules/SimpleRenderEngine/include/sre/BlendType.hpp
+sre/impl/Export.hpp
+submodules/SimpleRenderEngine/include/sre/sre/impl/Export.hpp
+
+submodules/SimpleRenderEngine/include/sre/Camera.hpp
+array
+-
+glm/glm.hpp
+submodules/SimpleRenderEngine/include/sre/glm/glm.hpp
 sre/impl/Export.hpp
 submodules/SimpleRenderEngine/include/sre/sre/impl/Export.hpp
 
 submodules/SimpleRenderEngine/include/sre/Color.hpp
 glm/glm.hpp
 -
+
+submodules/SimpleRenderEngine/include/sre/Framebuffer.hpp
+memory
+-
+vector
+-
+string
+-
+glm/glm.hpp
+submodules/SimpleRenderEngine/include/sre/glm/glm.hpp
+Texture.hpp
+submodules/SimpleRenderEngine/include/sre/Texture.hpp
+impl/CPPShim.hpp
+submodules/SimpleRenderEngine/include/sre/impl/CPPShim.hpp
+
+submodules/SimpleRenderEngine/include/sre/Inspector.hpp
+vector
+-
+chrono
+-
+memory
+-
+sre/RenderStats.hpp
+submodules/SimpleRenderEngine/include/sre/sre/RenderStats.hpp
+sre/Framebuffer.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Framebuffer.hpp
+sre/WorldLights.hpp
+submodules/SimpleRenderEngine/include/sre/sre/WorldLights.hpp
 
 submodules/SimpleRenderEngine/include/sre/Light.hpp
 glm/glm.hpp
@@ -90,6 +134,26 @@ submodules/SimpleRenderEngine/include/sre/Log.hpp
 string
 -
 functional
+-
+
+submodules/SimpleRenderEngine/include/sre/Material.hpp
+sre/Shader.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Shader.hpp
+sre/Texture.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Texture.hpp
+glm/glm.hpp
+submodules/SimpleRenderEngine/include/sre/glm/glm.hpp
+sre/Color.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Color.hpp
+sre/impl/UniformSet.hpp
+submodules/SimpleRenderEngine/include/sre/sre/impl/UniformSet.hpp
+string
+-
+map
+-
+iostream
+-
+vector
 -
 
 submodules/SimpleRenderEngine/include/sre/Mesh.hpp
@@ -117,6 +181,28 @@ submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
 submodules/SimpleRenderEngine/include/sre/MeshTopology.hpp
 sre/impl/Export.hpp
 submodules/SimpleRenderEngine/include/sre/sre/impl/Export.hpp
+
+submodules/SimpleRenderEngine/include/sre/RenderPass.hpp
+sre/Camera.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Camera.hpp
+sre/Color.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Color.hpp
+sre/Mesh.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Mesh.hpp
+sre/Material.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Material.hpp
+sre/WorldLights.hpp
+submodules/SimpleRenderEngine/include/sre/sre/WorldLights.hpp
+string
+-
+functional
+-
+sre/impl/Export.hpp
+submodules/SimpleRenderEngine/include/sre/sre/impl/Export.hpp
+SpriteBatch.hpp
+submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
+Skybox.hpp
+submodules/SimpleRenderEngine/include/sre/Skybox.hpp
 
 submodules/SimpleRenderEngine/include/sre/RenderStats.hpp
 sre/impl/Export.hpp
@@ -150,6 +236,12 @@ map
 set
 -
 
+submodules/SimpleRenderEngine/include/sre/Skybox.hpp
+memory
+-
+sre/Material.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Material.hpp
+
 submodules/SimpleRenderEngine/include/sre/Sprite.hpp
 memory
 -
@@ -160,6 +252,16 @@ submodules/SimpleRenderEngine/include/sre/glm/glm.hpp
 sre/impl/CPPShim.hpp
 submodules/SimpleRenderEngine/include/sre/sre/impl/CPPShim.hpp
 
+submodules/SimpleRenderEngine/include/sre/SpriteAtlas.hpp
+vector
+-
+string
+-
+map
+-
+sre/Sprite.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Sprite.hpp
+
 submodules/SimpleRenderEngine/include/sre/SpriteBatch.hpp
 vector
 -
@@ -169,6 +271,22 @@ Mesh.hpp
 submodules/SimpleRenderEngine/include/sre/Mesh.hpp
 Log.hpp
 submodules/SimpleRenderEngine/include/sre/Log.hpp
+
+submodules/SimpleRenderEngine/include/sre/Texture.hpp
+cstdint
+-
+vector
+-
+string
+-
+map
+-
+sre/impl/Export.hpp
+submodules/SimpleRenderEngine/include/sre/sre/impl/Export.hpp
+sre/Framebuffer.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Framebuffer.hpp
+sre/Shader.hpp
+submodules/SimpleRenderEngine/include/sre/sre/Shader.hpp
 
 submodules/SimpleRenderEngine/include/sre/WorldLights.hpp
 Light.hpp
@@ -204,6 +322,18 @@ OpenGL/gl3.h
 string
 -
 vector
+-
+
+submodules/SimpleRenderEngine/include/sre/impl/UniformSet.hpp
+sre/Texture.hpp
+submodules/SimpleRenderEngine/include/sre/impl/sre/Texture.hpp
+sre/Color.hpp
+submodules/SimpleRenderEngine/include/sre/impl/sre/Color.hpp
+glm/glm.hpp
+submodules/SimpleRenderEngine/include/sre/impl/glm/glm.hpp
+string
+-
+map
 -
 
 submodules/SimpleRenderEngine/submodules/glm/glm/common.hpp

@@ -86,10 +86,12 @@ void PokemanGame::init() {
     auto birdC = birdObj->addComponent<TrainerController>();
 
     vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
-    for(auto & s : spriteAnim){
-        s.setScale({1,1});
-    }
     anim-> setSprites(spriteAnim);
+    vector<Sprite> upDownSpriteAnim({
+        spriteAtlas->get("tile012.png"),spriteAtlas->get("tile013.png"),spriteAtlas->get("tile014.png"),spriteAtlas->get("tile015.png"),
+        spriteAtlas->get("tile000.png"),spriteAtlas->get("tile001.png"),spriteAtlas->get("tile002.png"),spriteAtlas->get("tile003.png")
+    });
+    anim-> setUpDownSprites(upDownSpriteAnim);
 
     auto spriteBottom = spriteAtlas->get("tile008.png");
     spriteBottom.setScale({1,1});

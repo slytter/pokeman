@@ -10,12 +10,15 @@
 #include "PhysicsComponent.hpp"
 #include "PokemanGame.hpp"
 #include "SpriteComponent.hpp"
+#include "SpriteAnimationComponent.hpp"
 
 using namespace glm;
+using namespace sre;
+using namespace std;
 
 TrainerController::TrainerController(GameObject *gameObject) : Component(gameObject) {
     // initiate bird physics
-    b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition() ;
+    b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
 }
 
@@ -47,19 +50,15 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
 
 void TrainerController::update(float deltaTime) {
     //std::cout<< "yas";
-
     if (fwd) {
         updatePos (vec3(-1,1,0));
     }
-
     if (bwd) {
         updatePos (vec3(1,-1,0));
     }
-
     if (left) {
         updatePos (vec3(-1,-1,0));
     }
-
     if (right) {
         updatePos (vec3(1,1,0));
     }
