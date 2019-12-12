@@ -44,7 +44,7 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
     if(comp->getGameObject()->name == "Coin") {
         comp->getGameObject()->removeMe = true;
     } else {
-        //PokemanGame::instance->setGameState(GameState::GameOver);
+        // PokemanGame::instance->setGameState(GameState::GameOver);
     }
     std::cout << "bird collided with something: " << comp->getGameObject()->name << std::endl;
 }

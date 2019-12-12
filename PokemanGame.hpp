@@ -19,7 +19,7 @@ enum class GameState{
 class PokemanGame : public b2ContactListener {
 public:
     PokemanGame();
-
+    std::shared_ptr<GameObject> Player;
     std::shared_ptr<GameObject> createGameObject();
     static const glm::vec2 windowSize;
 
@@ -34,6 +34,11 @@ public:
 
     WorldGenerator pokemanMap;
     void setGameState(GameState newState);
+
+    std::shared_ptr<GameObject> addGameObject(std::shared_ptr<GameObject> gameObject);
+
+    void spawnProjectile(glm::vec2 pos, float rotation);
+
 private:
     sre::SDLRenderer r;
 

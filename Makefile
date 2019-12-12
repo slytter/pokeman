@@ -282,6 +282,33 @@ Component.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.s
 .PHONY : Component.cpp.s
 
+Creature.o: Creature.cpp.o
+
+.PHONY : Creature.o
+
+# target to build an object file
+Creature.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o
+.PHONY : Creature.cpp.o
+
+Creature.i: Creature.cpp.i
+
+.PHONY : Creature.i
+
+# target to preprocess a source file
+Creature.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.i
+.PHONY : Creature.cpp.i
+
+Creature.s: Creature.cpp.s
+
+.PHONY : Creature.s
+
+# target to generate assembly for a file
+Creature.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.s
+.PHONY : Creature.cpp.s
+
 GameObject.o: GameObject.cpp.o
 
 .PHONY : GameObject.o
@@ -362,6 +389,33 @@ PokemanGame.s: PokemanGame.cpp.s
 PokemanGame.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.s
 .PHONY : PokemanGame.cpp.s
+
+Projectile.o: Projectile.cpp.o
+
+.PHONY : Projectile.o
+
+# target to build an object file
+Projectile.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
+.PHONY : Projectile.cpp.o
+
+Projectile.i: Projectile.cpp.i
+
+.PHONY : Projectile.i
+
+# target to preprocess a source file
+Projectile.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.i
+.PHONY : Projectile.cpp.i
+
+Projectile.s: Projectile.cpp.s
+
+.PHONY : Projectile.s
+
+# target to generate assembly for a file
+Projectile.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.s
+.PHONY : Projectile.cpp.s
 
 SpriteAnimationComponent.o: SpriteAnimationComponent.cpp.o
 
@@ -523,6 +577,9 @@ help:
 	@echo "... Component.o"
 	@echo "... Component.i"
 	@echo "... Component.s"
+	@echo "... Creature.o"
+	@echo "... Creature.i"
+	@echo "... Creature.s"
 	@echo "... GameObject.o"
 	@echo "... GameObject.i"
 	@echo "... GameObject.s"
@@ -532,6 +589,9 @@ help:
 	@echo "... PokemanGame.o"
 	@echo "... PokemanGame.i"
 	@echo "... PokemanGame.s"
+	@echo "... Projectile.o"
+	@echo "... Projectile.i"
+	@echo "... Projectile.s"
 	@echo "... SpriteAnimationComponent.o"
 	@echo "... SpriteAnimationComponent.i"
 	@echo "... SpriteAnimationComponent.s"

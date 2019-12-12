@@ -8,6 +8,7 @@
 #include "Box2D/Dynamics/Contacts/b2Contact.h"
 #include "PhysicsComponent.hpp"
 #include "TrainerController.hpp"
+#include "Projectile.h"
 #include "Creature.h"
 
 using namespace std;
@@ -36,9 +37,6 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 
     init();
 
-
-
-
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
         onKey(e);
@@ -57,6 +55,7 @@ void PokemanGame::init() {
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
+    createGameObject();
 
     sceneObjects.clear();
     camera.reset();
@@ -73,21 +72,21 @@ void PokemanGame::init() {
     spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
     defaultSprites = SpriteAtlas::create("bird.json","bird.png");
 
-    auto birdObj = createGameObject();
-    birdObj->name = "Bird";
-    camera->setFollowObject(birdObj, {+150, PokemanGame::windowSize.y / 2});
-    auto so = birdObj->addComponent<SpriteComponent>();
+    Player = createGameObject();
+    Player->name = "Player";
+    camera->setFollowObject(Player, {+150, PokemanGame::windowSize.y / 2});
+    auto so = Player->addComponent<SpriteComponent>();
     auto sprite = spriteAtlas->get("tile008.png");
     // sprite.setOrderInBatch(10); <-- til z-order
     sprite.setScale({2,2});
     std:: cout << (int)pokemanMap.getStartingPosition().x;
 
-    birdObj->setPosition({(int)pokemanMap.getStartingPosition().x,pokemanMap.getStartingPosition().y});
+    Player->setPosition({(int)pokemanMap.getStartingPosition().x, pokemanMap.getStartingPosition().y});
     so->setSprite(sprite);
-    auto anim = birdObj->addComponent<SpriteAnimationComponent>();
-    auto phys = birdObj->addComponent<PhysicsComponent>();
-    phys->initCircle(b2_dynamicBody, 10/physicsScale, {birdObj->getPosition().x/physicsScale,birdObj->getPosition().y/physicsScale}, 1);
-    auto birdC = birdObj->addComponent<TrainerController>();
+    auto anim = Player->addComponent<SpriteAnimationComponent>();
+    auto phys = Player->addComponent<PhysicsComponent>();
+    phys->initCircle(b2_dynamicBody, 10/physicsScale, {Player->getPosition().x / physicsScale, Player->getPosition().y / physicsScale}, 1);
+    auto birdC = Player->addComponent<TrainerController>();
 
     vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
     anim-> setSprites(spriteAnim);
@@ -96,7 +95,6 @@ void PokemanGame::init() {
         spriteAtlas->get("tile000.png"),spriteAtlas->get("tile001.png"),spriteAtlas->get("tile002.png"),spriteAtlas->get("tile003.png")
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
-
 
 
     auto enemy = createGameObject();
@@ -110,10 +108,26 @@ void PokemanGame::init() {
     auto phys2 = enemy->addComponent<PhysicsComponent>();
     phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
     auto creature = enemy->addComponent<Creature>();
-    creature->getPlayer(birdObj);
+    creature->getPlayer(Player);
 
+
+    spawnProjectile(vec2(0,0), 0);
+    spawnProjectile(vec2(1,1), 30);
+    spawnProjectile(vec2(0,2), 60);
 
 }
+
+
+void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
+    auto projectile = createGameObject();
+    projectile->name = "Projectile";
+    std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
+    projectileSpriteCom->setSprite(defaultSprites->get("game-over.png"));
+    std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
+    projectileCompenent->shoot(pos, rotation);
+//    projectileCompenent->playerReference = bird
+}
+
 
 void PokemanGame::update(float time) {
     if (gameState == GameState::Running){
@@ -203,6 +217,8 @@ std::shared_ptr<GameObject> PokemanGame::createGameObject() {
     sceneObjects.push_back(obj);
     return obj;
 }
+
+
 
 void PokemanGame::updatePhysics() {
     const float32 timeStep = 1.0f / 60.0f;
@@ -303,4 +319,9 @@ void PokemanGame::initLevel() {
             }
         }
     }
+}
+
+std::shared_ptr<GameObject> PokemanGame::addGameObject(std::shared_ptr<GameObject> gameObject) {
+    sceneObjects.push_back(gameObject);
+    return gameObject;
 }
