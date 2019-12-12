@@ -63,7 +63,7 @@ void TrainerController::update(float deltaTime) {
     if (right) {
         updatePos (vec3(1,1,0));
     }
-    std::cout << gameObject->getRotation()<< std::endl;
+    //std::cout << gameObject->getRotation()<< std::endl;
 
 }
 
@@ -75,7 +75,7 @@ void TrainerController::updatePos(glm::vec3 dir) {
     trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
     trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
     trainerPhys->body->SetLinearDamping((10));
-    std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y;
+    //std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y;
     // trainerPhysx->
 }
 

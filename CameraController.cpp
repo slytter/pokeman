@@ -57,7 +57,7 @@ bool CameraController::onKey(SDL_Event &event) {
         camRotation.z -= 0.02f;
     }
 
-    std::cout << "x: " << camRotation.x << ", y: " << camRotation.y << ", z: " << camRotation.z << std::endl;
+    //std::cout << "x: " << camRotation.x << ", y: " << camRotation.y << ", z: " << camRotation.z << std::endl;
 
     return false;
 }
