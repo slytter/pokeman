@@ -62,6 +62,7 @@ private:
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasPokeman;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasMonsters;
     std::shared_ptr<sre::SpriteAtlas> defaultSprites;
+    std::shared_ptr<sre::SpriteAtlas> bulletSprite;
 
     std::map<int,std::string> tileType;
     std::vector<std::string> monsterType;

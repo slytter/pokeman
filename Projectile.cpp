@@ -1,11 +1,15 @@
 //
 // Created by Nikolaj on 12/12/2019.
 //
-
+#include <iostream>
+#include <Box2D/Box2D.h>
 #include "Projectile.h"
 #include "PhysicsComponent.hpp"
 #include "GameObject.hpp"
 #include "TrainerController.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
+#include "glm/gtx/vector_angle.hpp"
+
 using namespace glm;
 using namespace sre;
 using namespace std;
@@ -14,14 +18,15 @@ Projectile::Projectile(GameObject *gameObject) : Component(gameObject) {
     phys = gameObject->addComponent<PhysicsComponent>();
 }
 
-void Projectile::shoot(glm::vec2 pos, float rotation){
+void Projectile::shoot(glm::vec2 pos){
     vec2 currentDirection = playerReference->getComponent<TrainerController>()->currentDirection;
-    auto body = playerReference->getComponent<PhysicsComponent>()->body;
-    b2Vec2 currentPosition = body->GetPosition();
+    b2Vec2 currentPosition = playerReference->getComponent<PhysicsComponent>()->body->GetPosition();
     b2Vec2 spawnPosition = {currentPosition.x + (currentDirection.x * 0.1f), currentPosition.y + (currentDirection.y * 0.1f) };
-    phys->initCircle(b2_dynamicBody, 0.1, {currentPosition.x/100, currentPosition.y/100}, 1);
-    phys->body->SetTransform(b2Vec2(spawnPosition.x, spawnPosition.y), 0);
-    phys->addForce(currentDirection * 5.0f);
+    phys->initCircle(b2_dynamicBody, 0.1, {currentDirection.x/100, currentDirection.y/100}, 1);
+    float rotation = glm::degrees(glm::orientedAngle(vec2(1, 1), currentDirection) + 45.0f);
+    phys->body->SetTransform(b2Vec2(spawnPosition.x, spawnPosition.y), rotation);
+    cout << glm::degrees(glm::orientedAngle(vec2(0, 1), currentDirection)) << endl;
+    phys->addForce(currentDirection * 8.0f);
 }
 
 
@@ -30,6 +35,9 @@ void Projectile::update(float deltaTime){
 }
 
 void Projectile::onCollisionStart(PhysicsComponent *comp) {
+    if(comp->getGameObject()->name != "Player"){
+        gameObject->removeMe = true;
+    }
     Component::onCollisionStart(comp);
 }
 
