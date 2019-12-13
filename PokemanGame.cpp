@@ -136,6 +136,8 @@ void PokemanGame::enemySpawner() {
     creature->getPlayer(Player);
 
 
+
+
 }
 
 
