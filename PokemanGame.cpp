@@ -44,6 +44,7 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
     spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
     defaultSprites = SpriteAtlas::create("bird.json","bird.png");
+    bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
 
     init();
 
@@ -74,14 +75,11 @@ void PokemanGame::init() {
     physicsComponentLookup.clear();
     initPhysics();
 
-
-
+    initLevel ();
     auto camObj = createGameObject();
     camObj->name = "Camera";
     camera = camObj->addComponent<CameraController>();
     camObj->setPosition(windowSize*0.5f);
-
-    initLevel ();
 
     Player = createGameObject();
     Player->name = "Player";
@@ -108,7 +106,6 @@ void PokemanGame::init() {
         spriteAtlas->get("tile000.png"),spriteAtlas->get("tile001.png"),spriteAtlas->get("tile002.png"),spriteAtlas->get("tile003.png")
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
-
 }
 
 
@@ -116,12 +113,12 @@ void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
     auto projectile = createGameObject();
     projectile->name = "Projectile";
     std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
-    auto spriteImage = defaultSprites->get("game-over.png");
-    spriteImage.setScale(vec2(0.2f, 0.2f));
+    auto spriteImage = bulletSprite->get("bullet.png");
+    spriteImage.setScale(vec2(1.2f, 1.2f));
     projectileSpriteCom->setSprite(spriteImage);
     std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
     projectileCompenent->playerReference = Player;
-    projectileCompenent->shoot(pos, rotation);
+    projectileCompenent->shoot(pos);
 }
 
 void PokemanGame::enemySpawner() {
