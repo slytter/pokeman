@@ -10,6 +10,7 @@
 #include "TrainerController.hpp"
 #include "Projectile.h"
 #include "Creature.h"
+#include "SoundSource.h"
 
 using namespace std;
 using namespace glm;
@@ -21,6 +22,7 @@ const glm::vec2 PokemanGame::windowSize(800, 600);
 PokemanGame* PokemanGame::instance = nullptr;
 
 PokemanGame::PokemanGame() :debugDraw(physicsScale) {
+
     instance = this;
     r.setWindowSize(windowSize);
     r.init()
@@ -42,12 +44,11 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 
     spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
     spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
+    defaultSprites = SpriteAtlas::create("screens.json","screens.png");
     spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
-    defaultSprites = SpriteAtlas::create("bird.json","bird.png");
     bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
 
     init();
-
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
         onKey(e);
@@ -161,6 +162,7 @@ void PokemanGame::update(float time) {
 
     if(maySpawnProjectile && timePast > burstSpeed) {
         timePast = 0.0f;
+        gunShotSound.play();
         spawnProjectile();
     }
 }
@@ -179,11 +181,13 @@ void PokemanGame::render() {
     }
 
     if (gameState == GameState::Ready){
-        auto sprite = defaultSprites->get("get-ready.png");
+        auto sprite = defaultSprites->get("cap-em-all.png");
+        sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     } else if (gameState == GameState::GameOver){
-        auto sprite = defaultSprites->get("game-over.png");
+        auto sprite = defaultSprites->get("lost.png");
+        sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     }
@@ -226,9 +230,11 @@ void PokemanGame::onKey(SDL_Event &event) {
                 break;
             case SDLK_SPACE:
                 if (gameState == GameState::GameOver){
+                    camera->lerpTime = 0.0f;
                     init();
                     gameState = GameState::Ready;
                 } else if (gameState == GameState::Ready){
+                    camera->lerpSpeed = 1.0f;
                     gameState = GameState::Running;
                 }
                 break;
