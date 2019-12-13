@@ -37,11 +37,13 @@ public:
 
     std::shared_ptr<GameObject> addGameObject(std::shared_ptr<GameObject> gameObject);
 
-    void spawnProjectile(glm::vec2 pos, float rotation);
+    void spawnProjectile();
 
 private:
+    float timePast = 0.0f;
+    bool maySpawnProjectile = false;
+    float burstSpeed = 0.2f;
     sre::SDLRenderer r;
-
     void init();
     void initPhysics();
 

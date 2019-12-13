@@ -18,7 +18,7 @@ Projectile::Projectile(GameObject *gameObject) : Component(gameObject) {
     phys = gameObject->addComponent<PhysicsComponent>();
 }
 
-void Projectile::shoot(glm::vec2 pos){
+void Projectile::shoot(){
     vec2 currentDirection = playerReference->getComponent<TrainerController>()->currentDirection;
     b2Vec2 currentPosition = playerReference->getComponent<PhysicsComponent>()->body->GetPosition();
     b2Vec2 spawnPosition = {currentPosition.x + (currentDirection.x * 0.1f), currentPosition.y + (currentDirection.y * 0.1f) };

@@ -177,9 +177,22 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pokeman.dir/Projectile.cpp.s"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.cpp -o CMakeFiles/Pokeman.dir/Projectile.cpp.s
 
+project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
+project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o: project/Pokeman/SoundSource.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o"
+	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/SoundSource.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.cpp
+
+project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pokeman.dir/SoundSource.cpp.i"
+	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.cpp > CMakeFiles/Pokeman.dir/SoundSource.cpp.i
+
+project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pokeman.dir/SoundSource.cpp.s"
+	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.cpp -o CMakeFiles/Pokeman.dir/SoundSource.cpp.s
+
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/SpriteAnimationComponent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.cpp
 
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.i: cmake_force
@@ -192,7 +205,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.s: cmake_for
 
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o: project/Pokeman/SpriteComponent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.cpp
 
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.i: cmake_force
@@ -205,7 +218,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.s: cmake_force
 
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: project/Pokeman/TrainerController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/TrainerController.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.cpp
 
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.i: cmake_force
@@ -218,7 +231,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.s: cmake_force
 
 project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
 project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o: project/Pokeman/WorldGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/WorldGenerator.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.cpp
 
 project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.i: cmake_force
@@ -231,7 +244,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/WorldGenerator.cpp.s: cmake_force
 
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/CMakeFiles/Pokeman.dir/flags.make
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pokeman.dir/main.cpp.o -c /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp
 
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.i: cmake_force
@@ -253,6 +266,7 @@ Pokeman_OBJECTS = \
 "CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o" \
 "CMakeFiles/Pokeman.dir/PokemanGame.cpp.o" \
 "CMakeFiles/Pokeman.dir/Projectile.cpp.o" \
+"CMakeFiles/Pokeman.dir/SoundSource.cpp.o" \
 "CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o" \
 "CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o" \
 "CMakeFiles/Pokeman.dir/TrainerController.cpp.o" \
@@ -271,6 +285,7 @@ project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/GameObject.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
+project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o
@@ -281,7 +296,7 @@ project/Pokeman/Pokeman: thirdparty/macOS/Lua/lib/liblua.a
 project/Pokeman/Pokeman: submodules/SimpleRenderEngine/src/libSRE.a
 project/Pokeman/Pokeman: thirdparty/macOS/Box2D/lib/libBox2D.a
 project/Pokeman/Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Pokeman"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/macbook/Projects/SimpleRenderEngineProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Pokeman"
 	cd /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Pokeman.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

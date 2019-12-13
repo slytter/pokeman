@@ -16,7 +16,7 @@ public:
     bool bwd = false;
     bool left = false;
     bool right = false;
-
+    glm::vec2 collectedDirection = {0, 0};
     float pDmg = 20;
     float health = 100;
 private:

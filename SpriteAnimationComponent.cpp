@@ -45,7 +45,7 @@ void SpriteAnimationComponent::update(float deltaTime) {
         }
     }
 
-    bool directionX = velocity.x < 0;
+    bool directionX = playerController->currentDirection.x < 0;
     auto chosenSprite = spriteComponent->getSprite();
     chosenSprite.setFlip(glm::vec2(directionX, false));
     chosenSprite.setScale(glm::vec2(.8, 1.2f));

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/PokemanGame.cpp.o"
   "CMakeFiles/Pokeman.dir/Projectile.cpp.o"
+  "CMakeFiles/Pokeman.dir/SoundSource.cpp.o"
   "CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/SpriteComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/TrainerController.cpp.o"
