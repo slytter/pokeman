@@ -7,6 +7,9 @@
 #include "PhysicsComponent.hpp"
 #include "Creature.h"
 #include "iostream"
+#include "PokemanGame.hpp"
+#include "TrainerController.hpp"
+
 
 using namespace std;
 
@@ -20,12 +23,20 @@ Creature::Creature(GameObject *gameObject) : Component(gameObject) {
 }
 
 void Creature::onCollisionStart(PhysicsComponent *comp) {
-    if(comp->getGameObject()->name == "player") {
+    if(comp->getGameObject()->name == "Player") {
+        player->getComponent<TrainerController>()->health -= cDmg;
         cout<< "you dead boi!";
+    } else if (comp->getGameObject()->name == "Projectile") {
+        cHealth -= player->getComponent<TrainerController>()->pDmg;
     }
 }
 
 void Creature::update(float deltaTime) {
+
+    if (cHealth <= 0) {
+        gameObject->removeMe = true;
+    }
+
     dirToPlayer = player->getPosition() - gameObject->getPosition();
     creaturePhys->addForce(glm::normalize(dirToPlayer) * (cSpeed*deltaTime));
     creaturePhys->body->SetLinearDamping((10));

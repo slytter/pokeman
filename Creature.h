@@ -9,6 +9,7 @@
 
 #include "Component.hpp"
 #include "sre/SpriteAtlas.hpp"
+#include "TrainerController.hpp"
 
 class Creature : public Component {
 public:
@@ -21,9 +22,9 @@ public:
     std::shared_ptr<GameObject> player;
 
 private:
-    float cSpeed = 10;
+    float cSpeed = 100;
     float cHealth = 100;
-    float cDmg = 10;
+    float cDmg = 50;
 
     glm::vec2 dirToPlayer;
     std::shared_ptr<PhysicsComponent> creaturePhys;

@@ -16,8 +16,11 @@ public:
     bool bwd = false;
     bool left = false;
     bool right = false;
+
+    float pDmg = 20;
+    float health = 100;
 private:
     float playerSpeed = 0.75f;
-    void updatePos(glm::vec3);
+    void updatePos(glm::vec2);
     std::shared_ptr<PhysicsComponent> trainerPhys;
 };

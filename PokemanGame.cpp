@@ -38,10 +38,12 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     monsterType.push_back(std::string("tile4.png"));
     monsterType.push_back(std::string("tile5.png"));
 
-
-
-
     pokemanMap.loadPokemanMap("levelData.json");
+
+    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
+    spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
+    spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
+    defaultSprites = SpriteAtlas::create("bird.json","bird.png");
 
     init();
 
@@ -63,36 +65,37 @@ void PokemanGame::init() {
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
-    createGameObject();
 
+    Player = nullptr;
+    createGameObject();
     sceneObjects.clear();
+
     camera.reset();
     physicsComponentLookup.clear();
     initPhysics();
 
-    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
-    spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
 
-    initLevel ();
+
     auto camObj = createGameObject();
     camObj->name = "Camera";
     camera = camObj->addComponent<CameraController>();
     camObj->setPosition(windowSize*0.5f);
 
-    spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
-    defaultSprites = SpriteAtlas::create("bird.json","bird.png");
+    initLevel ();
 
     Player = createGameObject();
     Player->name = "Player";
+
     camera->setFollowObject(Player, {+150, PokemanGame::windowSize.y / 2});
     auto so = Player->addComponent<SpriteComponent>();
     auto sprite = spriteAtlas->get("tile008.png");
-    // sprite.setOrderInBatch(10); <-- til z-order
+    sprite.setOrderInBatch(10);
     sprite.setScale({2,2});
     std:: cout << (int)pokemanMap.getStartingPosition().x;
 
     Player->setPosition({(int)pokemanMap.getStartingPosition().x, pokemanMap.getStartingPosition().y});
     so->setSprite(sprite);
+
     auto anim = Player->addComponent<SpriteAnimationComponent>();
     auto phys = Player->addComponent<PhysicsComponent>();
     phys->initCircle(b2_dynamicBody, 10/physicsScale, {Player->getPosition().x / physicsScale, Player->getPosition().y / physicsScale}, 1);
@@ -106,30 +109,6 @@ void PokemanGame::init() {
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
 
-<<<<<<< HEAD
-
-
-
-    spawnProjectile(vec2(0,0), 0);
-    spawnProjectile(vec2(1,1), 30);
-    spawnProjectile(vec2(0,2), 60);
-
-
-
-=======
-    auto enemy = createGameObject();
-    enemy->name = "creature";
-    auto so2 = enemy->addComponent<SpriteComponent>();
-    auto sprite2 = spriteAtlas->get("tile008.png");
-    sprite2.setScale({2,2});
-    srand(time(NULL));
-    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) + 0]);
-    so2->setSprite(sprite2);
-    auto phys2 = enemy->addComponent<PhysicsComponent>();
-    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
-    auto creature = enemy->addComponent<Creature>();
-    creature->getPlayer(Player);
->>>>>>> a701861ca91a195339bb0f10fcc858b0f340ac9b
 }
 
 
@@ -149,15 +128,13 @@ void PokemanGame::enemySpawner() {
     auto enemy = createGameObject();
     enemy->name = "creature";
     auto so2 = enemy->addComponent<SpriteComponent>();
-    std::cout<< monsterType[(rand() % 5)]<< "\n";
-
     auto sprite2 = spriteAtlasMonsters->get(monsterType[(rand() % 5)]);
     sprite2.setScale({2,2});
     srand(time(NULL));
     enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) ]);
     so2->setSprite(sprite2);
     auto phys2 = enemy->addComponent<PhysicsComponent>();
-    phys2->initCircle(b2_dynamicBody, 10/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
+    phys2->initCircle(b2_dynamicBody, 30/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
     auto creature = enemy->addComponent<Creature>();
     creature->getPlayer(Player);
 
@@ -351,7 +328,9 @@ void PokemanGame::initLevel() {
         for (int j = 0; j < pokemanMap.getHeight() ; ++j) {
             for (auto type : tileType) {
                 if (type.first == pokemanMap.getTile(i, j)) {
-                    tile = spriteAtlasPokeman->get(type.second);
+                    auto sprite = spriteAtlasPokeman->get(type.second);
+                    sprite.setOrderInBatch(0);
+                    tile = sprite;
                     tile.setScale({2,2});
                     auto tileObj = createGameObject();
                     tileObj->name = type.second.substr(0,type.second.find('.'));

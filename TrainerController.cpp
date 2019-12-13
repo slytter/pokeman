@@ -52,16 +52,21 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
 void TrainerController::update(float deltaTime) {
     //std::cout<< "yas";
     if (fwd) {
-        updatePos (vec3(-1,1,0));
+        updatePos (vec2(-1,1));
     }
     if (bwd) {
-        updatePos (vec3(1,-1,0));
+        updatePos (vec2(1,-1));
     }
     if (left) {
-        updatePos (vec3(-1,-1,0));
+        updatePos (vec2(-1,-1));
     }
     if (right) {
-        updatePos (vec3(1,1,0));
+        updatePos (vec2(1,1));
+    }
+
+    if (health <= 0) {
+        gameObject->removeMe = true;
+        PokemanGame::instance->setGameState(GameState::GameOver);
     }
     //std::cout << gameObject->getRotation()<< std::endl;
 
@@ -71,7 +76,7 @@ void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
 
 }
 
-void TrainerController::updatePos(glm::vec3 dir) {
+void TrainerController::updatePos(glm::vec2 dir) {
     currentDirection = glm::vec2(dir.x, dir.y);
     trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
     trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
