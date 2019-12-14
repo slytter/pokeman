@@ -12,6 +12,7 @@
 #include "SpriteComponent.hpp"
 #include "SpriteAnimationComponent.hpp"
 #include "imgui.h"
+
 #include "CameraController.hpp"
 
 using namespace glm;
@@ -23,6 +24,8 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
     gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
+
+    GUISize = glm::vec2(200,50);
 
 }
 
@@ -50,7 +53,7 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
         std::cout << "bang";
 
         trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
-        trainerPhys->addImpulse(glm::normalize(-currentDirection) /5.f);
+        trainerPhys->addImpulse(glm::normalize(-currentDirection) /3.f);
         // PokemanGame::instance->setGameState(GameState::GameOver);
     }
     std::cout << "bird collided with something: " << comp->getGameObject()->name << std::endl;
@@ -99,12 +102,16 @@ void TrainerController::updatePos(glm::vec2 dir) {
 }
 
 void TrainerController::onGui() {
-    trainerPhys = gameObject->getComponent<PhysicsComponent>();
-    ImGui::SetNextWindowPos(ImVec2(cam->getCameraPos().x, cam->getCameraPos().y), ImGuiSetCond_Always);
-    ImGui::SetNextWindowSize(ImVec2(100, 30), ImGuiSetCond_Always);
-    ImGui::Begin("", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-    ImGui::ProgressBar(0.5f, {-1, 0});
-    ImGui::End();
+    if (PokemanGame::instance->getGameState() == GameState::Running) {
+        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), 0));
+        ImGui::SetNextWindowBgAlpha(0.0f);
+        ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x/2, isoCamView.y - GUISize.y ),
+                                ImGuiSetCond_Always);
+        //ImGui::SetNextWindowSize(ImVec2(GUISize.x, GUISize.y), ImGuiSetCond_Always);
+        ImGui::Begin("", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+        ImGui::ProgressBar(health / 100, {-1, 3});
+        ImGui::End();
+    }
 }
 
 void TrainerController::setCamera(std::shared_ptr<CameraController> _cam) {

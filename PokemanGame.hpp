@@ -41,6 +41,8 @@ public:
 
     WorldGenerator pokemanMap;
     void setGameState(GameState newState);
+    GameState getGameState();
+
 
     std::shared_ptr<GameObject> addGameObject(std::shared_ptr<GameObject> gameObject);
 
@@ -51,6 +53,7 @@ private:
     float timePast = 0.0f;
     bool maySpawnProjectile = false;
     float burstSpeed = 0.2f;
+    int enemyCount;
     sre::SDLRenderer r;
     void init();
     void initPhysics();

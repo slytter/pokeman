@@ -46,6 +46,13 @@ void GameObject::update(float deltaTime) {
     }
 }
 
+void GameObject::renderGUI() {
+    for (auto& comp : components){
+        comp->onGui();
+    }
+}
+
+
 const std::vector<std::shared_ptr<Component>> &GameObject::getComponents() {
     return components;
 }

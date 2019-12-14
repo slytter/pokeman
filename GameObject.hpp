@@ -31,6 +31,7 @@ public:
     float getRotation() const;
 
     void setRotation(float rotation);
+    void renderGUI();
 
     const std::vector<std::shared_ptr<Component>>& getComponents();
     bool removeMe = false;

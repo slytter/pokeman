@@ -50,6 +50,8 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
     srand(10);
 
+    ImGui::GetStyle().FrameBorderSize = 0.0f;
+    ImGui::GetStyle().WindowBorderSize = 0.0f;
     init();
 
     // setup callback functions
@@ -131,6 +133,7 @@ void PokemanGame::spawnProjectile(){
 }
 
 void PokemanGame::enemySpawner() {
+    enemyCount++;
     auto enemy = createGameObject();
     enemy->name = "creature";
     auto so2 = enemy->addComponent<SpriteComponent>();
@@ -144,7 +147,9 @@ void PokemanGame::enemySpawner() {
     auto phys2 = enemy->addComponent<PhysicsComponent>();
     phys2->initCircle(b2_dynamicBody, 30/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
     auto creature = enemy->addComponent<Creature>();
+    creature->getEnemyCount(enemyCount);
     creature->getPlayer(Player);
+    creature->setCamera(camera);
 
 
 
@@ -188,7 +193,9 @@ void PokemanGame::render() {
             .build();
 
 
-    onGUIPLayer->onGui();
+    for (int i = 0; i <sceneObjects.size() ; ++i) {
+        sceneObjects[i]->renderGUI();
+    }
 
     auto pos = camera->getGameObject()->getPosition();
     background1Component.renderBackground(rp, +pos.x*0.8f);
@@ -351,6 +358,10 @@ void PokemanGame::handleContact(b2Contact *contact, bool begin) {
 
 void PokemanGame::setGameState(GameState newState) {
     this->gameState = newState;
+}
+
+GameState PokemanGame::getGameState() {
+    return gameState;
 }
 
 void PokemanGame::initLevel() {

@@ -13,7 +13,7 @@ public:
     sre::Camera& getCamera();
     glm::mat4 cameraOriMat4;
     bool onKey(SDL_Event &event) override;
-    glm::vec3 getCameraPos ();
+    glm::vec2 getCameraPos (glm::vec3 _ObjectPos);
     float lerpTime = 0.0f;
     float lerpSpeed = 0.0f;
     //std::shared_ptr<PokemanGame::GameState> gameState;
