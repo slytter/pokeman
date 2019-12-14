@@ -50,18 +50,21 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
 }
 
 void TrainerController::update(float deltaTime) {
-    //std::cout<< "yas";
+    vec2 collectedDirection = {0, 0};
     if (fwd) {
-        updatePos (vec2(-1,1));
+        collectedDirection += vec2(-1, 1);
     }
     if (bwd) {
-        updatePos (vec2(1,-1));
+        collectedDirection += (vec2(1,-1));
     }
     if (left) {
-        updatePos (vec2(-1,-1));
+        collectedDirection += (vec2(-1,-1));
     }
     if (right) {
-        updatePos (vec2(1,1));
+        collectedDirection += (vec2(1,1));
+    }
+    if(fwd || bwd || left || right){
+        updatePos(collectedDirection);
     }
 
     if (health <= 0) {

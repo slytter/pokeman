@@ -109,7 +109,7 @@ void PokemanGame::init() {
 }
 
 
-void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
+void PokemanGame::spawnProjectile(){
     auto projectile = createGameObject();
     projectile->name = "Projectile";
     std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
@@ -118,7 +118,7 @@ void PokemanGame::spawnProjectile(glm::vec2 pos, float rotation){
     projectileSpriteCom->setSprite(spriteImage);
     std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
     projectileCompenent->playerReference = Player;
-    projectileCompenent->shoot(pos);
+    projectileCompenent->shoot();
 }
 
 void PokemanGame::enemySpawner() {
@@ -142,17 +142,17 @@ void PokemanGame::enemySpawner() {
 
 
 void PokemanGame::update(float time) {
-
+    timePast += time;
     if (countDown <= 0) {
         enemySpawner();
         countDown = enemySpawnerTime;
     }
 
-    if (gameState == GameState::Running){
+    if (gameState == GameState::Running) {
         updatePhysics();
 
     }
-    for (int i=0;i<sceneObjects.size();i++){
+    for (int i = 0; i < sceneObjects.size(); i++) {
         if(sceneObjects[i]->removeMe) {
             sceneObjects.erase(sceneObjects.begin() + i);
         }
@@ -161,6 +161,10 @@ void PokemanGame::update(float time) {
 
     countDown -= time;
 
+    if(maySpawnProjectile && timePast > burstSpeed) {
+        timePast = 0.0f;
+        spawnProjectile();
+    }
 }
 
 void PokemanGame::render() {
@@ -223,7 +227,6 @@ void PokemanGame::onKey(SDL_Event &event) {
                 init();
                 break;
             case SDLK_SPACE:
-                spawnProjectile(vec2(0,2), 60);
                 if (gameState == GameState::GameOver){
                     init();
                     gameState = GameState::Ready;
@@ -232,6 +235,9 @@ void PokemanGame::onKey(SDL_Event &event) {
                 }
                 break;
         }
+    }
+    if (event.key.keysym.sym == SDLK_SPACE) {
+        maySpawnProjectile = event.type == SDL_KEYDOWN;
     }
 }
 

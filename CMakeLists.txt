@@ -17,7 +17,7 @@ file(GLOB pokeman
         )
 
 # Compile cpp files (from Snake variable)
-add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Projectile.cpp Projectile.h Creature.h Creature.cpp)
+add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Projectile.cpp Projectile.h Creature.h Creature.cpp SoundSource.cpp SoundSource.h)
 
 target_link_libraries(Pokeman ${all_libs})
 

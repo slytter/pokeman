@@ -417,6 +417,33 @@ Projectile.cpp.s:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.s
 .PHONY : Projectile.cpp.s
 
+SoundSource.o: SoundSource.cpp.o
+
+.PHONY : SoundSource.o
+
+# target to build an object file
+SoundSource.cpp.o:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o
+.PHONY : SoundSource.cpp.o
+
+SoundSource.i: SoundSource.cpp.i
+
+.PHONY : SoundSource.i
+
+# target to preprocess a source file
+SoundSource.cpp.i:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.i
+.PHONY : SoundSource.cpp.i
+
+SoundSource.s: SoundSource.cpp.s
+
+.PHONY : SoundSource.s
+
+# target to generate assembly for a file
+SoundSource.cpp.s:
+	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.s
+.PHONY : SoundSource.cpp.s
+
 SpriteAnimationComponent.o: SpriteAnimationComponent.cpp.o
 
 .PHONY : SpriteAnimationComponent.o
@@ -592,6 +619,9 @@ help:
 	@echo "... Projectile.o"
 	@echo "... Projectile.i"
 	@echo "... Projectile.s"
+	@echo "... SoundSource.o"
+	@echo "... SoundSource.i"
+	@echo "... SoundSource.s"
 	@echo "... SpriteAnimationComponent.o"
 	@echo "... SpriteAnimationComponent.i"
 	@echo "... SpriteAnimationComponent.s"

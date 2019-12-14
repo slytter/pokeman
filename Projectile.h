@@ -16,7 +16,7 @@ public:
     void onCollisionEnd(PhysicsComponent *comp) override;
     std::shared_ptr<PhysicsComponent> phys;
     std::shared_ptr<GameObject> playerReference;
-    void shoot(glm::vec2 pos);
+    void shoot();
 };
 
 
