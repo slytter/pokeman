@@ -24,11 +24,18 @@ PokemanGame* PokemanGame::instance = nullptr;
 
 PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 
+
+
     instance = this;
     r.setWindowSize(windowSize);
     r.init()
       .withSdlInitFlags(SDL_INIT_EVERYTHING)
       .withSdlWindowFlags(SDL_WINDOW_OPENGL);
+
+    if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
+        cout << "Cannot initialize audio output"<< endl;
+        return;
+    }
 
     tileType[0] = std::string("defaultWall.png");
     tileType[1] = std::string("dirt.png");
@@ -53,6 +60,11 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     ImGui::GetStyle().FrameBorderSize = 0.0f;
     ImGui::GetStyle().WindowBorderSize = 0.0f;
     init();
+    auto fonts = ImGui::GetIO().Fonts;
+    fonts->AddFontDefault();
+    auto fontName = "Lazer84.ttf";
+    int fontSize = 45;
+    chosenFont = fonts->AddFontFromFileTTF(fontName, fontSize);
 
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
@@ -71,6 +83,7 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 }
 
 void PokemanGame::init() {
+
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
@@ -106,8 +119,8 @@ void PokemanGame::init() {
     auto anim = Player->addComponent<SpriteAnimationComponent>();
     auto phys = Player->addComponent<PhysicsComponent>();
     phys->initCircle(b2_dynamicBody, 10/physicsScale, {Player->getPosition().x / physicsScale, Player->getPosition().y / physicsScale}, 1);
-    auto birdC = Player->addComponent<TrainerController>();
-    onGUIPLayer = birdC;
+    auto trainer = Player->addComponent<TrainerController>();
+    onGUIPLayer = trainer;
     onGUIPLayer -> setCamera(camera);
 
     vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
@@ -141,7 +154,6 @@ void PokemanGame::enemySpawner() {
     sprite2.setScale({2,2});
 
     int rno = (int)(rand() % 4);
-    cout<< "dfs " << rno;
     enemy->setPosition(pokemanMap.enemySpawnPoints[rno]);
     so2->setSprite(sprite2);
     auto phys2 = enemy->addComponent<PhysicsComponent>();
@@ -150,43 +162,57 @@ void PokemanGame::enemySpawner() {
     creature->getEnemyCount(enemyCount);
     creature->getPlayer(Player);
     creature->setCamera(camera);
-
-
-
-
 }
 
 
 void PokemanGame::update(float time) {
-    timePast += time;
-    if (countDown <= 0) {
+
+
+    bool gameIsRunning = gameState == GameState::Running;
+    int waveSize = waveIncreaseBy * wave;
+    bool maySpawnEnemy = currentEnemyCount < waveSize;
+
+    cout << "EnemyCount: " << currentEnemyCount << endl;
+    cout << "waveSize: " << waveSize << endl;
+
+    if (countDown <= 0 && gameIsRunning && !allEnemiesSpawnedInWave) {
         enemySpawner();
+        if(currentEnemyCount == waveSize - 1){
+            allEnemiesSpawnedInWave = true;
+        }
         countDown = enemySpawnerTime;
     }
 
-    if (gameState == GameState::Running) {
-        updatePhysics();
+    countDown -= time;
 
+    if(currentEnemyCount == 0 && allEnemiesSpawnedInWave) {
+        allEnemiesSpawnedInWave = false;
+        wave++;
     }
+
+    currentEnemyCount = 0;
     for (int i = 0; i < sceneObjects.size(); i++) {
+        if(sceneObjects[i]->name == "creature"){
+            currentEnemyCount ++;
+        }
         if(sceneObjects[i]->removeMe) {
             sceneObjects.erase(sceneObjects.begin() + i);
         }
         sceneObjects[i]->update(time);
     }
 
-    countDown -= time;
-
+    timePast += time;
     if(maySpawnProjectile && timePast > burstSpeed) {
         timePast = 0.0f;
         gunShotSound.play();
         spawnProjectile();
     }
+    if (gameIsRunning) {
+        updatePhysics();
+    }
 }
 
 void PokemanGame::render() {
-
-
     auto rp = RenderPass::create()
             .withCamera(camera->getCamera())
             .withClearColor(true, {0, 0, 0, 1})
@@ -234,9 +260,14 @@ void PokemanGame::render() {
         debugDraw.clear();
     }
 
-
-
-
+    ImGui::SetNextWindowPos(ImVec2(Renderer::instance->getWindowSize().x/2-100, .0f), ImGuiSetCond_Always);
+    ImGui::SetNextWindowBgAlpha(0.0f);
+    ImGui::SetNextWindowSize(ImVec2(300, 100), ImGuiSetCond_Always);
+    ImGui::Begin("WAVE", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+    ImGui::PushFont(chosenFont);
+    ImGui::Text("WAVE: %d", wave);
+    ImGui::PopFont();
+    ImGui::End();
 }
 
 void PokemanGame::onKey(SDL_Event &event) {

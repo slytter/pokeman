@@ -19,10 +19,10 @@ SoundSource::SoundSource(char* _pathName, bool _shouldLoop, int _channel, float 
         return;
     }
     sound = Mix_LoadWAV( pathName );
+    Mix_Volume(channel, (int)(volume * 128));
 };
 
 int SoundSource::play(){
-    Mix_Volume(channel, (int)(volume * 128));
-    Mix_PlayChannel(channel, sound, shouldLoop ? -1 : 0);
+    Mix_PlayChannelTimed(channel, sound, shouldLoop ? -1 : 0, 0);
     return 1;
 }

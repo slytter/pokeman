@@ -23,47 +23,36 @@ Creature::Creature(GameObject *gameObject) : Component(gameObject) {
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
 
     creaturePhys = gameObject->getComponent<PhysicsComponent>();
-    GUISize = glm::vec2(200,50);
+    GUISize = glm::vec2(100,50);
 
     idPointer = &enemyId;
-
-
-
-
 }
 
 void Creature::onCollisionStart(PhysicsComponent *comp) {
     if(comp->getGameObject()->name == "Player") {
         player->getComponent<TrainerController>()->health -= cDmg;
-        cout<< "you dead boi!";
     } else if (comp->getGameObject()->name == "Projectile") {
         cHealth -= player->getComponent<TrainerController>()->pDmg;
     }
 }
 
 void Creature::update(float deltaTime) {
-
     if (cHealth <= 0) {
-        delete idPointer; // <--- THIS IS PROBLEM!
         gameObject->removeMe = true;
     }
-
     dirToPlayer = player->getPosition() - gameObject->getPosition();
     creaturePhys->addForce(glm::normalize(dirToPlayer) * (cSpeed*deltaTime));
     creaturePhys->body->SetLinearDamping((10));
-
 }
 
 void Creature::onGui() {
     if (PokemanGame::instance->getGameState() == GameState::Running) {
-        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), 0));
-
+        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), 1));
         ImGui::SetNextWindowBgAlpha(0.0f);
         ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x/2, isoCamView.y - GUISize.y ),
                                 ImGuiSetCond_Always);
-        //ImGui::SetNextWindowSize(ImVec2(GUISize.x, GUISize.y), ImGuiSetCond_Always);
         ImGui::Begin(idPointer, nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-        ImGui::ProgressBar(cHealth / 100, {-1, 3});
+        ImGui::ProgressBar(cHealth / 100, {100, 3});
         ImGui::End();
     }
 }

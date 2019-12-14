@@ -21,6 +21,9 @@ enum class GameState {
 
 class PokemanGame : public b2ContactListener {
 public:
+    ImFont* chosenFont;
+    int wave = 1;
+    int waveIncreaseBy = 3;
     PokemanGame();
     std::shared_ptr<GameObject> Player;
     std::shared_ptr<GameObject> createGameObject();
@@ -86,8 +89,10 @@ private:
     std::map<int,std::string> tileType;
     std::vector<std::string> monsterType;
 
-    float enemySpawnerTime = 2;
+    float enemySpawnerTime = 0.3f;
     float countDown = enemySpawnerTime;
+    int currentEnemyCount = 0;
+    bool allEnemiesSpawnedInWave = false;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
     BackgroundComponent background1Component;

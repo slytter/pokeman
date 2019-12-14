@@ -24,7 +24,7 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
     gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
 
-    GUISize = glm::vec2(200,50);
+    GUISize = glm::vec2(100,50);
 
 }
 
@@ -98,13 +98,12 @@ void TrainerController::updatePos(glm::vec2 dir) {
 
 void TrainerController::onGui() {
     if (PokemanGame::instance->getGameState() == GameState::Running) {
-        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), 0));
+        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), -1));
         ImGui::SetNextWindowBgAlpha(0.0f);
-        ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x/2, isoCamView.y - GUISize.y ),
+        ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x / 2.0f, isoCamView.y - GUISize.y ),
                                 ImGuiSetCond_Always);
-        //ImGui::SetNextWindowSize(ImVec2(GUISize.x, GUISize.y), ImGuiSetCond_Always);
-        ImGui::Begin("", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
-        ImGui::ProgressBar(health / 100, {-1, 3});
+        ImGui::Begin("Some-Value", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+        ImGui::ProgressBar(health / 100, {100, 3});
         ImGui::End();
     }
 }

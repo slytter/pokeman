@@ -770,6 +770,14 @@ Component.hpp
 PhysicsComponent.hpp
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
 
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.cpp
+SoundSource.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
+iostream
+-
+SDL_mixer.h
+/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SDL_mixer.h
+
 /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
 iostream
 -
