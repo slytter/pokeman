@@ -201,7 +201,7 @@ void PokemanGame::render() {
     if (gameState == GameState::Ready){
         runOnceWhenGameOver = true;
         auto sprite = defaultSprites->get("cap-em-all.png");
-        sprite.setScale(glm::vec2(0.5f, 0.5f));
+        sprite.setScale(glm::vec2(0.4f, 0.4f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     } else if (gameState == GameState::GameOver){
@@ -211,7 +211,7 @@ void PokemanGame::render() {
             hellNoSound.play();
         }
         auto sprite = defaultSprites->get("lost.png");
-        sprite.setScale(glm::vec2(0.5f, 0.5f));
+        sprite.setScale(glm::vec2(0.4f, 0.4f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     }
