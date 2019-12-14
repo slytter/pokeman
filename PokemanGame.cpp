@@ -72,7 +72,7 @@ void PokemanGame::init() {
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
-
+    soundTrackSound.play();
     Player = nullptr;
     onGUIPLayer = nullptr;
 
@@ -124,10 +124,10 @@ void PokemanGame::spawnProjectile(){
     std::shared_ptr<SpriteComponent> projectileSpriteCom = projectile->addComponent<SpriteComponent>();
     auto spriteImage = bulletSprite->get("bullet.png");
     spriteImage.setScale(vec2(1.2f, 1.2f));
-    projectileSpriteCom->setSprite(spriteImage);
     std::shared_ptr<Projectile> projectileCompenent = projectile->addComponent<Projectile>();
     projectileCompenent->playerReference = Player;
     projectileCompenent->shoot();
+    projectileSpriteCom->setSprite(spriteImage);
 }
 
 void PokemanGame::enemySpawner() {
@@ -199,11 +199,17 @@ void PokemanGame::render() {
     }
 
     if (gameState == GameState::Ready){
+        runOnceWhenGameOver = true;
         auto sprite = defaultSprites->get("cap-em-all.png");
         sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     } else if (gameState == GameState::GameOver){
+        if(runOnceWhenGameOver) {
+            runOnceWhenGameOver = false;
+            pukeSound.play();
+            hellNoSound.play();
+        }
         auto sprite = defaultSprites->get("lost.png");
         sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
@@ -235,7 +241,9 @@ void PokemanGame::onKey(SDL_Event &event) {
             }
         }
     }
-
+    if (event.key.keysym.sym == SDLK_SPACE && gameState == GameState::Running) {
+        maySpawnProjectile = event.type == SDL_KEYDOWN;
+    }
     if (event.type == SDL_KEYDOWN){
         switch (event.key.keysym.sym){
             case SDLK_d:
@@ -256,15 +264,15 @@ void PokemanGame::onKey(SDL_Event &event) {
                     init();
                     gameState = GameState::Ready;
                 } else if (gameState == GameState::Ready){
+                    cout << "ReadyState" << endl<< endl;
                     camera->lerpSpeed = 1.0f;
+                    ahShitSound.play();
                     gameState = GameState::Running;
                 }
                 break;
         }
     }
-    if (event.key.keysym.sym == SDLK_SPACE) {
-        maySpawnProjectile = event.type == SDL_KEYDOWN;
-    }
+
 }
 
 std::shared_ptr<GameObject> PokemanGame::createGameObject() {

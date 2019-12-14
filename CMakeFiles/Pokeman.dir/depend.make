@@ -47,6 +47,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: /Library/Frame
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/BackgroundComponent.cpp
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
@@ -57,6 +58,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokema
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/PokemanGame.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/SoundSource.h
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/SpriteComponent.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: project/Pokeman/WorldGenerator.h
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/Camera.hpp
@@ -497,6 +499,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: /Library/Framewor
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/CameraController.cpp
@@ -507,6 +510,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/G
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/PokemanGame.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/SoundSource.h
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/SpriteComponent.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: project/Pokeman/WorldGenerator.h
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o: submodules/SimpleRenderEngine/include/sre/Camera.hpp
@@ -793,6 +797,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: /Library/Frameworks/SDL2.
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o: project/Pokeman/CameraController.hpp
@@ -1093,6 +1098,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: /Library/Framewor
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/CameraController.hpp
@@ -1104,6 +1110,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/P
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/PokemanGame.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/SoundSource.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/SpriteComponent.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: project/Pokeman/WorldGenerator.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o: submodules/SimpleRenderEngine/include/sre/Camera.hpp
@@ -1303,6 +1310,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: /Library/Frameworks/SD
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: project/Pokeman/CameraController.hpp
@@ -1454,6 +1462,8 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: thirdparty/macOS/Box2D
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2World.h
 project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
 
+project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
+project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/CameraController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/Component.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/GameObject.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/PhysicsComponent.hpp
@@ -1462,6 +1472,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/Project
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/SoundSource.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Camera.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Color.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/Light.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: submodules/SimpleRenderEngine/include/sre/LightType.hpp
@@ -1621,9 +1632,11 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: thirdparty/macOS/Box2D/
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2World.h
 project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o: thirdparty/macOS/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
 
+project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o: project/Pokeman/SoundSource.cpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SoundSource.cpp.o: project/Pokeman/SoundSource.h
 
+project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/CameraController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/Component.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/GameObject.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/SpriteAnimationComponent.cpp.o: project/Pokeman/PhysicsComponent.hpp
@@ -1908,6 +1921,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: /Library/Framewo
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o: project/Pokeman/CameraController.hpp
@@ -2244,6 +2258,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: /Library/Frameworks/SDL2.fram
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_video.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: /Library/Frameworks/SDL2.framework/Headers/begin_code.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
+project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: /Library/Frameworks/SDL2_mixer.framework/Headers/SDL_mixer.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/BackgroundComponent.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/Box2DDebugDraw.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/CameraController.hpp
@@ -2253,6 +2268,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/GameState.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/PokemanGame.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/SoundSource.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/SpriteComponent.hpp
+project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/TrainerController.hpp
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/WorldGenerator.h
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: project/Pokeman/main.cpp
 project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o: submodules/SimpleRenderEngine/include/sre/BlendType.hpp

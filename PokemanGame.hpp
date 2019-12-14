@@ -26,9 +26,12 @@ public:
     std::shared_ptr<GameObject> createGameObject();
     static const glm::vec2 windowSize;
 
-    SoundSource gunShotSound = SoundSource((char*)"gunSound.wav");
-
-    //SoundSource gameSound;
+    SoundSource gunShotSound = SoundSource((char*)"sounds/gun-sound.wav", false, 0, 0.6f);
+    SoundSource damageSound = SoundSource((char*)"sounds/damage.wav", false, 1);
+    SoundSource soundTrackSound = SoundSource((char*)"sounds/sound-track.mp3", true, 2, 0.6f);
+    SoundSource pukeSound = SoundSource((char*)"sounds/puke.wav", false, 3);
+    SoundSource ahShitSound = SoundSource((char*)"sounds/ah-shit.wav", false, 4, 0.6f);
+    SoundSource hellNoSound = SoundSource((char*)"sounds/hell-no.wav", false, 5);
 
     std::shared_ptr<WorldGenerator> pokemanWorld;
 
@@ -47,6 +50,7 @@ public:
     void spawnProjectile();
 
 private:
+    bool runOnceWhenGameOver = true;
     GameState gameState = GameState::Ready;
     float timePast = 0.0f;
     bool maySpawnProjectile = false;

@@ -19,7 +19,6 @@ using namespace sre;
 using namespace std;
 
 TrainerController::TrainerController(GameObject *gameObject) : Component(gameObject) {
-    // initiate bird physics
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
     gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
@@ -43,17 +42,12 @@ bool TrainerController::onKey(SDL_Event &event) {
 }
 
 void TrainerController::onCollisionStart(PhysicsComponent *comp) {
-
-    if(comp->getGameObject()->name == "Coin") {
-        comp->getGameObject()->removeMe = true;
-    } else if (comp->getGameObject()->name == "creature") {
+    if (comp->getGameObject()->name == "creature") {
         std::cout << "bang";
-
+        PokemanGame::instance->damageSound.play();
         trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
         trainerPhys->addImpulse(glm::normalize(-currentDirection) /5.f);
-        // PokemanGame::instance->setGameState(GameState::GameOver);
     }
-    std::cout << "bird collided with something: " << comp->getGameObject()->name << std::endl;
 }
 
 void TrainerController::update(float deltaTime) {
