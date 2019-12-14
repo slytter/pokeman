@@ -46,7 +46,11 @@ void TrainerController::onCollisionStart(PhysicsComponent *comp) {
 
     if(comp->getGameObject()->name == "Coin") {
         comp->getGameObject()->removeMe = true;
-    } else {
+    } else if (comp->getGameObject()->name == "creature") {
+        std::cout << "bang";
+
+        trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
+        trainerPhys->addImpulse(glm::normalize(-currentDirection) /5.f);
         // PokemanGame::instance->setGameState(GameState::GameOver);
     }
     std::cout << "bird collided with something: " << comp->getGameObject()->name << std::endl;
@@ -90,7 +94,7 @@ void TrainerController::updatePos(glm::vec2 dir) {
     trainerPhys->body->SetLinearDamping((10));
     //savedPos = glm::vec2(trainerPhys->gameObject->getPosition());
 
-    std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y << "\n";
+    //std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y << "\n";
     // trainerPhysx->
 }
 

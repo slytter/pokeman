@@ -27,12 +27,12 @@ void WorldGenerator::loadPokemanMap (string filename) {
     d.ParseStream(isw);
 
     startingPosition = vec2(0,0);
-    worldOffset = vec2(500,500);
+    worldOffset = vec2(1000,1000);
 
-    enemySpawnPoints.push_back(vec2(-267.614,-259.656));
-    enemySpawnPoints.push_back(vec2(-270.858,510.229));
-    enemySpawnPoints.push_back(vec2(1383.31,-247.58245));
-    enemySpawnPoints.push_back(vec2(1353.27,529.92545));
+    enemySpawnPoints.push_back(vec2(948.205, 509.023));
+    enemySpawnPoints.push_back(vec2(-806.035, -160.443));
+    enemySpawnPoints.push_back(vec2(-828.446,446.275));
+    enemySpawnPoints.push_back(vec2(869.736, -319.354));
 
     const Value &a = d["tileMap"];
     assert(a.IsArray());

@@ -10,6 +10,7 @@
 #include "TrainerController.hpp"
 #include "Projectile.h"
 #include "Creature.h"
+#include "SoundSource.h"
 
 
 using namespace std;
@@ -22,6 +23,7 @@ const glm::vec2 PokemanGame::windowSize(800, 600);
 PokemanGame* PokemanGame::instance = nullptr;
 
 PokemanGame::PokemanGame() :debugDraw(physicsScale) {
+
     instance = this;
     r.setWindowSize(windowSize);
     r.init()
@@ -43,15 +45,12 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 
     spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
     spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
+    defaultSprites = SpriteAtlas::create("screens.json","screens.png");
     spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
-    defaultSprites = SpriteAtlas::create("bird.json","bird.png");
     bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
-
-
-
+    srand(10);
 
     init();
-
 
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
@@ -137,8 +136,10 @@ void PokemanGame::enemySpawner() {
     auto so2 = enemy->addComponent<SpriteComponent>();
     auto sprite2 = spriteAtlasMonsters->get(monsterType[(rand() % 5)]);
     sprite2.setScale({2,2});
-    srand(time(NULL));
-    enemy->setPosition(pokemanMap.enemySpawnPoints[(rand() % 3) ]);
+
+    int rno = (int)(rand() % 4);
+    cout<< "dfs " << rno;
+    enemy->setPosition(pokemanMap.enemySpawnPoints[rno]);
     so2->setSprite(sprite2);
     auto phys2 = enemy->addComponent<PhysicsComponent>();
     phys2->initCircle(b2_dynamicBody, 30/physicsScale, {enemy->getPosition().x/physicsScale,enemy->getPosition().y/physicsScale}, 1);
@@ -173,6 +174,7 @@ void PokemanGame::update(float time) {
 
     if(maySpawnProjectile && timePast > burstSpeed) {
         timePast = 0.0f;
+        gunShotSound.play();
         spawnProjectile();
     }
 }
@@ -182,7 +184,7 @@ void PokemanGame::render() {
 
     auto rp = RenderPass::create()
             .withCamera(camera->getCamera())
-            .withClearColor(true, {.20, .60, .86, 1})
+            .withClearColor(true, {0, 0, 0, 1})
             .build();
 
 
@@ -197,11 +199,13 @@ void PokemanGame::render() {
     }
 
     if (gameState == GameState::Ready){
-        auto sprite = defaultSprites->get("get-ready.png");
+        auto sprite = defaultSprites->get("cap-em-all.png");
+        sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     } else if (gameState == GameState::GameOver){
-        auto sprite = defaultSprites->get("game-over.png");
+        auto sprite = defaultSprites->get("lost.png");
+        sprite.setScale(glm::vec2(0.5f, 0.5f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
     }
@@ -248,9 +252,11 @@ void PokemanGame::onKey(SDL_Event &event) {
                 break;
             case SDLK_SPACE:
                 if (gameState == GameState::GameOver){
+                    camera->lerpTime = 0.0f;
                     init();
                     gameState = GameState::Ready;
                 } else if (gameState == GameState::Ready){
+                    camera->lerpSpeed = 1.0f;
                     gameState = GameState::Running;
                 }
                 break;

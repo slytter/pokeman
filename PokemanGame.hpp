@@ -8,9 +8,12 @@
 #include "Box2DDebugDraw.hpp"
 #include "WorldGenerator.h"
 #include "TrainerController.hpp"
+#include "GameState.h"
+#include "SoundSource.h"
+
 class PhysicsComponent;
 
-enum class GameState{
+enum class GameState {
     Ready,
     Running,
     GameOver
@@ -22,6 +25,10 @@ public:
     std::shared_ptr<GameObject> Player;
     std::shared_ptr<GameObject> createGameObject();
     static const glm::vec2 windowSize;
+
+    SoundSource gunShotSound = SoundSource((char*)"gunSound.wav");
+
+    //SoundSource gameSound;
 
     std::shared_ptr<WorldGenerator> pokemanWorld;
 
@@ -40,6 +47,7 @@ public:
     void spawnProjectile();
 
 private:
+    GameState gameState = GameState::Ready;
     float timePast = 0.0f;
     bool maySpawnProjectile = false;
     float burstSpeed = 0.2f;
@@ -86,7 +94,6 @@ private:
     std::map<b2Fixture*,PhysicsComponent *> physicsComponentLookup;
     Box2DDebugDraw debugDraw;
     bool doDebugDraw = false;
-    GameState gameState = GameState::Ready;
     friend class PhysicsComponent;
 };
 

@@ -14,8 +14,9 @@ public:
     glm::mat4 cameraOriMat4;
     bool onKey(SDL_Event &event) override;
     glm::vec3 getCameraPos ();
-
-
+    float lerpTime = 0.0f;
+    float lerpSpeed = 0.0f;
+    //std::shared_ptr<PokemanGame::GameState> gameState;
 private:
     glm::mat4 IsometricView;
     sre::Camera camera;

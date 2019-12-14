@@ -54,7 +54,9 @@ project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.h
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
@@ -502,7 +504,9 @@ project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.h
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
@@ -797,8 +801,10 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Creature.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Creature.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Creature.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.h
@@ -1093,9 +1099,11 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PhysicsComponent.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.h
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
@@ -1302,10 +1310,12 @@ project/Pokeman/CMakeFiles/Pokeman.dir/PokemanGame.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Creature.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.h
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
@@ -1450,6 +1460,7 @@ project/Pokeman/CMakeFiles/Pokeman.dir/Projectile.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.cpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Projectile.h
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.hpp
  submodules/SimpleRenderEngine/include/sre/BlendType.hpp
  submodules/SimpleRenderEngine/include/sre/Color.hpp
@@ -1903,8 +1914,10 @@ project/Pokeman/CMakeFiles/Pokeman.dir/TrainerController.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PhysicsComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteAnimationComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/TrainerController.cpp
@@ -2237,7 +2250,9 @@ project/Pokeman/CMakeFiles/Pokeman.dir/main.cpp.o
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameObject.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/GameState.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/PokemanGame.hpp
+ /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SoundSource.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/SpriteComponent.hpp
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/WorldGenerator.h
  /Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/main.cpp

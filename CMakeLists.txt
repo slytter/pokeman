@@ -17,14 +17,14 @@ file(GLOB pokeman
         )
 
 # Compile cpp files (from Snake variable)
-add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Projectile.cpp Projectile.h Creature.h Creature.cpp SoundSource.cpp SoundSource.h)
+add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Projectile.cpp Projectile.h Creature.h Creature.cpp SoundSource.cpp SoundSource.h GameState.h)
 
 target_link_libraries(Pokeman ${all_libs})
 
 # copy files to dest
-file(COPY background.png background2.png bird.json bird.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-file(COPY background.png background2.png bird.json bird.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
-file(COPY background.png background2.png bird.json bird.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY background.png background2.png bird.json bird.png gunSound.wav screens.json screens.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+file(COPY background.png background2.png bird.json bird.png gunSound.wav  screens.json screens.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)
+file(COPY background.png background2.png bird.json bird.png gunSound.wav  screens.json screens.png bullet.json bullet.png monsters.json monsters.png ash.json ash.png levelData.json 2DLandscape.png 2DLandscape.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 IF (WIN32)
     # Copy dll files to ${CMAKE_CURRENT_BINARY_DIR}/Debug
