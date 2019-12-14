@@ -11,6 +11,8 @@
 #include "PokemanGame.hpp"
 #include "SpriteComponent.hpp"
 #include "SpriteAnimationComponent.hpp"
+#include "imgui.h"
+#include "CameraController.hpp"
 
 using namespace glm;
 using namespace sre;
@@ -21,6 +23,7 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
     gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
+
 }
 
 bool TrainerController::onKey(SDL_Event &event) {
@@ -71,7 +74,8 @@ void TrainerController::update(float deltaTime) {
         gameObject->removeMe = true;
         PokemanGame::instance->setGameState(GameState::GameOver);
     }
-    //std::cout << gameObject->getRotation()<< std::endl;
+
+
 
 }
 
@@ -84,8 +88,23 @@ void TrainerController::updatePos(glm::vec2 dir) {
     trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
     trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
     trainerPhys->body->SetLinearDamping((10));
-    //std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y;
+    //savedPos = glm::vec2(trainerPhys->gameObject->getPosition());
+
+    std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y << "\n";
     // trainerPhysx->
+}
+
+void TrainerController::onGui() {
+    trainerPhys = gameObject->getComponent<PhysicsComponent>();
+    ImGui::SetNextWindowPos(ImVec2(cam->getCameraPos().x, cam->getCameraPos().y), ImGuiSetCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(100, 30), ImGuiSetCond_Always);
+    ImGui::Begin("", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+    ImGui::ProgressBar(0.5f, {-1, 0});
+    ImGui::End();
+}
+
+void TrainerController::setCamera(std::shared_ptr<CameraController> _cam) {
+    this->cam = _cam;
 }
 
 

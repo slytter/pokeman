@@ -11,6 +11,7 @@
 #include "Projectile.h"
 #include "Creature.h"
 
+
 using namespace std;
 using namespace glm;
 using namespace sre;
@@ -46,7 +47,11 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     defaultSprites = SpriteAtlas::create("bird.json","bird.png");
     bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
 
+
+
+
     init();
+
 
     // setup callback functions
     r.keyEvent = [&](SDL_Event& e){
@@ -56,7 +61,9 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
         update(deltaTime);
     };
     r.frameRender = [&](){
+
         render();
+
     };
     // start game loop
     r.startEventLoop();
@@ -68,6 +75,8 @@ void PokemanGame::init() {
     }
 
     Player = nullptr;
+    onGUIPLayer = nullptr;
+
     createGameObject();
     sceneObjects.clear();
 
@@ -89,7 +98,6 @@ void PokemanGame::init() {
     auto sprite = spriteAtlas->get("tile008.png");
     sprite.setOrderInBatch(10);
     sprite.setScale({2,2});
-    std:: cout << (int)pokemanMap.getStartingPosition().x;
 
     Player->setPosition({(int)pokemanMap.getStartingPosition().x, pokemanMap.getStartingPosition().y});
     so->setSprite(sprite);
@@ -98,6 +106,8 @@ void PokemanGame::init() {
     auto phys = Player->addComponent<PhysicsComponent>();
     phys->initCircle(b2_dynamicBody, 10/physicsScale, {Player->getPosition().x / physicsScale, Player->getPosition().y / physicsScale}, 1);
     auto birdC = Player->addComponent<TrainerController>();
+    onGUIPLayer = birdC;
+    onGUIPLayer -> setCamera(camera);
 
     vector<Sprite> spriteAnim({spriteAtlas->get("tile008.png"),spriteAtlas->get("tile009.png"),spriteAtlas->get("tile010.png"),spriteAtlas->get("tile011.png")});
     anim-> setSprites(spriteAnim);
@@ -168,9 +178,15 @@ void PokemanGame::update(float time) {
 }
 
 void PokemanGame::render() {
+
+
     auto rp = RenderPass::create()
             .withCamera(camera->getCamera())
+            .withClearColor(true, {.20, .60, .86, 1})
             .build();
+
+
+    onGUIPLayer->onGui();
 
     auto pos = camera->getGameObject()->getPosition();
     background1Component.renderBackground(rp, +pos.x*0.8f);
@@ -200,6 +216,10 @@ void PokemanGame::render() {
         rp.drawLines(debugDraw.getLines());
         debugDraw.clear();
     }
+
+
+
+
 }
 
 void PokemanGame::onKey(SDL_Event &event) {

@@ -13,6 +13,8 @@ public:
     sre::Camera& getCamera();
     glm::mat4 cameraOriMat4;
     bool onKey(SDL_Event &event) override;
+    glm::vec3 getCameraPos ();
+
 
 private:
     glm::mat4 IsometricView;

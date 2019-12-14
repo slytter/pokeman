@@ -13,7 +13,7 @@ CameraController::CameraController(GameObject *gameObject) : Component(gameObjec
 
     camera.setWindowCoordinates();
     camera.setOrthographicProjection(200, -2000, 2000);
-    camRotation = glm::vec3(-0.76,-0.76, 0.54);
+    camRotation = glm::vec3(0,0, 0);
     cameraOriMat4 = camera.getViewTransform();
     camera.setViewTransform(IsometricView);
 }
@@ -60,4 +60,7 @@ bool CameraController::onKey(SDL_Event &event) {
     //std::cout << "x: " << camRotation.x << ", y: " << camRotation.y << ", z: " << camRotation.z << std::endl;
 
     return false;
+}
+glm::vec3 CameraController::getCameraPos () {
+    return camera.getPosition();
 }

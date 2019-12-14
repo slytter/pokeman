@@ -7,7 +7,7 @@
 #include "BackgroundComponent.hpp"
 #include "Box2DDebugDraw.hpp"
 #include "WorldGenerator.h"
-
+#include "TrainerController.hpp"
 class PhysicsComponent;
 
 enum class GameState{
@@ -65,6 +65,8 @@ private:
     std::shared_ptr<sre::SpriteAtlas> spriteAtlasMonsters;
     std::shared_ptr<sre::SpriteAtlas> defaultSprites;
     std::shared_ptr<sre::SpriteAtlas> bulletSprite;
+
+    std::shared_ptr<TrainerController> onGUIPLayer;
 
     std::map<int,std::string> tileType;
     std::vector<std::string> monsterType;

@@ -32,3 +32,7 @@ void Component::onCollisionStart(PhysicsComponent* comp) {
 void Component::onCollisionEnd(PhysicsComponent* comp) {
 
 }
+
+void Component::onGui()  {
+
+}
