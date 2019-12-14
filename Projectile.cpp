@@ -21,12 +21,11 @@ Projectile::Projectile(GameObject *gameObject) : Component(gameObject) {
 }
 
 void Projectile::shoot(){
-    //SoundSource shootingShound = SoundSource("snare.wav");
-    //shootingShound.play();
-
     vec2 currentDirection = playerReference->getComponent<TrainerController>()->currentDirection;
     b2Vec2 currentPosition = playerReference->getComponent<PhysicsComponent>()->body->GetPosition();
     b2Vec2 spawnPosition = {currentPosition.x + (currentDirection.x * 0.1f), currentPosition.y + (currentDirection.y * 0.1f) };
+    //SoundSource shootingShound = SoundSource("snare.wav");
+    //shootingShound.play();
     phys->initCircle(b2_dynamicBody, 0.1, {currentDirection.x/100, currentDirection.y/100}, 1);
     float rotation = glm::degrees(glm::orientedAngle(vec2(1, 1), currentDirection) + 45.0f);
     phys->body->SetTransform(b2Vec2(spawnPosition.x, spawnPosition.y), rotation);

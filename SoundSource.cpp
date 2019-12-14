@@ -4,19 +4,25 @@
 
 #include "SoundSource.h"
 #include <iostream>
-#include <SDL2/SDL.h>
+#include "SDL_mixer.h"
 
 using namespace std;
 
-SoundSource::SoundSource(char* _pathName) {
+SoundSource::SoundSource(char* _pathName, bool _shouldLoop, int _channel, float _volume) {
     pathName = _pathName;
-    SDL_LoadWAV(pathName, &wavSpec, &wavBuffer, &wavLength);
+    shouldLoop = _shouldLoop;
+    channel = _channel;
+    volume = _volume;
+
+    if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
+        cout << "Cannot initialize audio output"<< endl;
+        return;
+    }
+    sound = Mix_LoadWAV( pathName );
 };
 
 int SoundSource::play(){
-    SDL_AudioDeviceID deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
-    int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
-    SDL_PauseAudioDevice(deviceId, 0);
-    // cout << success << endl;
-    return success;
+    Mix_Volume(channel, (int)(volume * 128));
+    Mix_PlayChannel(channel, sound, shouldLoop ? -1 : 0);
+    return 1;
 }
