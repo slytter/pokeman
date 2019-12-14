@@ -31,5 +31,7 @@ private:
     std::shared_ptr<PhysicsComponent> trainerPhys;
     std::shared_ptr<CameraController> cam;
 
+    glm::vec2 GUIOffset;
+    glm::vec2 GUISize;
 
 };

@@ -69,6 +69,13 @@ bool CameraController::onKey(SDL_Event &event) {
 
     return false;
 }
-glm::vec3 CameraController::getCameraPos () {
-    return camera.getPosition();
+glm::vec2 CameraController::getCameraPos (glm::vec3 _ObjectPos) {
+    vec4 w(_ObjectPos, 1.0f);
+    auto r = sre::Renderer::instance;
+    auto viewport = static_cast<glm::vec2>(r->getDrawableSize());
+    vec4 cSpace = camera.getProjectionTransform(viewport) * camera.getViewTransform()*w;
+    vec4 ndc = cSpace/cSpace.w;
+    ndc.y *= -1;
+    vec4 wCoords = ndc * 0.5f + 0.5f;
+    return vec2(wCoords) * vec2(r->getWindowSize());
 }
