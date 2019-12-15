@@ -14,7 +14,7 @@ using namespace glm;
 CameraController::CameraController(GameObject *gameObject) : Component(gameObject) {
     camera.setOrthographicProjection(PokemanGame::windowSize.y * 3, -1000, 1000);
     camera.setWindowCoordinates();
-    camera.setOrthographicProjection(200, -2000, 2000);
+    camera.setOrthographicProjection(250, -2000, 2000);
     camRotation = glm::vec3(-0.94,-0.66, 0.44);
     cameraOriMat4 = camera.getViewTransform();
     camera.setViewTransform(IsometricView);
@@ -61,8 +61,6 @@ bool CameraController::onKey(SDL_Event &event) {
     if  (event.key.keysym.sym == SDLK_j && event.type == SDL_KEYDOWN) {
         camRotation.z -= 0.02f;
     }
-
-    std::cout << "x: " << camRotation.x << ", y: " << camRotation.y << ", z: " << camRotation.z << std::endl;
 
     return false;
 }

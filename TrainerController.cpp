@@ -44,7 +44,6 @@ bool TrainerController::onKey(SDL_Event &event) {
 
 void TrainerController::onCollisionStart(PhysicsComponent *comp) {
     if (comp->getGameObject()->name == "creature") {
-        std::cout << "bang";
         PokemanGame::instance->damageSound.play();
         trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
         trainerPhys->addImpulse(glm::normalize(-currentDirection) /3.f);

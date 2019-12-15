@@ -24,7 +24,6 @@ void Projectile::shoot(){
     phys->initCircle(b2_dynamicBody, 0.1, {currentDirection.x/100, currentDirection.y/100}, 1);
     float rotation = glm::degrees(glm::orientedAngle(vec2(1, 1), currentDirection) + 45.0f);
     phys->body->SetTransform(b2Vec2(spawnPosition.x, spawnPosition.y), rotation);
-    cout << glm::degrees(glm::orientedAngle(vec2(0, 1), currentDirection)) << endl;
     phys->addForce(currentDirection * 8.0f);
 }
 

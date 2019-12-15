@@ -170,12 +170,8 @@ void PokemanGame::update(float time) {
     bool gameIsRunning = gameState == GameState::Running;
     int waveSize = waveIncreaseBy * wave;
 
-    cout << "Wave: " << wave << endl;
-    cout << "waveSize: " << waveSize << endl;
-
     if(currentEnemyCount == 0 && allEnemiesSpawnedInWave && gameIsRunning) {
         allEnemiesSpawnedInWave = false;
-        cout << "Adding to wave: " << wave << endl;
         wave++;
     }
 
@@ -190,7 +186,7 @@ void PokemanGame::update(float time) {
 
     currentEnemyCount = 0;
     for (int i = 0; i < sceneObjects.size(); i++) {
-        if(sceneObjects[i]->name == "creature"){
+        if(sceneObjects[i]->name == "creature") {
             currentEnemyCount ++;
         }
         if(sceneObjects[i]->removeMe) {
@@ -224,7 +220,9 @@ void PokemanGame::render() {
 
     auto spriteBatchBuilder = SpriteBatch::create();
     for (auto & go : sceneObjects){
-        go->renderSprite(spriteBatchBuilder);
+        if(go->name != "Player" || gameState == GameState::Running){
+            go->renderSprite(spriteBatchBuilder);
+        }
     }
 
     if (gameState == GameState::Ready){
@@ -297,7 +295,6 @@ void PokemanGame::onKey(SDL_Event &event) {
                     init();
                     gameState = GameState::Ready;
                 } else if (gameState == GameState::Ready){
-                    cout << "ReadyState" << endl<< endl;
                     camera->lerpSpeed = 1.0f;
                     ahShitSound.play();
                     gameState = GameState::Running;

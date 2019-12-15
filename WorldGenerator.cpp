@@ -28,6 +28,7 @@ void WorldGenerator::loadPokemanMap (string filename) {
     startingPosition = vec2(0,0);
     worldOffset = vec2(1000,1000);
 
+    // Defining spawnpoints:
     enemySpawnPoints.push_back(vec2(948.205, 509.023));
     enemySpawnPoints.push_back(vec2(-806.035, -160.443));
     enemySpawnPoints.push_back(vec2(-828.446,446.275));
