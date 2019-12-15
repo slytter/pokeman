@@ -45,13 +45,13 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     monsterType.push_back(std::string("tile4.png"));
     monsterType.push_back(std::string("tile5.png"));
 
-    pokemanMap.loadPokemanMap("levelData.json");
+    pokemanMap.loadPokemanMap("assets/levelData.json");
 
-    spriteAtlasPokeman = SpriteAtlas::create("2DLandscape.json","2DLandscape.png");
-    spriteAtlasMonsters = SpriteAtlas::create("monsters.json","monsters.png");
-    defaultSprites = SpriteAtlas::create("screens.json","screens.png");
-    spriteAtlas = SpriteAtlas::create("ash.json","ash.png");
-    bulletSprite = SpriteAtlas::create("bullet.json","bullet.png");
+    spriteAtlasPokeman = SpriteAtlas::create("sprites/2DLandscape.json","sprites/2DLandscape.png");
+    spriteAtlasMonsters = SpriteAtlas::create("sprites/monsters.json","sprites/monsters.png");
+    defaultSprites = SpriteAtlas::create("sprites/screens.json","sprites/screens.png");
+    spriteAtlas = SpriteAtlas::create("sprites/ash.json","sprites/ash.png");
+    bulletSprite = SpriteAtlas::create("sprites/bullet.json","sprites/bullet.png");
     srand(10);
 
     ImGui::GetStyle().FrameBorderSize = 0.0f;
@@ -59,7 +59,7 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     init();
     auto fonts = ImGui::GetIO().Fonts;
     fonts->AddFontDefault();
-    auto fontName = "Lazer84.ttf";
+    auto fontName = "assets/Lazer84.ttf";
     int fontSize = 45;
     chosenFont = fonts->AddFontFromFileTTF(fontName, fontSize);
 
@@ -221,7 +221,6 @@ void PokemanGame::render() {
     }
 
     auto pos = camera->getGameObject()->getPosition();
-    background1Component.renderBackground(rp, +pos.x*0.8f);
 
     auto spriteBatchBuilder = SpriteBatch::create();
     for (auto & go : sceneObjects){
@@ -249,7 +248,6 @@ void PokemanGame::render() {
     auto sb = spriteBatchBuilder.build();
     rp.draw(sb);
 
-    background2Component.renderBackground(rp, -pos.x*0.2f);
 
     if (doDebugDraw){
         world->DrawDebugData();

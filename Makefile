@@ -118,8 +118,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/Applications/CMake.app/Contents/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -173,33 +173,6 @@ Pokeman: project/Pokeman/CMakeFiles/Pokeman.dir/rule
 Pokeman/fast:
 	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/build
 .PHONY : Pokeman/fast
-
-BackgroundComponent.o: BackgroundComponent.cpp.o
-
-.PHONY : BackgroundComponent.o
-
-# target to build an object file
-BackgroundComponent.cpp.o:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o
-.PHONY : BackgroundComponent.cpp.o
-
-BackgroundComponent.i: BackgroundComponent.cpp.i
-
-.PHONY : BackgroundComponent.i
-
-# target to preprocess a source file
-BackgroundComponent.cpp.i:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.i
-.PHONY : BackgroundComponent.cpp.i
-
-BackgroundComponent.s: BackgroundComponent.cpp.s
-
-.PHONY : BackgroundComponent.s
-
-# target to generate assembly for a file
-BackgroundComponent.cpp.s:
-	cd /Users/macbook/Projects/SimpleRenderEngineProject && $(MAKE) -f project/Pokeman/CMakeFiles/Pokeman.dir/build.make project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.s
-.PHONY : BackgroundComponent.cpp.s
 
 Box2DDebugDraw.o: Box2DDebugDraw.cpp.o
 
@@ -592,9 +565,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Pokeman"
-	@echo "... BackgroundComponent.o"
-	@echo "... BackgroundComponent.i"
-	@echo "... BackgroundComponent.s"
 	@echo "... Box2DDebugDraw.o"
 	@echo "... Box2DDebugDraw.i"
 	@echo "... Box2DDebugDraw.s"

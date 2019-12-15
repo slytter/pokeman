@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o"
   "CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o"
   "CMakeFiles/Pokeman.dir/CameraController.cpp.o"
   "CMakeFiles/Pokeman.dir/Component.cpp.o"

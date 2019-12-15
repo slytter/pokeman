@@ -4,7 +4,6 @@
 #include "Box2D/Dynamics/b2World.h"
 #include "GameObject.hpp"
 #include "CameraController.hpp"
-#include "BackgroundComponent.hpp"
 #include "Box2DDebugDraw.hpp"
 #include "WorldGenerator.h"
 #include "TrainerController.hpp"
@@ -96,8 +95,6 @@ private:
     bool maySpawnProjectile = false;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
-    BackgroundComponent background1Component;
-    BackgroundComponent background2Component;
 
     void updatePhysics();
     b2World * world = nullptr;

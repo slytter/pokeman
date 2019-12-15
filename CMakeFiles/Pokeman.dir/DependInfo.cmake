@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/BackgroundComponent.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/BackgroundComponent.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Box2DDebugDraw.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/Box2DDebugDraw.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CameraController.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/CameraController.cpp.o"
   "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/Component.cpp" "/Users/macbook/Projects/SimpleRenderEngineProject/project/Pokeman/CMakeFiles/Pokeman.dir/Component.cpp.o"
