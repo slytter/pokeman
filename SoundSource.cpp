@@ -22,7 +22,7 @@ SoundSource::SoundSource(char* _pathName, bool _shouldLoop, int _channel, float 
 };
 
 int SoundSource::play(){
-    // Playing on specific channel with the sound, an inline if statement setting loop to -1 or 0 and
+    // Playing on specific channel with the sound, an inline if statement setting loop to -1 or 0, and a delay of 0.
     Mix_PlayChannelTimed(channel, sound, shouldLoop ? -1 : 0, 0);
     return 1;
 }

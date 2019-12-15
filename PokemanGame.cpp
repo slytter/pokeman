@@ -39,14 +39,17 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     tileType[2] = std::string("stone.png");
     tileType[3] = std::string("lava.png");
 
+    // Loading monsters:
     monsterType.push_back(std::string("tile1.png"));
     monsterType.push_back(std::string("tile2.png"));
     monsterType.push_back(std::string("tile3.png"));
     monsterType.push_back(std::string("tile4.png"));
     monsterType.push_back(std::string("tile5.png"));
 
+    // Loading map
     pokemanMap.loadPokemanMap("assets/levelData.json");
 
+    // Loading spritemaps
     spriteAtlasPokeman = SpriteAtlas::create("sprites/2DLandscape.json","sprites/2DLandscape.png");
     spriteAtlasMonsters = SpriteAtlas::create("sprites/monsters.json","sprites/monsters.png");
     defaultSprites = SpriteAtlas::create("sprites/screens.json","sprites/screens.png");
@@ -57,6 +60,8 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
     ImGui::GetStyle().FrameBorderSize = 0.0f;
     ImGui::GetStyle().WindowBorderSize = 0.0f;
     init();
+
+    // Loading GUI fonts:
     auto fonts = ImGui::GetIO().Fonts;
     fonts->AddFontDefault();
     auto fontName = "assets/Lazer84.ttf";
@@ -71,9 +76,7 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
         update(deltaTime);
     };
     r.frameRender = [&](){
-
         render();
-
     };
     // start game loop
     r.startEventLoop();
@@ -93,8 +96,8 @@ void PokemanGame::init() {
     camera.reset();
     physicsComponentLookup.clear();
     initPhysics();
-
     initLevel ();
+
     auto camObj = createGameObject();
     camObj->name = "Camera";
     camera = camObj->addComponent<CameraController>();
@@ -128,9 +131,7 @@ void PokemanGame::init() {
     anim-> setUpDownSprites(upDownSpriteAnim);
     wave = 1;
     allEnemiesSpawnedInWave = false;
-
 }
-
 
 void PokemanGame::spawnProjectile(){
     auto projectile = createGameObject();
@@ -165,20 +166,20 @@ void PokemanGame::enemySpawner() {
 
 
 void PokemanGame::update(float time) {
-    if(gameState == GameState::Ready) {
-    }
     bool gameIsRunning = gameState == GameState::Running;
     int waveSize = waveIncreaseBy * wave;
 
+    // A wave incrementation is allowed when all enemies are killed, and all enemies has been spawned.
     if(currentEnemyCount == 0 && allEnemiesSpawnedInWave && gameIsRunning) {
-        allEnemiesSpawnedInWave = false;
         wave++;
+        allEnemiesSpawnedInWave = false;
     }
 
+    // We spawn an enemy when all enemies has not been spawned and the timer is 0,.
     if (countDown <= 0 && gameIsRunning && !allEnemiesSpawnedInWave) {
         enemySpawner();
-        if(currentEnemyCount == waveSize - 1){
-            allEnemiesSpawnedInWave = true;
+        if(currentEnemyCount == waveSize - 1) { // if the current enemies is equal to the wavesize:
+            allEnemiesSpawnedInWave = true; // we block for more enemies to be spawned for now.
         }
         countDown = enemySpawnerTime;
     }
@@ -186,17 +187,17 @@ void PokemanGame::update(float time) {
 
     currentEnemyCount = 0;
     for (int i = 0; i < sceneObjects.size(); i++) {
-        if(sceneObjects[i]->name == "creature") {
+        if(sceneObjects[i]->name == "creature") { // Here we count to current amount of enemies.
             currentEnemyCount ++;
         }
-        if(sceneObjects[i]->removeMe) {
-            sceneObjects.erase(sceneObjects.begin() + i);
+        if(sceneObjects[i]->removeMe) { // here we remove components that the removeMe boolean set to true.
+            sceneObjects.erase(sceneObjects.begin() + i); // using erase with an index, makes sure that no pointers are removed wrongly
         }
         sceneObjects[i]->update(time);
     }
 
     timePast += time;
-    if(maySpawnProjectile && timePast > burstSpeed) {
+    if(maySpawnProjectile && timePast > burstSpeed) { // here we allow for a projectile to be spawned
         timePast = 0.0f;
         gunShotSound.play();
         spawnProjectile();
@@ -220,19 +221,22 @@ void PokemanGame::render() {
 
     auto spriteBatchBuilder = SpriteBatch::create();
     for (auto & go : sceneObjects){
-        if(go->name != "Player" || gameState == GameState::Running){
-            go->renderSprite(spriteBatchBuilder);
+        if(go->name != "Player" || gameState == GameState::Running){ // making sure that we only render the player when gameState is running.
+            go->renderSprite(spriteBatchBuilder); //rendering sprites from gameopjects
         }
     }
 
-    if (gameState == GameState::Ready){
+    if (gameState == GameState::Ready) { // When the game is in its initial ready state
         runOnceWhenGameOver = true;
-        auto sprite = defaultSprites->get("cap-em-all.png");
+        auto sprite = defaultSprites->get("cap-em-all.png"); // we show the main screen sprite:
         sprite.setScale(glm::vec2(0.4f, 0.4f));
         sprite.setPosition(pos);
         spriteBatchBuilder.addSprite(sprite);
-    } else if (gameState == GameState::GameOver){
-        if(runOnceWhenGameOver) {
+    } else if (gameState == GameState::GameOver) { // When game is over:
+        if(runOnceWhenGameOver) { // run once:
+            camera->lerpTime = 1;
+            camera->lerpSpeed = -1;
+
             runOnceWhenGameOver = false;
             pukeSound.play();
             hellNoSound.play();
@@ -246,7 +250,6 @@ void PokemanGame::render() {
     auto sb = spriteBatchBuilder.build();
     rp.draw(sb);
 
-
     if (doDebugDraw){
         world->DrawDebugData();
         rp.drawLines(debugDraw.getLines());
@@ -258,7 +261,7 @@ void PokemanGame::render() {
     ImGui::SetNextWindowSize(ImVec2(300, 100), ImGuiSetCond_Always);
     ImGui::Begin("WAVE", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
     ImGui::PushFont(chosenFont);
-    ImGui::Text("WAVE: %d", wave);
+    ImGui::Text("WAVE: %d", wave); // Drawing wave GUI
     ImGui::PopFont();
     ImGui::End();
 }
@@ -272,13 +275,12 @@ void PokemanGame::onKey(SDL_Event &event) {
             }
         }
     }
-    if (event.key.keysym.sym == SDLK_SPACE && gameState == GameState::Running) {
+    if (event.key.keysym.sym == SDLK_SPACE && gameState == GameState::Running) { // Press space will allow shooting
         maySpawnProjectile = event.type == SDL_KEYDOWN;
     }
     if (event.type == SDL_KEYDOWN){
         switch (event.key.keysym.sym){
             case SDLK_d:
-                // press 'd' for physics debug
                 doDebugDraw = !doDebugDraw;
                 if (doDebugDraw){
                     world->SetDebugDraw(&debugDraw);
@@ -395,8 +397,9 @@ GameState PokemanGame::getGameState() {
     return gameState;
 }
 
-void PokemanGame::initLevel() {
+void PokemanGame::initLevel() { // where we create the spritemap
     sre::Sprite tile;
+    //pokemanMap has previously been initialized from ...
     for (int i = 0; i < pokemanMap.getWidth() ; ++i) {
         for (int j = 0; j < pokemanMap.getHeight() ; ++j) {
             for (auto type : tileType) {
