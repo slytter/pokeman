@@ -145,14 +145,13 @@ void PokemanGame::spawnProjectile(){
     projectileSpriteCom->setSprite(spriteImage);
 }
 
-void PokemanGame::enemySpawner() {
+void PokemanGame::enemySpawner() { // This is a very simple function which is responsible for spawning enemies.
     enemyCount++;
     auto enemy = createGameObject();
     enemy->name = "creature";
     auto so2 = enemy->addComponent<SpriteComponent>();
     auto sprite2 = spriteAtlasMonsters->get(monsterType[(rand() % 5)]);
     sprite2.setScale({1.5f,2});
-
     int rno = (int)(rand() % 4);
     enemy->setPosition(pokemanMap.enemySpawnPoints[rno]);
     so2->setSprite(sprite2);
@@ -214,7 +213,7 @@ void PokemanGame::render() {
             .build();
 
     for (int i = 0; i <sceneObjects.size() ; ++i) {
-        sceneObjects[i]->renderGUI();
+        sceneObjects[i]->renderGUI(); // This function handles every GUI element attached to a game object.
     }
 
     auto pos = camera->getGameObject()->getPosition();
@@ -314,7 +313,6 @@ std::shared_ptr<GameObject> PokemanGame::createGameObject() {
 }
 
 
-
 void PokemanGame::updatePhysics() {
     const float32 timeStep = 1.0f / 60.0f;
     const int positionIterations = 2;
@@ -397,23 +395,24 @@ GameState PokemanGame::getGameState() {
     return gameState;
 }
 
-void PokemanGame::initLevel() { // where we create the spritemap
+void PokemanGame::initLevel() { // This function initializes the map
     sre::Sprite tile;
-    //pokemanMap has previously been initialized from ...
+    // The PokemanMap object, contains a 2D vector that represents the gameworld (specified in assets/levelData.json).
+    // The every entry in the 2D vector, has a tile-type (either: 0 = defaultWall,1 = dirt,2 = stone, 3 = lava) which defines its "properties".
     for (int i = 0; i < pokemanMap.getWidth() ; ++i) {
         for (int j = 0; j < pokemanMap.getHeight() ; ++j) {
-            for (auto type : tileType) {
-                if (type.first == pokemanMap.getTile(i, j)) {
+            for (auto type : tileType) { // This loops through each tile-type, in order to test for match.
+                if (type.first == pokemanMap.getTile(i, j)) { // The map variable, matches the given entry of the 2D grid, to the corresponding image path.
                     auto sprite = spriteAtlasPokeman->get(type.second);
                     sprite.setOrderInBatch(0);
                     tile = sprite;
                     tile.setScale({2,2});
                     auto tileObj = createGameObject();
-                    tileObj->name = type.second.substr(0,type.second.find('.'));
+                    tileObj->name = type.second.substr(0,type.second.find('.')); // This tags the newly created gameobject.
                     auto so1 = tileObj->addComponent<SpriteComponent>();
                     so1->setSprite(tile);
-                    tileObj->setPosition({(pokemanMap.getStartingPosition().x - pokemanMap.worldOffset.x) + (64 * i),(pokemanMap.getStartingPosition().y - pokemanMap.worldOffset.y) +(j*64)});
-                    if (tileObj->name == "defaultWall" || tileObj->name == "lava") {
+                    tileObj->setPosition({(pokemanMap.getStartingPosition().x - pokemanMap.worldOffset.x) + (64 * i),(pokemanMap.getStartingPosition().y - pokemanMap.worldOffset.y) +(j*64)}); // The tile is positioned in the gameworld
+                    if (tileObj->name == "defaultWall") { // Here the tag of the gameobjec is checked, in order to see if a collider needs to be attached.
                         std::shared_ptr<PhysicsComponent> TilePhys = tileObj->addComponent<PhysicsComponent>();
                         TilePhys->initBox(b2_staticBody, vec2(32 / physicsScale, 32 / physicsScale), {tileObj->getPosition().x/physicsScale,tileObj->getPosition().y/physicsScale}, 2);
                     }

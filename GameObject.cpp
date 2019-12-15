@@ -46,6 +46,7 @@ void GameObject::update(float deltaTime) {
     }
 }
 
+// This function extends the initial Gameobject script, and allow each attach component, to call an onGUI function.
 void GameObject::renderGUI() {
     for (auto& comp : components){
         comp->onGui();

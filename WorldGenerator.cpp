@@ -37,6 +37,7 @@ void WorldGenerator::loadPokemanMap (string filename) {
     const Value &a = d["tileMap"];
     assert(a.IsArray());
 
+    // The code bellow load each col from each row, into the 2D vector: eiles.
     for (SizeType i = 0; i < a.Size(); i++) {
         auto col = a[i].GetArray();
         std::vector<int> singleRow;
