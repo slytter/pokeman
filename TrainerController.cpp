@@ -88,7 +88,7 @@ void TrainerController::updatePos(glm::vec2 dir) {
 
 void TrainerController::onGui() {
     if (PokemanGame::instance->getGameState() == GameState::Running) {
-        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), -1));
+        vec2 isoCamView = cam->getCameraPos(vec3(gameObject->getPosition(), -1)); // Gets the view coordinates of the camera, in order to correctly "track" and map the GUI health bar.
         ImGui::SetNextWindowBgAlpha(0.0f);
         ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x / 2.0f, isoCamView.y - GUISize.y ),
                                 ImGuiSetCond_Always);

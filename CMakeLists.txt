@@ -9,14 +9,12 @@ IF (WIN32)
     ENDIF(NOT DEFINED DLLFileList)
 ENDIF(WIN32)
 
-# Add hpp and cpp files to Snake variable
 file(GLOB pokeman
         "*.hpp"
         "*.h"
         "*.cpp"
         )
 
-# Compile cpp files (from Snake variable)
 add_executable(Pokeman ${pokeman} WorldGenerator.cpp WorldGenerator.h Projectile.cpp Projectile.h Creature.h Creature.cpp SoundSource.cpp SoundSource.h)
 
 target_link_libraries(Pokeman ${all_libs})
