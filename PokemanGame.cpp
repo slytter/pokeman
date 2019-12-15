@@ -422,8 +422,3 @@ void PokemanGame::initLevel() { // where we create the spritemap
         }
     }
 }
-
-std::shared_ptr<GameObject> PokemanGame::addGameObject(std::shared_ptr<GameObject> gameObject) {
-    sceneObjects.push_back(gameObject);
-    return gameObject;
-}
