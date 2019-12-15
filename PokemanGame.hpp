@@ -7,7 +7,6 @@
 #include "Box2DDebugDraw.hpp"
 #include "WorldGenerator.h"
 #include "TrainerController.hpp"
-#include "GameState.h"
 #include "SoundSource.h"
 
 class PhysicsComponent;

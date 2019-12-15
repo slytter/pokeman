@@ -1,7 +1,3 @@
-//
-// Created by Nikolaj on 13/12/2019.
-//
-
 #ifndef SIMPLERENDERENGINEPROJECT_SOUNDSOURCE_H
 #define SIMPLERENDERENGINEPROJECT_SOUNDSOURCE_H
 #include <iostream>
@@ -20,11 +16,5 @@ public:
     int channel = 0;
     char* pathName = (char*)"snare.wav";
 };
-// see the implementation for more information
-
-#define MUS_PATH "Roland-GR-1-Trumpet-C5.wav"
-
-// prototype for our audio callback
-
 
 #endif //SIMPLERENDERENGINEPROJECT_SOUNDSOURCE_H

@@ -12,7 +12,6 @@
 #include "SpriteComponent.hpp"
 #include "SpriteAnimationComponent.hpp"
 #include "imgui.h"
-
 #include "CameraController.hpp"
 
 using namespace glm;
@@ -23,7 +22,6 @@ TrainerController::TrainerController(GameObject *gameObject) : Component(gameObj
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f);
     gameObject->getComponent<PhysicsComponent>()->body->SetFixedRotation(true);
-
     GUISize = glm::vec2(100,50);
 
 }
@@ -76,9 +74,6 @@ void TrainerController::update(float deltaTime) {
         gameObject->removeMe = true;
         PokemanGame::instance->setGameState(GameState::GameOver);
     }
-
-
-
 }
 
 void TrainerController::onCollisionEnd(PhysicsComponent *comp) {
@@ -90,10 +85,6 @@ void TrainerController::updatePos(glm::vec2 dir) {
     trainerPhys = gameObject->getComponent<PhysicsComponent>(); // (vec3(gameObject->getPosition(),0) + dir);
     trainerPhys->addForce(vec2(dir.x, dir.y) * playerSpeed);
     trainerPhys->body->SetLinearDamping((10));
-    //savedPos = glm::vec2(trainerPhys->gameObject->getPosition());
-
-    //std::cout << gameObject->getPosition().x << " "  << gameObject->getPosition().y << "\n";
-    // trainerPhysx->
 }
 
 void TrainerController::onGui() {

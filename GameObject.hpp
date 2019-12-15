@@ -39,11 +39,8 @@ public:
     GameObject() = default;
 private:
     std::vector<std::shared_ptr<Component>> components;
-
     glm::vec2 position;
     float rotation;
-
-    friend class BirdGame;
 };
 
 // definition of the template member function addComponent

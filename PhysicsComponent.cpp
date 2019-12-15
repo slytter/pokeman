@@ -1,5 +1,3 @@
-//
-
 #include <Box2D/Box2D.h>
 #include <iostream>
 #include "PhysicsComponent.hpp"
@@ -52,7 +50,6 @@ void PhysicsComponent::setLinearVelocity(glm::vec2 velocity) {
 
 void PhysicsComponent::initCircle(b2BodyType type, float radius, glm::vec2 center, float density) {
     assert(body == nullptr);
-    // do init
     shapeType = b2Shape::Type::e_circle;
     b2BodyDef bd;
     bd.type = type;
@@ -71,7 +68,6 @@ void PhysicsComponent::initCircle(b2BodyType type, float radius, glm::vec2 cente
 
 void PhysicsComponent::initBox(b2BodyType type, glm::vec2 size, glm::vec2 center, float density) {
     assert(body == nullptr);
-    // do init
     shapeType = b2Shape::Type::e_polygon;
     b2BodyDef bd;
     bd.type = type;

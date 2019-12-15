@@ -1,6 +1,3 @@
-//
-// Created by Morten Nobel-Jørgensen on 10/10/2017.
-//
 
 #include "SpriteAnimationComponent.hpp"
 #include "GameObject.hpp"

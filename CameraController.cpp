@@ -13,12 +13,9 @@ using namespace glm;
 
 CameraController::CameraController(GameObject *gameObject) : Component(gameObject) {
     camera.setOrthographicProjection(PokemanGame::windowSize.y * 3, -1000, 1000);
-
     camera.setWindowCoordinates();
     camera.setOrthographicProjection(200, -2000, 2000);
-
     camRotation = glm::vec3(-0.94,-0.66, 0.44);
-    //-0.94, y: -0.66, z: 0.44
     cameraOriMat4 = camera.getViewTransform();
     camera.setViewTransform(IsometricView);
 }

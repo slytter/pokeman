@@ -16,7 +16,6 @@ using namespace rapidjson;
 
 WorldGenerator::WorldGenerator(){
 
-
 }
 
 
@@ -37,8 +36,6 @@ void WorldGenerator::loadPokemanMap (string filename) {
     const Value &a = d["tileMap"];
     assert(a.IsArray());
 
-
-
     for (SizeType i = 0; i < a.Size(); i++) {
         auto col = a[i].GetArray();
         std::vector<int> singleRow;
@@ -47,11 +44,9 @@ void WorldGenerator::loadPokemanMap (string filename) {
         }
         tiles.push_back({singleRow});
     }
-
 }
 
 int WorldGenerator::getTile(int x, int y) {
-
     return tiles.at(y).at(x);
 }
 

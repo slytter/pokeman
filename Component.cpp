@@ -4,9 +4,7 @@
 
 #include "Component.hpp"
 
-Component::Component(GameObject *gameObject)
-:gameObject(gameObject)
-{
+Component::Component(GameObject *gameObject) : gameObject(gameObject) {
 }
 
 void Component::renderSprite(sre::SpriteBatch::SpriteBatchBuilder &spriteBatchBuilder) {
