@@ -1,6 +1,4 @@
-//
-// Created by Sune Øllgaard Klem on 12/12/2019.
-//
+
 #pragma once
 #include "WorldGenerator.h"
 #include "rapidjson/rapidjson.h"

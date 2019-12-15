@@ -1,6 +1,3 @@
-//
-// Created by Sune Øllgaard Klem on 12/12/2019.
-//
 
 #ifndef SIMPLERENDERENGINEPROJECT_CREATURE_H
 #define SIMPLERENDERENGINEPROJECT_CREATURE_H

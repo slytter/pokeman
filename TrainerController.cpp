@@ -1,6 +1,3 @@
-//
-// Created by Morten Nobel-Jørgensen on 19/10/2017.
-//
 
 #include <SDL_events.h>
 #include <iostream>
