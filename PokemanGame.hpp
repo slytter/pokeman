@@ -58,9 +58,7 @@ private:
     bool runOnceWhenGameOver = true;
     GameState gameState = GameState::Ready;
     float timePast = 0.0f;
-    bool maySpawnProjectile = false;
     float burstSpeed = 0.2f;
-    int enemyCount;
     sre::SDLRenderer r;
     void init();
     void initPhysics();
@@ -93,6 +91,9 @@ private:
     float countDown = enemySpawnerTime;
     int currentEnemyCount = 0;
     bool allEnemiesSpawnedInWave = false;
+    int enemyCount;
+
+    bool maySpawnProjectile = false;
 
     std::vector<std::shared_ptr<GameObject>> sceneObjects;
     BackgroundComponent background1Component;

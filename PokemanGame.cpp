@@ -23,9 +23,6 @@ const glm::vec2 PokemanGame::windowSize(800, 600);
 PokemanGame* PokemanGame::instance = nullptr;
 
 PokemanGame::PokemanGame() :debugDraw(physicsScale) {
-
-
-
     instance = this;
     r.setWindowSize(windowSize);
     r.init()
@@ -83,7 +80,6 @@ PokemanGame::PokemanGame() :debugDraw(physicsScale) {
 }
 
 void PokemanGame::init() {
-
     if (world != nullptr){ // deregister call backlistener to avoid getting callbacks when recreating the world
         world->SetContactListener(nullptr);
     }
@@ -130,6 +126,9 @@ void PokemanGame::init() {
         spriteAtlas->get("tile000.png"),spriteAtlas->get("tile001.png"),spriteAtlas->get("tile002.png"),spriteAtlas->get("tile003.png")
     });
     anim-> setUpDownSprites(upDownSpriteAnim);
+    wave = 1;
+    allEnemiesSpawnedInWave = false;
+
 }
 
 
@@ -151,7 +150,7 @@ void PokemanGame::enemySpawner() {
     enemy->name = "creature";
     auto so2 = enemy->addComponent<SpriteComponent>();
     auto sprite2 = spriteAtlasMonsters->get(monsterType[(rand() % 5)]);
-    sprite2.setScale({2,2});
+    sprite2.setScale({1.5f,2});
 
     int rno = (int)(rand() % 4);
     enemy->setPosition(pokemanMap.enemySpawnPoints[rno]);
@@ -166,14 +165,19 @@ void PokemanGame::enemySpawner() {
 
 
 void PokemanGame::update(float time) {
-
-
+    if(gameState == GameState::Ready) {
+    }
     bool gameIsRunning = gameState == GameState::Running;
     int waveSize = waveIncreaseBy * wave;
-    bool maySpawnEnemy = currentEnemyCount < waveSize;
 
-    cout << "EnemyCount: " << currentEnemyCount << endl;
+    cout << "Wave: " << wave << endl;
     cout << "waveSize: " << waveSize << endl;
+
+    if(currentEnemyCount == 0 && allEnemiesSpawnedInWave && gameIsRunning) {
+        allEnemiesSpawnedInWave = false;
+        cout << "Adding to wave: " << wave << endl;
+        wave++;
+    }
 
     if (countDown <= 0 && gameIsRunning && !allEnemiesSpawnedInWave) {
         enemySpawner();
@@ -182,13 +186,7 @@ void PokemanGame::update(float time) {
         }
         countDown = enemySpawnerTime;
     }
-
     countDown -= time;
-
-    if(currentEnemyCount == 0 && allEnemiesSpawnedInWave) {
-        allEnemiesSpawnedInWave = false;
-        wave++;
-    }
 
     currentEnemyCount = 0;
     for (int i = 0; i < sceneObjects.size(); i++) {
@@ -217,7 +215,6 @@ void PokemanGame::render() {
             .withCamera(camera->getCamera())
             .withClearColor(true, {0, 0, 0, 1})
             .build();
-
 
     for (int i = 0; i <sceneObjects.size() ; ++i) {
         sceneObjects[i]->renderGUI();
