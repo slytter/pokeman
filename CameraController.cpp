@@ -14,7 +14,7 @@ using namespace glm;
 CameraController::CameraController(GameObject *gameObject) : Component(gameObject) {
     camera.setOrthographicProjection(PokemanGame::windowSize.y * 3, -1000, 1000);
     camera.setWindowCoordinates();
-    camera.setOrthographicProjection(200, -2000, 2000);
+    camera.setOrthographicProjection(250, -2000, 2000);
     camRotation = glm::vec3(-0.94,-0.66, 0.44);
     cameraOriMat4 = camera.getViewTransform();
     camera.setViewTransform(IsometricView);
@@ -26,10 +26,12 @@ sre::Camera &CameraController::getCamera() {
 
 void CameraController::update(float deltaTime) {
     lerpTime += deltaTime / 2.0f * lerpSpeed;
-    float easeTime = 0.5 - cos(-glm::min(lerpTime, 1.0f) * M_PI) * 0.5;
+    float easeTime = 0.5 - cos(-glm::max(glm::min(lerpTime, 1.0f), 0.0f) * M_PI) * 0.5; // our ease-in-out easing function.
+    // We are lerping the camera view from a 0,0,0 vector to the isometric view, with the above easing function
     vec3 lerpedCameraRotation = glm::mix(vec3(0,0,0), camRotation, easeTime);
     auto position = followObject->getPosition();
     gameObject->setPosition(position);
+    // Setting the isometric view ...
     IsometricView = rotate(cameraOriMat4, lerpedCameraRotation.x, glm::vec3(1.0f, 0.0f, 0.0f));
     IsometricView = rotate(IsometricView, lerpedCameraRotation.y, glm::vec3(0.0f, 1.0f, 0.00f));
     IsometricView = rotate(IsometricView, lerpedCameraRotation.z, glm::vec3(0.0f, 0.0f, 1.0f));
@@ -43,6 +45,8 @@ void CameraController::setFollowObject(std::shared_ptr<GameObject> followObject,
 }
 
 bool CameraController::onKey(SDL_Event &event) {
+    // We implemented a basic camera rotation controller in order to test the isometric view.
+    // When in-game, use keys: T, G to control x. Y, H to control y. U, J to control z.
     if (event.key.keysym.sym == SDLK_t && event.type == SDL_KEYDOWN) {
         camRotation.x += 0.02f;
     }
@@ -61,8 +65,6 @@ bool CameraController::onKey(SDL_Event &event) {
     if  (event.key.keysym.sym == SDLK_j && event.type == SDL_KEYDOWN) {
         camRotation.z -= 0.02f;
     }
-
-    std::cout << "x: " << camRotation.x << ", y: " << camRotation.y << ", z: " << camRotation.z << std::endl;
 
     return false;
 }
