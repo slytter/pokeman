@@ -15,7 +15,6 @@ SpriteAnimationComponent::SpriteAnimationComponent(GameObject *gameObject) : Com
 void SpriteAnimationComponent::update(float deltaTime) {
     auto spriteComponent = gameObject->getComponent<SpriteComponent>();
     assert(spriteComponent != nullptr);
-
     if(characterPhysics == nullptr){
         characterPhysics = gameObject->getComponent<PhysicsComponent>();
     }

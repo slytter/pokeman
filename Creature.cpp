@@ -17,7 +17,6 @@ using namespace glm;
 Creature::Creature(GameObject *gameObject) : Component(gameObject) {
     b2Vec2 pos = gameObject->getComponent<PhysicsComponent>()->body->GetPosition();
     gameObject->getComponent<PhysicsComponent>()->body->SetTransform(pos, 45.0f); // Sets the initial state of the creature, in regards the position and rotation.
-
     creaturePhys = gameObject->getComponent<PhysicsComponent>();
     GUISize = glm::vec2(100,50);
     idPointer = &enemyId;
@@ -48,7 +47,7 @@ void Creature::onGui() {
 
         ImGui::SetNextWindowBgAlpha(0.0f); // Initialize GUI element
         ImGui::SetNextWindowPos(ImVec2(isoCamView.x - GUISize.x/2, isoCamView.y - GUISize.y ),ImGuiSetCond_Always);
-        ImGui::Begin(idPointer, nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize); // The idPointer insures that the spawned GUI element is unique to the given creature.
+        ImGui::Begin(idPointer, (bool*) false, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize); // The idPointer insures that the spawned GUI element is unique to the given creature.
         ImGui::ProgressBar(cHealth / 100, {100, 3});
         ImGui::End();
     }
